@@ -85,7 +85,7 @@ section p {
     background-color: #ffffff;
     width: 60%;
     padding: 3%;
-    margin: 5px auto;
+    margin: 7px auto;
     color: #242424;
     font-size: 20px;
     font-weight: 100;
@@ -104,8 +104,8 @@ footer {
     font-style: italic;
     background-color: #434445;
     width: 100%;
-    height: 70px;
+    height: 55px;
     display: inline-block;
     text-align: center;
-    line-height: 70px;
+    line-height: 55px;
 }
