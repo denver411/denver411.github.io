@@ -4,40 +4,50 @@
     padding: 0;
 }
 
-
-  a:hover {
+a:hover {
     text-decoration: underline;
-  }
-  a:active, a:focus {
-    color: teal;
-  }
-
-html,
-body, .container {
-    font-family: Roboto;
-    height: 100%;
+    font-weight: bold;
 }
 
-.container{
+a:active,
+a:focus {
+    color: teal;
+}
+
+html,
+body {
+    font-family: Roboto;
+    height: 100%;
+    width: 100vw;
+}
+
+.container {
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
 header {
     background-color: #dfdfdf;
-    min-height: 7%;
+    height: 50px;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    vertical-align: middle;
+    position: fixed;
 }
 
 nav,
 ul {
-    width: 100%;
     display: flex;
+    /* justify-content: space-around; */
     align-items: center;
-    justify-content: space-around;
+    width: 100%;
+    height: 50px;
+}
+
+ul li {
+    list-style: none;
+    width: 33%;
+    text-align: center;
 }
 
 ul a {
@@ -48,21 +58,17 @@ ul a {
     text-align: left;
 }
 
-ul li {
-    list-style: none;
-    flex-wrap: wrap;
-}
-
 main {
     background: #f7f7f7;
     flex: 1;
+    margin-top: 50px;
 }
 
 main h1 {
     font-family: Roboto;
     color: #2e353d;
     font-size: 40px;
-     font-weight: 300;
+    font-weight: 300;
     text-align: center;
     margin: 3%;
 }
@@ -72,26 +78,23 @@ section {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    margin: auto 10%;
-    
+    margin: auto 5%;
 }
 
 section p {
-    background-color:  #ffffff;
-    width: 41.4%;
-    height: 38.7%;
+    background-color: #ffffff;
+    width: 60%;
     padding: 3%;
     color: #242424;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 100;
     line-height: 36px;
     text-align: left;
-    border-radius: 5%;
+    overflow: auto;
 }
 
 img {
     height: 250px;
-
 }
 
 footer {
@@ -100,8 +103,8 @@ footer {
     font-style: italic;
     background-color: #434445;
     width: 100%;
-    height: 8%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    height: 70px;
+    display: inline-block;
+    text-align: center;
+    line-height: 70px;
 }
