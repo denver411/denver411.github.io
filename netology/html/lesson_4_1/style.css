@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700');
+html {
+    font-family: 'Raleway', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.center {
+    max-width: 1170px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header {
+    background: url("http://image.ibb.co/jd1wLx/header.jpg");
+    background-size: cover;
+    padding: 38px 0 155px;
+}
+
+.main-menu {
+    position: fixed;
+    top: 0;
+    left: 0%;
+    right: 0%;
+    padding: 38px 9.4%;
+    text-align: justify;
+    border-bottom: solid 1px rgba(255, 255, 255, 0);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.15);
+    font-size: 0;
+    background: rgba(47, 48, 76, 0.8);
+}
+
+.main-menu::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.main-menu__item {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nav-menu {
+    min-width: 50%;
+    width: auto;
+}
+
+.nav-menu__items {
+    text-align: justify;
+}
+
+.nav-menu__items::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.nav-menu__item {
+    padding: 0 10px;
+    display: inline-block;
+    width: 20%;
+    box-sizing: border-box;
+    font-family: Raleway;
+    color: #ffffff;
+    font-size: 0.813rem;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.nav-menu li:hover {
+    color: #e84545;
+    font-weight: bold;
+}
+
+.header-text h1 {
+    max-width: 861px;
+    margin: 155px auto 40px;
+    font-family: Raleway;
+    color: #ffffff;
+    font-size: 4.063em;
+    font-weight: 600;
+    line-height: 3.75rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header-text h2 {
+    max-width: 912px;
+    margin: 0 auto 76px;
+    font-family: Raleway;
+    color: #ffffff;
+    font-size: 1.375em;
+    font-weight: 400;
+    line-height: 1.75rem;
+    text-align: center;
+}
+
+.header-text__button {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 47px;
+    font-family: Raleway;
+    color: #ffffff;
+    font-size: 0.813em;
+    font-weight: 600;
+    line-height: 47px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 2px;
+    background-color: #e84545;
+}
+
+.header-text__button:hover {
+    background-color: #cccccc;
+    color: black;
+}
+
+.features {
+    padding: 120px 0 46px;
+    font-size: 0;
+}
+
+.features>.center {
+    max-width: 1265px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.features__item {
+    display: inline-block;
+    width: 33.1%;
+    min-width: 296px;
+    padding: 0 47px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.features__item img {
+    height: 60px;
+}
+
+.features__item h3 {
+    margin: 34px auto 25px;
+    font-family: Raleway;
+    color: #2d3033;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.features__item p {
+    padding-bottom: 74px;
+    font-family: Raleway;
+    color: #6c7279;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.18em;
+    text-align: center;
+}
+
+.works {
+    font-size: 0;
+}
+
+.works__item {
+    display: inline-block;
+    width: 25%;
+    border: solid 0.1px #808080;
+    box-sizing: border-box;
+}
+
+.works__item a {
+    display: block;
+    padding: 33% 0 35%;
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.works__item a h3 {
+    margin-bottom: 13px;
+    text-align: center;
+    font-family: Raleway;
+    color: #ffffff;
+    font-size: 0.875em;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+.works__item a h4 {
+    text-align: center;
+    font-family: Raleway;
+    color: #ffffff;
+    font-size: 0.875em;
+    font-weight: 400;
+    opacity: 0;
+}
+
+.works__item:nth-of-type(1) {
+    background-image: url(http://image.ibb.co/jzYbLx/work_1.jpg);
+    background-size: cover;
+}
+
+.works__item:nth-of-type(2) {
+    background-image: url(http://image.ibb.co/gnQqfx/work_2.jpg);
+    background-size: cover;
+}
+
+.works__item:nth-of-type(3) {
+    background-image: url(http://image.ibb.co/j3P5DH/work_5.jpg);
+    background-size: cover;
+}
+
+.works__item:nth-of-type(4) {
+    background-image: url(http://image.ibb.co/bBBkDH/work_4.jpg);
+    background-size: cover;
+}
+
+.works__item:nth-of-type(5) {
+    background-image: url(http://image.ibb.co/j3P5DH/work_5.jpg);
+    background-size: cover;
+}
+
+.works__item:nth-of-type(6) {
+    background-image: url(http://image.ibb.co/fDgVfx/work_6.jpg);
+    background-size: cover;
+}
+
+.works__item:nth-of-type(7) {
+    background-image: url(http://image.ibb.co/nysgnc/work_7.jpg);
+    background-size: cover;
+}
+
+.works__item:nth-of-type(8) {
+    background-image: url(http://image.ibb.co/gWTMnc/work_8.jpg);
+    background-size: cover;
+}
+
+.works__item a:hover {
+    background: rgba(232, 69, 69, 0.8);
+}
+
+.works__item a:hover h3 {
+    opacity: 1;
+}
+
+.works__item a:hover h4 {
+    opacity: 1;
+}
+
+footer {
+    padding-top: 71px;
+    background-color: #3a3e64;
+}
+
+.center>div {
+    display: inline-block;
+    width: 33%;
+    vertical-align: top;
+}
+
+footer h3 {
+    margin-bottom: 13px;
+    text-align: center;
+    font-family: Raleway;
+    color: #ffffff;
+    font-size: 0.875em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+footer h4 {
+    text-align: center;
+    font-family: Raleway;
+    color: rgb(157, 159, 178);
+    font-size: 0.875em;
+    font-weight: 400;
+}
+
+.footer-share .footer-share__links {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #ffffff;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.footer-share__links:nth-of-type(1) {
+    background: url(http://image.ibb.co/bzSaDH/facebook.png) no-repeat center;
+}
+
+.footer-share__links:nth-of-type(2) {
+    background: url(http://image.ibb.co/ehQqfx/twitter.png) no-repeat center;
+}
+
+.footer-share__links:nth-of-type(3) {
+    background: url(http://image.ibb.co/epMVfx/instagram.png) no-repeat center;
+}
+
+.footer-share__links a {
+    display: block;
+    height: 100%;
+}
+
+.footer-share__links a:hover {
+    background-color: rgba(232, 69, 69, 0.5);
+}
+
+.footer-copyright {
+    margin: 110px auto 0;
+    padding: 29px 0;
+    font-family: Raleway;
+    color: #808080;
+    font-size: 0.875em;
+    font-weight: 400;
+    line-height: 1.607;
+    text-align: center;
+    background: #313454;
+    border-top: solid 0.5px #808080;
+}
+
+.footer-copyright__heart {
+    font-family: Webdings;
+    color: #e84545;
+}
+
+.footer-copyright__author {
+    font-family: Raleway;
+    color: #ffffff;
+}
