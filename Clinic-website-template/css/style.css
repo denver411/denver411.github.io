@@ -222,7 +222,7 @@
 .information {
   display: flex;
   flex-wrap: wrap;
-  padding: 92px 47px 0 101px;
+  padding: 92px 47px 16px 101px;
   background-color: #f1f1f1;
 }
 .information .about-company {
@@ -252,7 +252,7 @@
   line-height: 1;
 }
 .information .latest-post .post-item {
-  margin-bottom: 31px;
+  min-height: 124px;
 }
 .information .latest-post .post-item__pic {
   float: left;
