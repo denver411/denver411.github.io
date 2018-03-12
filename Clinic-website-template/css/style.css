@@ -15,6 +15,7 @@
   border-top: solid 5px #fa6900;
 }
 .header .header-text {
+  min-width: 270px;
   margin-top: 96px;
   font-weight: bold;
   text-align: center;
@@ -29,6 +30,7 @@
   font-size: 31px;
 }
 .menu {
+  min-width: 273px;
   font-size: 0;
   text-align: justify;
 }
@@ -41,6 +43,7 @@
   display: inline-block;
 }
 .menu__logo {
+  min-width: 230px;
   padding-left: 61px;
   background-image: url(../img/logo.png);
   background-repeat: no-repeat;
@@ -62,7 +65,7 @@
 .about-us {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   padding: 0 13% 42px;
   background-color: #f1f1f1;
 }
@@ -93,10 +96,13 @@
   line-height: 1.5;
 }
 .about-us-features {
-  flex-basis: 33%;
+  flex-basis: calc(13%);
   margin-top: 65px;
   font-size: 23.5px;
   text-align: center;
+}
+.about-us-features:not(:last-child) {
+  margin-right: 20px;
 }
 .about-us-features__shape {
   display: flex;
@@ -127,13 +133,15 @@
 }
 .slider {
   min-height: 472px;
-  padding: 44px 158px 0;
+  padding: 44px 0 350px;
   background-color: #fa6900;
   background-image: url(../img/slider.png);
   background-repeat: no-repeat;
   background-position: center bottom 30px;
 }
 .slider__text {
+  max-width: 884px;
+  margin: 0 auto;
   font-size: 22px;
   font-weight: 300;
   line-height: 1.55;
@@ -174,7 +182,7 @@
 }
 .personal p {
   max-width: 667px;
-  margin: 033px auto;
+  margin: 33px auto;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.44;
@@ -182,24 +190,27 @@
   color: #000000;
 }
 .special-offer {
-  padding: 142px 666px 120px 101px;
+  padding: 142px 0 120px 101px;
   text-align: left;
   color: #ffffff;
   background-color: #fa6900;
   background-image: url(../img/special-offer-background.png);
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: left 583px center;
 }
 .special-offer h2 {
+  max-width: 400px;
   font-size: 26px;
   font-weight: bold;
 }
 .special-offer h3 {
+  max-width: 400px;
   margin-bottom: 49px;
   font-size: 22px;
   font-weight: 300;
 }
 .special-offer p {
+  max-width: 400px;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.1;
@@ -210,11 +221,12 @@
 }
 .information {
   display: flex;
+  flex-wrap: wrap;
   padding: 92px 47px 0 101px;
   background-color: #f1f1f1;
 }
 .information .about-company {
-  width: 50%;
+  flex-basis: 50%;
 }
 .information .about-company .social-links {
   height: 38px;
@@ -225,13 +237,13 @@
 .information .about-company > p {
   max-width: 460px;
   margin-top: 23px;
+  margin-right: 30px;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.63;
 }
 .information .latest-post {
-  width: 50%;
-  margin-left: 100px;
+  flex-basis: 50%;
 }
 .information .latest-post h2 {
   margin-bottom: 54px;

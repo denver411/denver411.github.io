@@ -16,6 +16,7 @@
             background-color: #69d2e7;
             border-top: solid 5px #fa6900;
             .header-text {
+                min-width: 270px;
                 margin-top: 96px;
                 font-weight: bold;
                 text-align: center;
@@ -32,6 +33,7 @@
         }
 
         .menu {
+            min-width: 273px;
             font-size: 0;
             text-align: justify;
             &:after {
@@ -43,6 +45,7 @@
                 display: inline-block;
             }
             &__logo {
+                min-width: 230px;
                 padding-left: 61px;
                 background-image: url(../img/logo.png);
                 background-repeat: no-repeat;
@@ -66,7 +69,7 @@
         .about-us {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; // position: relative;
+            justify-content: space-around;
             padding: 0 13% 42px;
             background-color: rgb(241, 241, 241);
             &-text {
@@ -100,10 +103,13 @@
                 }
             }
             &-features {
-                flex-basis: 33%;
+                flex-basis: calc(33%-20px);
                 margin-top: 65px;
                 font-size: 23.5px;
                 text-align: center;
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
                 &__shape {
                     display: flex;
                     justify-content: center;
@@ -136,12 +142,14 @@
 
         .slider {
             min-height: 472px;
-            padding: 44px 158px 0;
+            padding: 44px 0 350px;
             background-color: rgb(250, 105, 0);
             background-image: url(../img/slider.png);
             background-repeat: no-repeat;
             background-position: center bottom 30px;
             &__text {
+                max-width: 884px;
+                margin: 0 auto;
                 font-size: 22px;
                 font-weight: 300;
                 line-height: 1.55;
@@ -183,7 +191,7 @@
             }
             p {
                 max-width: 667px;
-                margin: 033px auto;
+                margin: 33px auto;
                 font-size: 16px;
                 font-weight: 300;
                 line-height: 1.44;
@@ -193,23 +201,26 @@
         }
 
         .special-offer {
-            padding: 142px 666px 120px 101px;
+            padding: 142px 0 120px 101px;
             text-align: left;
             color: rgb(255, 255, 255);
             background-color: rgb(250, 105, 0);
             background-image: url(../img/special-offer-background.png);
             background-repeat: no-repeat;
-            background-position: right center;
+            background-position: left 583px center;
             h2 {
+                max-width: 400px;
                 font-size: 26px;
                 font-weight: bold;
             }
             h3 {
+                max-width: 400px;
                 margin-bottom: 49px;
                 font-size: 22px;
                 font-weight: 300;
             }
             p {
+                max-width: 400px;
                 font-size: 16px;
                 font-weight: 300;
                 line-height: 1.1;
@@ -222,10 +233,11 @@
 
         .information {
             display: flex;
+            flex-wrap: wrap;
             padding: 92px 47px 0 101px;
             background-color: rgb(241, 241, 241);
             .about-company {
-                width: 50%;
+                flex-basis: 50%;
                 .social-links {
                     height: 38px;
                     margin-top: 33px;
@@ -235,14 +247,14 @@
                 &>p {
                     max-width: 460px;
                     margin-top: 23px;
+                    margin-right: 30px;
                     font-size: 16px;
                     font-weight: 300;
                     line-height: 1.63;
                 }
             }
             .latest-post {
-                width: 50%;
-                margin-left: 100px;
+                flex-basis: 50%;
                 h2 {
                     margin-bottom: 54px;
                     font-size: 26px;
