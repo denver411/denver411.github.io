@@ -98,6 +98,12 @@ body {
 .social-links__item:first-child {
   border-left: solid 1px #dee0e6;
 }
+.social-links__item_footer {
+  border-right: solid 1px #3c3e3f;
+}
+.social-links__item_footer:first-child {
+  border-left: solid 1px #3c3e3f;
+}
 .social-links__item:hover {
   background-color: #ffffff;
   cursor: pointer;
@@ -131,7 +137,6 @@ body {
 }
 .social-links__block {
   height: 63px;
-  opacity: 0.5;
 }
 .logo-block {
   min-height: 217px;
@@ -708,9 +713,6 @@ body {
   text-align: justify;
   background-color: #2b2c2d;
 }
-.footer .social-links__item > .pic {
-  background-position-y: -75px;
-}
 .footer::after {
   display: inline-block;
   width: 100%;
@@ -718,6 +720,10 @@ body {
 }
 .footer__social-links {
   display: inline-block;
+}
+.footer__social-links .pic {
+  background-position-y: -75px;
+  opacity: 0.4;
 }
 .footer__join-us {
   display: inline-block;

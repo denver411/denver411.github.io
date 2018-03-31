@@ -102,6 +102,12 @@
             &:first-child {
                 border-left: solid 1px rgb(222, 224, 230);
             }
+            &_footer{
+                border-right: solid 1px rgb(60, 62, 63);
+                &:first-child {
+                    border-left: solid 1px rgb(60, 62, 63);
+                }   
+            }
             &:hover {
                 background-color: rgb(255, 255, 255);
                 cursor: pointer;
@@ -136,7 +142,6 @@
         }
         &__block {
             height: 63px;
-            opacity: 0.5;
         }
     }
 
@@ -732,9 +737,6 @@
         font-size: 0;
         text-align: justify;
         background-color: rgb(43, 44, 45);
-        .social-links__item>.pic {
-            background-position-y: -75px;
-        }
         &::after {
             display: inline-block;
             width: 100%;
@@ -742,6 +744,10 @@
         }
         &__social-links {
             display: inline-block;
+            .pic {
+                background-position-y: -75px;
+                opacity: 0.4;
+            }
         }
         &__join-us {
             display: inline-block;
