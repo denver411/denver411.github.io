@@ -2,6 +2,9 @@ a:hover {
   text-decoration: underline;
   cursor: pointer;
 }
+.h3 {
+  text-transform: uppercase;
+}
 .order-wrapper {
   max-width: 1118px;
 }
@@ -51,7 +54,7 @@ a:hover {
   padding: 0 20px;
   font-size: 14px;
   text-align: left;
-  color: #D6D6D6;
+  color: #333333;
   background: #FFFFFF;
   border: 1px solid #C4C4C4;
   box-sizing: border-box;
@@ -277,6 +280,7 @@ a:hover {
   padding: 12px 26px;
   font-size: 12px;
   text-align: center;
+  text-transform: uppercase;
   color: #B4C5D0;
   border: 1px solid #AFC1CD;
   border-radius: 19.5px;

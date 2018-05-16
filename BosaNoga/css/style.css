@@ -31,7 +31,6 @@ li a:hover {
   width: 7px;
 }
 .container {
-  max-width: 1438px;
   margin: 0 auto;
 }
 .wrapper {
@@ -43,6 +42,7 @@ li a:hover {
   text-align: center;
   font-weight: bold;
   font-size: 28px;
+  text-transform: uppercase;
   color: #333333;
 }
 .arrow {
@@ -54,7 +54,6 @@ li a:hover {
 }
 .arrow:hover {
   cursor: pointer;
-  outline: solid 1px #cccccc;
 }
 .wave-bottom {
   background-image: url(../img/new-deals-background-wave.png);
@@ -93,7 +92,7 @@ li a:hover {
   flex-direction: column;
   justify-content: space-between;
   min-height: 124px;
-  background: url(../img/header-waves.png) bottom center no-repeat, linear-gradient(93.68deg, #EBE5E9 5.29%, #D1E3E5 95.42%);
+  background: url(../img/header-waves.png) bottom center repeat-x, linear-gradient(93.68deg, #EBE5E9 5.29%, #D1E3E5 95.42%);
 }
 .header .header-main__wrapper {
   min-height: 139px;
@@ -237,7 +236,7 @@ li a:hover {
   height: 80%;
   font-weight: 300;
   font-size: 14px;
-  color: #D6D6D6;
+  color: #333333;
   border: none;
   outline: none;
 }
@@ -387,9 +386,15 @@ li a:hover {
   left: 7px;
   background-position: 0 0;
 }
+.slider__arrow_left:hover {
+  background-position: -60px 0;
+}
 .slider__arrow_right {
   right: 7px;
   background-position: -30px 0;
+}
+.slider__arrow_right:hover {
+  background-position: -90px 0;
 }
 .slider__circles {
   display: flex;
@@ -414,6 +419,7 @@ li a:hover {
 }
 .slider__circle:hover {
   cursor: pointer;
+  transform: scale(1.2);
 }
 .new-deals {
   max-width: 1036px;
@@ -432,9 +438,10 @@ li a:hover {
   align-items: center;
 }
 .new-deals__menu-item {
+  padding-bottom: 10px;
   list-style: none;
   text-align: center;
-  padding-bottom: 10px;
+  text-transform: uppercase;
 }
 .new-deals__menu-item a {
   text-decoration: none;
@@ -518,6 +525,7 @@ li a:hover {
   font-weight: 500;
   font-size: 24px;
   color: #333333;
+  text-decoration: none;
 }
 .new-deals__product-info p {
   font-size: 14px;
@@ -673,6 +681,7 @@ li a:hover {
   font-size: 12px;
   line-height: 1;
   text-align: center;
+  text-transform: uppercase;
   color: #B4C5D0;
   background: #FFFFFF;
   border: 1px solid #AFC1CD;
@@ -688,7 +697,7 @@ li a:hover {
   min-height: 92px;
   height: 1px;
   margin: 0 auto;
-  background: url(../img/footer-waves.png) top center no-repeat, linear-gradient(92.54deg, #EBE5E9 5.3%, #D1E3E5 95.53%);
+  background: url(../img/footer-waves.png) top center repeat-x, linear-gradient(92.54deg, #EBE5E9 5.3%, #D1E3E5 95.53%);
 }
 .subscribe__wrapper {
   display: flex;
@@ -702,6 +711,7 @@ li a:hover {
 .subscribe__title {
   font-weight: bold;
   font-size: 14px;
+  text-transform: uppercase;
   color: #333333;
   mix-blend-mode: normal;
 }
@@ -762,7 +772,7 @@ li a:hover {
   font-weight: 300;
   font-size: 14px;
   vertical-align: middle;
-  color: #D6D6D6;
+  color: #333333;
   background: #FFFFFF;
   border: none;
   outline: none;

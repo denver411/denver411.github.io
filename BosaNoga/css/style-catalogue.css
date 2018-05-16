@@ -1,6 +1,6 @@
 html,
 body {
-  max-width: 1438px;
+  /* max-width: 1438px; */
   min-width: 1205px;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
@@ -20,16 +20,6 @@ a {
 a:hover {
   cursor: pointer;
 }
-
-
-/*****/
-/*Шпаргалка для пиксель-пёрфект, потом удалить*/
-.layout {
-  position: absolute;
-  opacity: 0.5;
-}
-/*****/
-
 
 /* Основной контент */
 /* Каталог */
@@ -192,6 +182,8 @@ select {
 }
 
 .product-catalogue__product_favorite-chosen {
+  position: absolute;
+  display: block;
   width: 33px;
   height: 30px;
   background-image: url(../img/catalogue-pics/product-catalogue__product_favorite_chosen.png);
@@ -925,7 +917,8 @@ input[type="search"] {
   padding-right: 35px;
   border-radius: 8px;
   border: 1px solid #C4C4C4;
-  color: #C4C4C4;
+  color: #333333;
+  outline: none;
 }
 
 /*Кастомизация плейсхолдера*/
