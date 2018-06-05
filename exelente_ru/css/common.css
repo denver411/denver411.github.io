@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic');
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../fonts/bebas/TTF\'s/BebasNeue Regular.ttf') format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  scroll-behavior: smooth;
+}
+@media (min-width: 577px) {
+  body {
+    max-width: 1280px;
+    min-width: 1180px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+@media (max-width: 576px) {
+  body {
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    min-width: unset;
+    padding: 0;
+  }
+}
+@media (min-width: 577px) {
+  .wrapper {
+    width: 1180px;
+    margin: 0 auto;
+    height: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+  }
+}
