@@ -54,6 +54,7 @@
     position: absolute;
     top: 32px;
     left: 50px;
+    z-index: 2;
   }
   .site-path__items {
     display: flex;

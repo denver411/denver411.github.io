@@ -1,46 +1,52 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic');
-@font-face {
-	font-family: 'Bebas Neue';
-	src: url('../fonts/bebas/TTF\'s/BebasNeue Regular.ttf') format("truetype");
-}
-html {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-body {
+/* body {
 	min-width: 1170px;
 	margin: 0 auto;
 	font-family: 'Open Sans', sans-serif;
-}
+} */
 a {
 	text-decoration: none;
 }
-section.content-top {
+.title {
 	width: 1220px;
 	display: flex;
 	justify-content: space-between;
 	margin-left: auto;
 	margin-right: auto;
 }
-h1.section-name {
+h2.section-name {
 	font-family: Bebas Neue;
 	font-size: 48px;
 	color: #DF5E16;
-	margin: 35px 45px 44px;
+	margin: 35px 25px 44px;
 }
 select.school-selection {
 	width: 150px;
 	height: 28px;
 	margin: 45px 4px;
+	padding-left: 10px;
 	background: #FFFFFF;
 	border: 1px solid #004391;
 	font-family: Open Sans;
 	font-weight: 600;
 	font-size: 14px;
 	color: #000000;
+	background: url(../img/content-img/content_select_arrow-down.png) no-repeat;
+  background-position: 125px center;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 0.01px; 
+  text-overflow: '';
+  -ms-appearance: none;
+  appearance: none;
 }
-section.content {
+option { 
+	font-family: Open Sans;
+	font-weight: 600;
+	font-size: 14px;
+	color: #000000;
+}
+section.content.content_schools {
 	width: 1220px;
 	display: flex;
 	justify-content: space-between;
@@ -49,7 +55,7 @@ section.content {
 	margin-right: auto;
 }
 aside.sidebar {
-	width: 200px;
+	width: 204px;
 	background: #F7F7F7;
 	box-shadow: 8px 8px 10px rgba(0, 67, 145, 0.3);
 }
@@ -58,7 +64,9 @@ section.sidebar__part {
 }
 section.sidebar__part h3 {
 	position: relative;
-	padding: 25px;
+	top: 13px;
+	left: 18px;
+	padding: 18px;
 	margin: 0;
 	font-family: Open Sans;
 	font-weight: bold;
@@ -66,9 +74,8 @@ section.sidebar__part h3 {
 	color: #333333;
 }
 section.sidebar__part .sidebar-arrow {
-	position: absolute;
-	top: 33px;
-	right: 50px;
+	position: relative;
+	left: 15px;
 	display: inline-block;
 	width: 8px;
 	height: 5px;
@@ -80,9 +87,59 @@ section.sidebar__part .arrow-down {
 section.sidebar__part .arrow-up {
 	background-position: -9px 0;
 }
-section.sidebar__part a.show-all {
+ul.choose-country__checkboxes {
+	position: relative;
+	top: -14px;
+	left: 20px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-family: Open Sans;
+	font-size: 10px;
+	color: #333333;
+}
+.country__checkbox {
+	display: none;
+}
+.checkbox-custom {
+	position: relative;
+	bottom: 15px;
+	width: 10px;
+	height: 10px;
+	background: #ffffff;
+	border: 1px solid #004391;
+	box-sizing: border-box;
+}
+.checkbox-custom,
+.label {
+	position: relative;
+	top: 10px;
+	right: -35px;
+	margin-top: 7px;
 	display: inline-block;
-	margin-left: 10px;
+	vertical-align: middle;
+}
+.label {
+	padding-left: 5px;
+}
+.country__checkbox:checked + .checkbox-custom::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	content: '';
+	background: #DF5E16;
+	outline: 1px solid #FFFFFF;
+	outline-offset: -1px;
+}
+section.sidebar__part a.show-all {
+	position: relative;
+	top: -1px;
+	left: 39px;
+	display: inline-block;
+	margin: 0;
 	border-bottom: 2px solid #DF5E16;
 	font-family: Open Sans;
 	font-style: italic;
@@ -95,7 +152,7 @@ section.sidebar__part.filters {
 .button__action.apply {
 	width: 114px;
 	height: 35px;
-	margin: 0 auto;
+	margin: 41px auto 0;
 	font-family: Bebas Neue;
 	font-size: 12px;
 	letter-spacing: 4px;
@@ -103,7 +160,7 @@ section.sidebar__part.filters {
 }
 a.reset-filter {
 	display: inline-block;
-	margin: 28px auto;
+	margin: 23px auto 36px;
 	padding-bottom: 3px;
 	text-align: center;
 	border-bottom: 2px solid #DF5E16;
@@ -112,14 +169,7 @@ a.reset-filter {
 	letter-spacing: 0.4em;
 	color: #333333;
 }
-ul.choose-country__checkboxes {
-	list-style: none;
-	padding-left: 35px;
-	font-family: Open Sans;
-	font-size: 10px;
-	color: #333333;
-}
-section.schools-list__wrapper {
+main.schools-list__wrapper {
 	width: 1090px;
 	display: flex;
 	flex-wrap: wrap;
@@ -128,20 +178,20 @@ section.schools-list__wrapper {
 	padding-left: 38px;
 }
 .school-card {
+	position: relative;
 	width: 300px;
 	height: 500px;
 	margin-bottom: 40px;
 	background: #F7F7F7;
 	box-shadow: 8px 8px 10px rgba(0, 67, 145, 0.3);
 }
-.school-card:hover {
-	background: url(../img/content-img/St_Johns_St_Augustine_Hall(1).png) no-repeat;
-}
-img.school-image {
+.school-card__image {
+	position: relative;
 	width: 300px;
 	height: 240px;
+	background: url(../img/content-img/St_Johns_St_Augustine_Hall.png) no-repeat
 }
-.school-card h2 {
+h2.school-card__name  {
 	margin-top: 39px;
 	margin-bottom: 10px;
 	font-family: Bebas Neue;
@@ -149,7 +199,7 @@ img.school-image {
 	color: #004391;
 	text-align: center;
 }
-span.country {
+span.school-card__country {
 	font-family: Open Sans;
 	font-size: 16px;
 	margin-left: 50px;
@@ -172,10 +222,10 @@ span.country {
 	letter-spacing: 4px;
 }
 .pagi-nav-wrapper {
- display: flex;
- justify-content: space-between;
- width: 296px;
- margin-left: 222px;
+	display: flex;
+	justify-content: space-between;
+	width: 296px;
+	margin-left: 222px;
 }
 nav.schools-catalogue__pagination {
 	width: 1220px;
@@ -194,8 +244,8 @@ nav.schools-catalogue__pagination  a {
 	color: #004391;
 }
 nav.schools-catalogue__pagination .active {
- background: #DF5E16;
- color: #FFFFFF;
+	background: #DF5E16;
+	color: #FFFFFF;
 }
 .pagi-arrow {
 	position: relative;
