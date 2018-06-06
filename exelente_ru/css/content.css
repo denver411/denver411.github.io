@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic');
+@font-face {
+	font-family: 'Bebas Neue';
+	src: url('../fonts/bebas/TTF\'s/BebasNeue Regular.ttf') format("truetype");
+}
+html {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	min-width: 1170px;
+	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif;
+}
+a {
+	text-decoration: none;
+}
+section.content-top {
+	width: 1220px;
+	display: flex;
+	justify-content: space-between;
+	margin-left: auto;
+	margin-right: auto;
+}
+h1.section-name {
+	font-family: Bebas Neue;
+	font-size: 48px;
+	color: #DF5E16;
+	margin: 35px 45px 44px;
+}
+select.school-selection {
+	width: 150px;
+	height: 28px;
+	margin: 45px 4px;
+	background: #FFFFFF;
+	border: 1px solid #004391;
+	font-family: Open Sans;
+	font-weight: 600;
+	font-size: 14px;
+	color: #000000;
+}
+section.content {
+	width: 1220px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-left: auto;
+	margin-right: auto;
+}
+aside.sidebar {
+	width: 200px;
+	background: #F7F7F7;
+	box-shadow: 8px 8px 10px rgba(0, 67, 145, 0.3);
+}
+section.sidebar__part {
+	position: relative;
+}
+section.sidebar__part h3 {
+	position: relative;
+	padding: 25px;
+	margin: 0;
+	font-family: Open Sans;
+	font-weight: bold;
+	font-size: 12px;
+	color: #333333;
+}
+section.sidebar__part .sidebar-arrow {
+	position: absolute;
+	top: 33px;
+	right: 50px;
+	display: inline-block;
+	width: 8px;
+	height: 5px;
+	background: url(../img/content-img/content_arrows.png) no-repeat;
+}
+section.sidebar__part .arrow-down {
+	background-position: 0 0;
+}
+section.sidebar__part .arrow-up {
+	background-position: -9px 0;
+}
+section.sidebar__part a.show-all {
+	display: inline-block;
+	margin-left: 10px;
+	border-bottom: 2px solid #DF5E16;
+	font-family: Open Sans;
+	font-style: italic;
+	font-size: 10px;
+	color: #333333;
+}
+section.sidebar__part.filters {
+	text-align: center;
+}
+.button__action.apply {
+	width: 114px;
+	height: 35px;
+	margin: 0 auto;
+	font-family: Bebas Neue;
+	font-size: 12px;
+	letter-spacing: 4px;
+	color: #FFFFFF;
+}
+a.reset-filter {
+	display: inline-block;
+	margin: 28px auto;
+	padding-bottom: 3px;
+	text-align: center;
+	border-bottom: 2px solid #DF5E16;
+	font-family: Bebas Neue;
+	font-size: 10px;
+	letter-spacing: 0.4em;
+	color: #333333;
+}
+ul.choose-country__checkboxes {
+	list-style: none;
+	padding-left: 35px;
+	font-family: Open Sans;
+	font-size: 10px;
+	color: #333333;
+}
+section.schools-list__wrapper {
+	width: 1090px;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 55px;
+	justify-content: space-between;
+	padding-left: 38px;
+}
+.school-card {
+	width: 300px;
+	height: 500px;
+	margin-bottom: 40px;
+	background: #F7F7F7;
+	box-shadow: 8px 8px 10px rgba(0, 67, 145, 0.3);
+}
+.school-card:hover {
+	background: url(../img/content-img/St_Johns_St_Augustine_Hall(1).png) no-repeat;
+}
+img.school-image {
+	width: 300px;
+	height: 240px;
+}
+.school-card h2 {
+	margin-top: 39px;
+	margin-bottom: 10px;
+	font-family: Bebas Neue;
+	font-size: 28px;
+	color: #004391;
+	text-align: center;
+}
+span.country {
+	font-family: Open Sans;
+	font-size: 16px;
+	margin-left: 50px;
+	color: #333333;
+}
+.button__action {
+	display: block;
+	border: none;
+	background-color: #DF5E16;
+}
+.button__action a {
+	color: #FFFFFF;
+}
+.button__action.more {
+	margin: 70px auto 0;
+	width: 201px;
+	height: 48px;
+	font-family: Bebas Neue;
+	font-size: 18px;
+	letter-spacing: 4px;
+}
+.pagi-nav-wrapper {
+ display: flex;
+ justify-content: space-between;
+ width: 296px;
+ margin-left: 222px;
+}
+nav.schools-catalogue__pagination {
+	width: 1220px;
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 35px;
+}
+nav.schools-catalogue__pagination  a {
+	display: inline-block;
+	padding: 5px 11px;
+	text-align: center;
+	font-family: Open Sans;
+	font-weight: bold;
+	font-size: 14px;
+	color: #004391;
+}
+nav.schools-catalogue__pagination .active {
+ background: #DF5E16;
+ color: #FFFFFF;
+}
+.pagi-arrow {
+	position: relative;
+	left: 13px;
+	display: block;
+	width: 15px;
+	height: 15px;
+	margin-left: -21px;
+	background: url(../img/content-img/content_arrows-pagination.png) no-repeat;
+}
+a.pagi-arrow-forward {
+	background-position: -5px 10px;
+}
