@@ -1,13 +1,9 @@
-/* body {
-	min-width: 1170px;
-	margin: 0 auto;
-	font-family: 'Open Sans', sans-serif;
-} */
+
 a {
 	text-decoration: none;
 }
 .title {
-	width: 1220px;
+	max-width: 1180px;
 	display: flex;
 	justify-content: space-between;
 	margin-left: auto;
@@ -17,7 +13,7 @@ h2.section-name {
 	font-family: Bebas Neue;
 	font-size: 48px;
 	color: #DF5E16;
-	margin: 35px 25px 44px;
+	margin: 35px 25px 44px 0;;
 }
 select.school-selection {
 	width: 150px;
@@ -47,7 +43,7 @@ option {
 	color: #000000;
 }
 section.content.content_schools {
-	width: 1220px;
+	max-width: 1180px;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;

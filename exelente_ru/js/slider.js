@@ -5,7 +5,7 @@ let slideClickNext = document.querySelector('.slider-navigation__arrow_right');
 let slideClickPrev = document.querySelector('.slider-navigation__arrow_left');
 var i = 0;
 document.querySelector('.slider-navigation__count_this').innerHTML = '0' + (i + 1);
-slide[i].style.zIndex = '1';
+slide[i].style.zIndex = '2';
 slideClickNext.onclick = function () {
   slide[i].style.zIndex = '0';
   slide[i].style.opacity = '0';
@@ -14,7 +14,7 @@ slideClickNext.onclick = function () {
     i = 0;
   }
   document.querySelector('.slider-navigation__count_this').innerHTML = '0' + (i + 1);
-  slide[i].style.zIndex = '1';
+  slide[i].style.zIndex = '2';
   slide[i].style.opacity = '1';
 }
 slideClickPrev.onclick = function () {
@@ -25,7 +25,7 @@ slideClickPrev.onclick = function () {
     i = slide.length - 1;
   }
   document.querySelector('.slider-navigation__count_this').innerHTML = '0' + (i + 1);
-  slide[i].style.zIndex = '1';
+  slide[i].style.zIndex = '2';
   slide[i].style.opacity = '1';
 }
 //SLIDER END
