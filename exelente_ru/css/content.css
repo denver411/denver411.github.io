@@ -31,14 +31,14 @@ select.school-selection {
 	font-size: 14px;
 	color: #000000;
 	background: url(../img/content-img/content_select_arrow-down.png) no-repeat;
-  background-position: 125px center;
+	background-position: 125px center;
 
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 0.01px; 
-  text-overflow: '';
-  -ms-appearance: none;
-  appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 0.01px; 
+	text-overflow: '';
+	-ms-appearance: none;
+	appearance: none;
 }
 option { 
 	font-family: Open Sans;
@@ -185,25 +185,73 @@ main.schools-list__wrapper {
 	background: #F7F7F7;
 	box-shadow: 8px 8px 10px rgba(0, 67, 145, 0.3);
 }
-.school-card__image {
-	position: relative;
+.school-1 .school-card__image {
 	width: 300px;
 	height: 240px;
-	background: url(../img/content-img/St_Johns_St_Augustine_Hall.png) no-repeat
+	background: url(../img/content-img/St_Johns_St_Augustine_Hall.png) no-repeat;
+	background-size: cover;
 }
-h2.school-card__name  {
-	margin-top: 39px;
-	margin-bottom: 10px;
+.school-1 .school-card__image:hover {
+	position: relative;
+	width: 300px;
+	height: 500px;
+	background: url(../img/content-img/St_Johns_St_Augustine_Hall-big.png) no-repeat;
+}
+.school-1 .school-card__image:hover::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 67, 145, 0.6);
+}
+.school__info {
+	position: absolute;
+	top: 249px;
+	width: 300px;
+	height: 250px;
+}
+.school-card h2.school-card__name  {
+	position: relative;
+	top: 20px;
 	font-family: Bebas Neue;
 	font-size: 28px;
 	color: #004391;
 	text-align: center;
 }
-span.school-card__country {
+.school-card:hover h2.school-card__name.hover {
+	color: white;
+}
+.school-card h2.school-card__name.hover {
+	display: block;
+	color: #004391;
+}
+.school-card span.school-card__country {
+	position: relative;
+	top: 20px;
+	left: 6px;
 	font-family: Open Sans;
 	font-size: 16px;
 	margin-left: 50px;
 	color: #333333;
+}
+.school-card:hover span.school-card__country.hover {
+	display: block;
+	color: white;
+}
+.school-card .button__action.more {
+	margin: 70px auto;
+	width: 201px;
+	height: 48px;
+	font-family: Bebas Neue;
+	font-size: 18px;
+	letter-spacing: 4px;
+}
+.school-card:hover .button__action.more.hover {
+	display: block;
+	background-color: #FFFFFF;
+}
+.school-card:hover .button__action a {
+	color: #DF5E16;
 }
 .button__action {
 	display: block;
@@ -212,14 +260,6 @@ span.school-card__country {
 }
 .button__action a {
 	color: #FFFFFF;
-}
-.button__action.more {
-	margin: 70px auto 0;
-	width: 201px;
-	height: 48px;
-	font-family: Bebas Neue;
-	font-size: 18px;
-	letter-spacing: 4px;
 }
 .pagi-nav-wrapper {
 	display: flex;
