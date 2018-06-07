@@ -196,6 +196,7 @@ main.schools-list__wrapper {
 	width: 300px;
 	height: 500px;
 	background: url(../img/content-img/St_Johns_St_Augustine_Hall-big.png) no-repeat;
+cursor: pointer;
 }
 .school-1 .school-card__image:hover::after {
 	content: "";
