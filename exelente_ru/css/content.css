@@ -1,8 +1,3 @@
-section.content.content__schools {
-    max-width: 1170px;
-    display: flex;
-    margin: 0 auto;
-}
 
 a {
 	text-decoration: none;
@@ -25,7 +20,7 @@ h2.section-name {
 	cursor: pointer;	
 	margin: 45px 0;
 	background: url(../img/content-img/content_select_arrow-down.png) no-repeat;
-	background-position: 120px center;
+	background-position: 130px center;
 }
 .selectbox .select {
 	width: 140px;
@@ -40,7 +35,7 @@ h2.section-name {
 }
 .selectbox .dropdown {
 	top: 27px;
-	width: 140px;
+	width: 150px;
 	margin: 0;
 	padding: 4px 0;
 	background: #FFFFFF;
@@ -74,9 +69,8 @@ h2.section-name {
 .selectbox li.disabled:hover {
 	background: none;
 }
-section.content.content_schools {
+.content__schools {
 	max-width: 1180px;
-
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;

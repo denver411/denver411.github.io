@@ -69,6 +69,8 @@
 .top-block__city {
   cursor: pointer;
 }
-.top-block__city:hover .popup-city {
-  display: block;
+@media (min-width: 577px) {
+  .top-block__city:hover .popup-city {
+    display: block;
+  }
 }
