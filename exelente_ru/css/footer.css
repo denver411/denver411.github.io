@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic');
 @font-face {
-	font-family: 'Bebas Neue';
+	font-family: 'Bebas Neue', sans-serif;
 	src: url('../fonts/bebas/TTF\'s/BebasNeue Regular.ttf') format("truetype");
 }
 html {
@@ -11,7 +11,7 @@ html {
 body {
 	min-width: 1170px;
 	margin: 0 auto;
-	font-family: 'Open Sans', sans-serif;
+	font-family: ''Open Sans', sans-serif', sans-serif;
 }
 a {
 	text-decoration: none;
@@ -51,9 +51,12 @@ a {
 	width: 165px;
 	height: 29px;
 }
+.button__action.franchise:hover {
+	background: #F58A4E;
+}
 .button__action.franchise a {
 	color: #FFFFFF;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	line-height: 26px;
 	font-size: 12px;
@@ -69,7 +72,7 @@ a {
 	list-style: none;
 	justify-content: center;
 	padding-top: 28px;
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	line-height: 26px;
 	font-size: 18px;
 }
@@ -94,6 +97,9 @@ a {
 	color: #FFFFFF;
 	border-bottom: 2px solid #FFFFFF;
 }
+.footer-menu__item a:hover {
+	border-bottom: 2px solid #DF5E16;
+}
 .footer__contacts {
 	width: 19%;
 	display: flex;
@@ -109,12 +115,15 @@ a {
 	height: 20px;
 }
 .footer__contacts .button__action.free-line {
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: normal;
 	font-size: 12px;
 }
+.footer__contacts .button__action.free-line:hover {
+	background: #F58A4E;
+}
 .footer__phone {
-	font-family: Bebas Neue;
+	font-family: 'Bebas Neue', sans-serif;
 	font-size: 24px;
 	color: #FFFFFF;
 	padding-top: 29px;
@@ -130,30 +139,40 @@ a {
 	margin-left: 13px;
 	width: 25px;
 	height: 25px;
-	background: url(../img/footer-img/footer_sprite.png) no-repeat;
+	background: url(../img/footer-img/footer_socials_sprite.png) no-repeat;
 }
 .footer__social-link.footer__social-link_instagram {
-	background-position: 0px 0px;
+	background-position: 0 0;
+}.footer__social-link.footer__social-link_instagram:hover {
+	background-position: 0 -26px;
 }
 .footer__social-link.footer__social-link_fb {
-	background-position: -31px 0px;
+	background-position: -31px 0;
+}.footer__social-link.footer__social-link_fb:hover {
+	background-position: -31px -26px;
 }
 .footer__social-link.footer__social-link_youtube {
-	background-position: -92px 0px;
+	background-position: -92px 0;
+}.footer__social-link.footer__social-link_youtube:hover {
+	background-position: -92px -26px;
 }
 .footer__social-link.footer__social-link_vk {
-	background-position: -62px 0px;
+	background-position: -62px 0;
+}.footer__social-link.footer__social-link_vk:hover {
+	background-position: -62px -26px;
 }
-input.subscribe__submit {
+a.subscribe__submit {
+	display: inline-block;
 	position: relative;
 	top: -37px;
 	left: -26px;
-	width: 185px;
+	width: 175px;
 	height: 24px;
 	cursor: pointer;
 	background-color: #004391;
-	font-family: 'Open Sans', sans-serif;
+	font-family: ''Open Sans', sans-serif', sans-serif;
 	font-size: 14px;
+	text-decoration: none;
 	color: #FFFFFF;
 	border: none;
 	border-bottom: 2px solid #DF5E16;
@@ -167,12 +186,12 @@ input.subscribe__submit {
 	background: #FFFFFF;
 }
 span.comp-name {
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	font-size: 14px;
 }
 .footer__copyright {
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 10px;
 	padding-top: 11px;
 	padding-left: 55px;
@@ -184,7 +203,7 @@ span.comp-name {
 .footer__made-by {
 	width: 16.5%;
 	padding: 18px;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #FFFFFF;
 	background-color: #DF5E16;
@@ -199,6 +218,6 @@ a.developer {
 	margin-left: 3px;
 	color: #FFFFFF;
 	border-bottom: 2px solid #FFFFFF;
-	font-family: Open Sans;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 }

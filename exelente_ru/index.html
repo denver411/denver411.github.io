@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Детские туры во время каникул</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
     <link rel="stylesheet" href="css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/header.css"/>
     <link rel="stylesheet" href="css/slider.css"/>
     <link rel="stylesheet" href="css/content.css"/>
     <link rel="stylesheet" href="css/footer.css"/>
+
   </head>
   <body>
     <div class="container">
@@ -195,26 +199,142 @@
           </select>
         </form>
       </div>
-      <section class="content content_schools">
+      <section class="content content__schools">
         <aside class="sidebar">
           <section class="sidebar__part">
             <h3>Программа
               <div class="sidebar-arrow arrow-down"></div>
             </h3>
+            <ul class="choose-program__checkboxes">
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Каникулярные программы</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Языковые курсы</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Среднее образование</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Высшее образование</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Работа</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Стажировка</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Стипендии и гранты</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Волонтерство</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Международные экзамены</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Ознакомительные поездки</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Foundation</span>
+                </label>
+              </li>
+            </ul>
           </section>
           <section class="sidebar__part">
             <h3>Специальности
-              <div class="sidebar-arrow arrow-up"></div>
+              <div class="sidebar-arrow arrow-down"></div>
             </h3>
+            <ul class="choose-specialty__checkboxes">
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Менеджмент, бизнес и управление</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Строительство, архитектура</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Сельское и лесное хозяйство</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Искусство, мода и дизайн</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Инженерия и IT</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Гостеприимство и туризм</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Правоведение</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Международные отношения и политика</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Медицина</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Физическая культура и спорт</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input class="custom__checkbox" type="checkbox" name=""><span class="checkbox-custom"></span><span class="label">Режиссура и кинематография</span>
+                </label>
+              </li>
+            </ul>
           </section>
           <section class="sidebar__part">
             <h3>Страны
-              <div class="sidebar-arrow arrow-up"></div>
+              <div class="sidebar-arrow arrow-down"></div>
             </h3>
             <ul class="choose-country__checkboxes">
               <li>
                 <label>
+
                   <input class="country__checkbox" type="checkbox" name="США"/><span class="checkbox-custom"></span><span class="label">США</span>
+
                 </label>
               </li>
               <li>
@@ -252,9 +372,9 @@
                   <input class="country__checkbox" type="checkbox" name="Филиппины"/><span class="checkbox-custom"></span><span class="label">Филиппины</span>
                 </label>
               </li>
-            </ul><a class="show-all" href="#">показать все</a>
+            </ul><a class="show-all" href="#">Показать все</a>
             <section class="sidebar__part filters">
-              <button class="button__action apply" type="button" value=""> <a href="#">Применить</a></button><a class="reset-filter" href="#">Сбросить фильтр</a>
+              <button class="button__action apply" type="button" value=""><a href="#">Применить</a></button><a class="reset-filter" href="#">Сбросить фильтр</a>
             </section>
           </section>
         </aside>
@@ -370,7 +490,7 @@
         </main>
       </section>
       <nav class="schools-catalogue__pagination">
-        <div class="pagi-nav-wrapper"><a class="active" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="">...</a><a href="#">125</a><a class="pagi-arrow pagi-arrow-forward" href="#"></a></div>
+        <div class="pagi-nav-wrapper"><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="">...</a><a href="#">125</a><a class="pagi-arrow pagi-arrow-forward" href="#"></a></div>
       </nav>
       <footer class="footer">
         <div class="footer__top">
@@ -400,6 +520,7 @@
                 <div class="footer__social-link footer__social-link_youtube"></div></a><a href="#">
                 <div class="footer__social-link footer__social-link_vk"></div></a></div>
             <input class="subscribe__submit" type="submit" value="Подписаться на рассылку"/>
+
           </div>
         </div>
         <div class="footer__bottom">
@@ -413,9 +534,11 @@
         </div>
       </footer>
       <script src="js/script.js"></script>
+      <script src="js/select.js"></script>
       <script src="js/header.js"></script>
       <script src="js/slider.js"></script>
       <script src="js/hidden-menu.js"></script>
+
     </div>
   </body>
 </html>
