@@ -20,7 +20,7 @@ h2.section-name {
 	cursor: pointer;	
 	margin: 45px 0;
 	background: url(../img/content-img/content_select_arrow-down.png) no-repeat;
-	background-position: 130px center;
+	background-position: 120px center;
 }
 .selectbox .select {
 	width: 140px;
@@ -35,7 +35,7 @@ h2.section-name {
 }
 .selectbox .dropdown {
 	top: 27px;
-	width: 150px;
+	width: 140px;
 	margin: 0;
 	padding: 4px 0;
 	background: #FFFFFF;
