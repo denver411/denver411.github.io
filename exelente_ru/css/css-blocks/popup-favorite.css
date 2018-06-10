@@ -1,0 +1,108 @@
+.chosen {
+  display: none;
+  position: fixed;
+  /*     width: 32.65%; */
+  width: 501.3px;
+  height: 45.6%;
+  left: 33.43%;
+  top: 41.73%;
+  z-index: 110;
+  background: #FFFFFF;
+  box-shadow: 5px 5px 10px rgba(0, 67, 145, 0.3);
+  box-sizing: border-box;
+  padding: 3.46% 2.65% 2.94% 2.38%;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.top-block__item_login:hover .chosen {
+  display: flex;
+}
+.col-1 {
+  width: 100%;
+}
+.row {
+  width: 100%;
+}
+.row::after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.chosen-content__title {
+  display: block;
+  float: left;
+  text-transform: uppercase;
+  font-family: Bebas Neue;
+  font-size: 24px;
+  color: #DF5E16;
+}
+.chosen-content__close {
+  display: block;
+  float: right;
+  font-size: 18px;
+  font-weight: lighter;
+  color: #DF5E16;
+  transition: 0.7s ease;
+  transform: rotate(90deg);
+}
+.chosen-content__close:hover {
+  transition: 0.7s ease;
+  transform: rotate(-90deg);
+}
+.chosen-content__desc {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  font-size: 16px;
+  color: #333333;
+}
+.row1 {
+  margin-bottom: 1, 5%;
+}
+.chosen-content-ulist {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 48px;
+}
+.chosen-content-ulist-list {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: -12px;
+}
+.chosen-content-ulist-list__sign,
+.chosen-content-ulist-list__login {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-family: Bebas Neue;
+  font-size: 13px;
+  letter-spacing: 4.1px;
+  line-height: 21px;
+  color: #333333;
+  border-bottom: 3px solid #DF5E16;
+  margin: 0 24px;
+}
+.chosen-content-ulist-list__sign {
+  float: left;
+}
+.chosen-content-ulist-list__login {
+  float: right;
+}
+.chosen-content-ulist-list:hover {
+  line-height: 48px;
+  display: block;
+  background-color: #DF5E16;
+  font-family: Bebas Neue;
+  letter-spacing: 4px;
+  color: #FFFFFF;
+}
+.chosen-content-ulist-list:hover a {
+  font-family: Bebas Neue;
+  letter-spacing: 4.1px;
+  line-height: 48px;
+  color: #FFFFFF;
+}

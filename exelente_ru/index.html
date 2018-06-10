@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="css/slider.css"/>
     <link rel="stylesheet" href="css/content.css"/>
     <link rel="stylesheet" href="css/footer.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   </head>
   <body>
     <div class="container">
       <header class="header">
         <div class="header__top-block top-block">
           <div class="wrapper header__wrapper">
-            <div class="top-block__city"><i class="fa fa-map-marker" aria-hidden="true"></i>Владивосток
+            <div class="top-block__city"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Владивосток</span>
               <div class="popup-city">
                 <div class="popup-city__title"><span>Ваш город</span><i class="fa fa-times" aria-hidden="true"></i></div>
                 <div class="popup-city__search">
@@ -37,7 +38,22 @@
             <div class="top-block__fill"></div>
             <div class="top-block__phone">8 800 737-77-05</div>
             <div class="top-block__popups">
-              <div class="top-block__item top-block__item_login">Вход/ Регистрация<i class="fa fa-user" aria-hidden="true"></i></div>
+              <div class="top-block__item top-block__item_login">Вход/ Регистрация<i class="fa fa-user" aria-hidden="true"></i>
+                <section class="chosen">
+                  <div class="row row1">
+                    <h2 class="chosen-content__title">Вы не зарегистрированы</h2><a class="chosen-content__close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+                  </div>
+                  <div class="row row2">
+                    <p class="chosen-content__desc">Зарегистрируйтесь или войдите в личный кабинет, чтобы иметь возможность пользоваться всеми функциями сайта.</p>
+                  </div>
+                  <div class="row row3">
+                    <ul class="chosen-content-ulist">
+                      <li class="chosen-content-ulist-list"><a class="chosen-content-ulist-list__sign" href="#">зарегистрироваться</a></li>
+                      <li class="chosen-content-ulist-list"><a class="chosen-content-ulist-list__login" href="#">войти в аккаунт</a></li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
               <div class="top-block__item top-block__item_favorite">10<i class="fa fa-star" aria-hidden="true"></i></div>
               <div class="top-block__item top-block__item_cart">2500 р<i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
             </div>
@@ -45,14 +61,14 @@
         </div>
         <div class="header__hidden-menu hidden-menu">
           <div class="wrapper header__wrapper">
-            <div class="hidden-menu__logo"><a href="index.html"><img src="img/logo_blue-orange.png" alt=""/></a></div>
+            <div class="hidden-menu__logo"><a href="index.html"><img src="img/logo_blue-orange.svg" alt="logo"/></a></div>
             <div class="hidden-menu__popups top-block__popups">
-              <div class="hidden-menu__item top-block__item"> 
+              <div class="hidden-menu__item hidden-menu__item_input top-block__item"> 
                 <input type="text" placeholder="Поиск..."/><i class="fa fa-search" aria-hidden="true"></i>
               </div>
-              <div class="hidden-menu__item top-block__item">Вход/ Регистрация<i class="fa fa-user" aria-hidden="true"></i></div>
-              <div class="hidden-menu__item top-block__item">10<i class="fa fa-star" aria-hidden="true"></i></div>
-              <div class="hidden-menu__item top-block__item">2500 р<i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+              <div class="hidden-menu__item hidden-menu__item_login top-block__item">Вход/ Регистрация<i class="fa fa-user" aria-hidden="true"></i></div>
+              <div class="hidden-menu__item hidden-menu__item_favorite top-block__item">10<i class="fa fa-star" aria-hidden="true"></i></div>
+              <div class="hidden-menu__item hidden-menu__item_cart top-block__item">2500 р<i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
             </div>
             <div class="hidden-menu__menu">Меню
               <div class="hidden-menu__close">
@@ -63,7 +79,7 @@
         </div>
         <div class="header__menu menu-block">
           <div class="wrapper header__wrapper">
-            <h1 class="menu-block__logo"><a href="index.html"><img src="img/logo_white.png" alt=""/></a><i class="fa fa-search" aria-hidden="true"></i></h1>
+            <h1 class="menu-block__logo"><a href="index.html"><img src="img/logo_white.svg" alt="logo"/></a><i class="fa fa-search" aria-hidden="true"></i></h1>
             <div class="menu-block__menu-pic">
               <div class="menu-block__menu-pic_close"><i class="fa fa-times" aria-hidden="true"></i></div>
             </div>
@@ -89,7 +105,7 @@
             </div>
             <div class="menu-block__menu main-menu">
               <ul class="main-menu__items">
-                <li class="main-menu__item"><a href="#">О компании</a>
+                <li class="main-menu__item main-menu__item_about"><a href="#">О компании</a>
                   <ul class="main-menu__subitems">
                     <li class="main-menu__subitem"><a href="#">Лицензии и сертификаты</a></li>
                     <li class="main-menu__subitem"><a href="#">Бонусная программа</a></li>
@@ -99,7 +115,7 @@
                     <li class="main-menu__subitem"><a href="#">Наши партнеры</a></li>
                   </ul>
                 </li>
-                <li class="main-menu__item"><a href="#">Программы</a>
+                <li class="main-menu__item main-menu__item_programs"><a href="#">Программы</a>
                   <ul class="main-menu__subitems">
                     <li class="main-menu__subitem"><a href="#">Работа</a></li>
                     <li class="main-menu__subitem"><a href="#">Стажировка</a></li>
@@ -110,7 +126,7 @@
                     <li class="main-menu__subitem"><a href="#">Стипендии и гранты</a></li>
                   </ul>
                 </li>
-                <li class="main-menu__item"> <a href="#">Услуги</a>
+                <li class="main-menu__item main-menu__item_service"> <a href="#">Услуги</a>
                   <ul class="main-menu__subitems">
                     <li class="main-menu__subitem"><a href="#">Поступление в зарубежный ВУЗ</a></li>
                     <li class="main-menu__subitem"><a href="#">Визовое сопровождение</a></li>
@@ -118,7 +134,7 @@
                     <li class="main-menu__subitem"><a href="#">Волонтерство</a></li>
                   </ul>
                 </li>
-                <li class="main-menu__item"> <a href="#">школы</a>
+                <li class="main-menu__item main-menu__item_schools"> <a href="#">школы</a>
                   <ul class="main-menu__subitems">
                     <li class="main-menu__subitem"><a href="#">Fanshawe College</a></li>
                     <li class="main-menu__subitem"><a href="#">St. John's University</a></li>
@@ -128,7 +144,7 @@
                     <li class="main-menu__subitem"><a href="#">University of Tokyo</a></li>
                   </ul>
                 </li>
-                <li class="main-menu__item"> <a href="#">Страны</a>
+                <li class="main-menu__item main-menu__item_countries"><a href="#">Страны</a>
                   <ul class="main-menu__subitems">
                     <li class="main-menu__subitem"><a href="#">США</a></li>
                     <li class="main-menu__subitem"><a href="#">Япония</a></li>
@@ -138,7 +154,7 @@
                     <li class="main-menu__subitem"><a href="#">Англия</a></li>
                   </ul>
                 </li>
-                <li class="main-menu__item"> <a href="#">Блог</a>
+                <li class="main-menu__item main-menu__item_blog"> <a href="#">Блог</a>
                   <ul class="main-menu__subitems">
                     <li class="main-menu__subitem"><a href="#">Акции</a></li>
                     <li class="main-menu__subitem"><a href="#">Отзывы</a></li>
@@ -146,7 +162,7 @@
                     <li class="main-menu__subitem"><a href="#">Мероприятия</a></li>
                   </ul>
                 </li>
-                <li class="main-menu__item"> <a href="#">Контакты</a></li>
+                <li class="main-menu__item main-menu__item_contacts"> <a href="#">Контакты</a></li>
               </ul>
             </div>
           </div>
@@ -190,397 +206,403 @@
         </div>
       </section>
       <div class="title">
-        <h2 class="section-name">школы</h2>
-        <form>
-          <select>
-            <option>Показать по 9</option>
-            <option>9</option>
-            <option>18</option>
-            <option>36</option>
-          </select>
-        </form>
+        <div class="wrapper title__wrapper">
+          <h2 class="section-name">школы</h2>
+          <form>
+            <select>
+              <option>Показать по 9</option>
+              <option>9</option>
+              <option>18</option>
+              <option>36</option>
+            </select>
+          </form>
+        </div>
       </div>
       <section class="content content__schools">
-        <aside class="sidebar">
-          <section class="sidebar__part">
-            <h3>Программа
-              <div class="sidebar-arrow arrow-down"></div>
-            </h3>
-            <ul class="choose-program__checkboxes">
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Каникулярные программы</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Языковые курсы</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Среднее образование</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Высшее образование</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Работа</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Стажировка</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Стипендии и гранты</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Волонтерство</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Международные экзамены</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Ознакомительные поездки</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Foundation</span>
-                </label>
-              </li>
-            </ul>
-          </section>
-          <section class="sidebar__part">
-            <h3>Специальности
-              <div class="sidebar-arrow arrow-down"></div>
-            </h3>
-            <ul class="choose-specialty__checkboxes">
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Менеджмент, бизнес и управление</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Строительство, архитектура</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Сельское и лесное хозяйство</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Искусство, мода и дизайн</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Инженерия и IT</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Гостеприимство и туризм</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Правоведение</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Международные отношения и политика</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Медицина</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Физическая культура и спорт</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Режиссура и кинематография</span>
-                </label>
-              </li>
-            </ul>
-          </section>
-          <section class="sidebar__part">
-            <h3>Страны
-              <div class="sidebar-arrow arrow-down"></div>
-            </h3>
-            <ul class="choose-country__checkboxes">
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">США</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Канада</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Австралия</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Новая Зеландия</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Сингапур</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Япония</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name="" checked=""/><span class="checkbox-custom"></span><span class="label">Корея</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Филиппины</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Ирландия</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Чехия</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Испания</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Германия</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Мальта</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Таиланд</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Сайпан</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Вьетнам</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">ОАЭ</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Канада</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Кипр</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Китай</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Англия</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Индонезия</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Куба</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Мексика</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Малайзия</span>
-                </label>
-              </li>
-              <li>
-                <label>
-                  <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Франция</span>
-                </label>
-              </li>
-            </ul><a class="show-all" href="#">Показать все</a>
-            <section class="sidebar__part filters">
-              <button class="button__action apply" type="button" value=""><a href="#">Применить</a></button><a class="reset-filter" href="#">Сбросить фильтр</a>
-            </section>
-          </section>
-        </aside>
-        <main class="schools-list__wrapper">
-          <div class="school-card school-1">
-            <div class="school-card__image">
-              <div class="school__info">
-                <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
-                <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+        <div class="wrapper content__wrapper">
+          <div class="content__main">
+            <aside class="sidebar">
+              <section class="sidebar__part">
+                <h3 class="sidebar__part-button-prog">Программа
+                  <div class="sidebar-arrow arrow-prog"></div>
+                </h3>
+                <ul class="choose-program__checkboxes">
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Каникулярные программы</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Языковые курсы</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Среднее образование</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Высшее образование</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Работа</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Стажировка</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Стипендии и гранты</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Волонтерство</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Международные экзамены</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Ознакомительные поездки</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Foundation</span>
+                    </label>
+                  </li>
+                </ul>
+              </section>
+              <section class="sidebar__part">
+                <h3 class="sidebar__part-button-spec">Специальности
+                  <div class="sidebar-arrow arrow-spec"></div>
+                </h3>
+                <ul class="choose-specialty__checkboxes">
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Менеджмент, бизнес и управление</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Строительство, архитектура</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Сельское и лесное хозяйство</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Искусство, мода и дизайн</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Инженерия и IT</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Гостеприимство и туризм</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Правоведение</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Международные отношения и политика</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Медицина</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Физическая культура и спорт</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Режиссура и кинематография</span>
+                    </label>
+                  </li>
+                </ul>
+              </section>
+              <section class="sidebar__part">
+                <h3 class="sidebar__part-button-count">Страны
+                  <div class="sidebar-arrow arrow-count"></div>
+                </h3>
+                <ul class="choose-country__checkboxes">
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">США</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Канада</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Австралия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Новая Зеландия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Сингапур</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Япония</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name="" checked=""/><span class="checkbox-custom"></span><span class="label">Корея</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Филиппины</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Ирландия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Чехия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Испания</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Германия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Мальта</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Таиланд</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Сайпан</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Вьетнам</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">ОАЭ</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Канада</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Кипр</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Китай</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Англия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Индонезия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Куба</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Мексика</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Малайзия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Франция</span>
+                    </label>
+                  </li>
+                </ul><a class="show-all" href="#">Показать все</a>
+                <section class="sidebar__part filters">
+                  <button class="button__action apply" type="button" value=""><a href="#">Применить</a></button><a class="reset-filter" href="#">Сбросить фильтр</a>
+                </section>
+              </section>
+            </aside>
+            <main class="schools-list__wrapper">
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                  <div class="school__info hover">
+                    <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
+                    <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
               </div>
-              <div class="school__info hover">
-                <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
-                <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                  <div class="school__info hover">
+                    <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
+                    <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
               </div>
-            </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                  <div class="school__info hover">
+                    <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
+                    <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                  <div class="school__info hover">
+                    <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
+                    <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                  <div class="school__info hover">
+                    <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
+                    <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                  <div class="school__info hover">
+                    <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
+                    <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                  <div class="school__info hover">
+                    <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
+                    <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                  <div class="school__info hover">
+                    <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
+                    <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                  <div class="school__info hover">
+                    <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
+                    <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+            </main>
           </div>
-          <div class="school-card school-1">
-            <div class="school-card__image">
-              <div class="school__info">
-                <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
-                <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-              <div class="school__info hover">
-                <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
-                <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-            </div>
-          </div>
-          <div class="school-card school-1">
-            <div class="school-card__image">
-              <div class="school__info">
-                <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
-                <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-              <div class="school__info hover">
-                <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
-                <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-            </div>
-          </div>
-          <div class="school-card school-1">
-            <div class="school-card__image">
-              <div class="school__info">
-                <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
-                <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-              <div class="school__info hover">
-                <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
-                <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-            </div>
-          </div>
-          <div class="school-card school-1">
-            <div class="school-card__image">
-              <div class="school__info">
-                <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
-                <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-              <div class="school__info hover">
-                <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
-                <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-            </div>
-          </div>
-          <div class="school-card school-1">
-            <div class="school-card__image">
-              <div class="school__info">
-                <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
-                <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-              <div class="school__info hover">
-                <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
-                <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-            </div>
-          </div>
-          <div class="school-card school-1">
-            <div class="school-card__image">
-              <div class="school__info">
-                <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
-                <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-              <div class="school__info hover">
-                <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
-                <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-            </div>
-          </div>
-          <div class="school-card school-1">
-            <div class="school-card__image">
-              <div class="school__info">
-                <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
-                <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-              <div class="school__info hover">
-                <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
-                <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-            </div>
-          </div>
-          <div class="school-card school-1">
-            <div class="school-card__image">
-              <div class="school__info">
-                <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
-                <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-              <div class="school__info hover">
-                <h2 class="school-card__name hover">St. John's University</h2><span class="school-card__country hover">США</span>
-                <button class="button__action more hover" type="button" value=""><a href="#">подробнее</a></button>
-              </div>
-            </div>
-          </div>
-        </main>
+        </div>
+        <nav class="schools-catalogue__pagination">
+          <div class="pagi-nav-wrapper"><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="">...</a><a href="#">125</a><a class="pagi-arrow pagi-arrow-forward" href="#"></a></div>
+        </nav>
       </section>
-      <nav class="schools-catalogue__pagination">
-        <div class="pagi-nav-wrapper"><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="">...</a><a href="#">125</a><a class="pagi-arrow pagi-arrow-forward" href="#"></a></div>
-      </nav>
       <footer class="footer">
         <div class="footer__top">
           <div class="footer-logo-button__wrapper"><a href="#">
@@ -611,12 +633,14 @@
           </div>
         </div>
         <div class="footer__bottom">
-          <div class="footer__copyright">
-            <p></p><span class="comp-name">OOO «Экселенте», 2018 г.</span><br/>
-            <p>Лицензия ФМС МВД РФ № 20110251124 от 13.08.2010 г. бессрочно</p>
-          </div>
-          <div class="footer__made-by">
-            <p>Разработка сайта<a class="developer" href="#">DVIGA</a></p>
+          <div class="wrapper footer__wrapper">
+            <div class="footer__copyright">
+              <p></p><span class="comp-name">OOO «Экселенте», 2018 г.</span><br/>
+              <p>Лицензия ФМС МВД РФ № 20110251124 от 13.08.2010 г. бессрочно</p>
+            </div>
+            <div class="footer__made-by">
+              <p>Разработка сайта<a class="developer" href="#">DVIGA</a></p>
+            </div>
           </div>
         </div>
       </footer>
@@ -624,6 +648,8 @@
       <script src="js/header.js"></script>
       <script src="js/slider.js"></script>
       <script src="js/hidden-menu.js"></script>
+      <script src="js/select.js"></script>
+      <script src="js/filter.js"></script>
     </div>
   </body>
 </html>

@@ -66,6 +66,11 @@
 ::-webkit-scrollbar {
   width: 2px;
 }
+@media (max-width: 576px) {
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+}
 .top-block__city {
   cursor: pointer;
 }

@@ -1,98 +1,133 @@
-
 a {
 	text-decoration: none;
 }
+
 .title {
-	max-width: 1180px;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding-top: 70px;
+	background-color: #ffffff;
+}
+
+.title__wrapper {
 	display: flex;
 	justify-content: space-between;
-	margin-left: auto;
-	margin-right: auto;
+	align-items: center;
+	max-width: 1180px;
 }
+
 h2.section-name {
 	font-family: 'Bebas Neue', sans-serif;
 	font-size: 48px;
 	color: #DF5E16;
-	margin: 35px 25px 44px 0;;
+	margin: 35px 25px 44px 0;
+	;
 }
+
 .selectbox {
+	z-index: 1;
 	vertical-align: middle;
-	cursor: pointer;	
+	cursor: pointer;
 	margin: 45px 0;
 	background: url(../img/content-img/content_select_arrow-down.png) no-repeat;
-	background-position: 130px center;
+	background-position: 120px center;
 }
+
 .selectbox .select {
 	width: 140px;
-	height: 29px;	
+	height: 29px;
 	line-height: 27px;
- padding-left: 10px;
+	padding-left: 10px;
 	font-size: 14px;
- font-weight: 600;
+	font-weight: 600;
 	font-family: 'Open Sans', sans-serif;
 	color: #000000;
- border: 1px solid #004391;
+	border: 1px solid #004391;
 }
+
 .selectbox .dropdown {
 	top: 27px;
-	width: 150px;
+	width: 140px;
 	margin: 0;
 	padding: 4px 0;
 	background: #FFFFFF;
- border: 1px solid #004391;
- border-top: none;
+	border: 1px solid #004391;
+	border-top: none;
 	font-size: 14px;
- font-weight: 600;
- font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;
 	color: #000000;
 }
+
 .selectbox ul {
- margin: 0;
- padding: 0;
+	margin: 0;
+	padding: 0;
 }
+
 .selectbox li {
 	padding: 4px 0 4px 10px;
 	color: #000000;
- list-style: none;
+	list-style: none;
 }
 
 .selectbox li:hover {
 	background: #DF5E16;
 	color: #FFFFFF;
 }
+
 .selectbox li:first-child {
 	display: none;
 }
+
 .selectbox li.disabled {
 	color: #AAAAAA;
 }
+
 .selectbox li.disabled:hover {
 	background: none;
 }
-.content__schools {
+
+.content__wrapper {
 	max-width: 1180px;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 }
+
+.content__main {
+	display: flex;
+	align-items: flex-start
+}
+
+.content__schools {
+	max-width: 1280px;
+	margin: 0 auto;
+	background-color: #ffffff;
+}
+
 aside.sidebar {
-	width: 204px;
+	margin-left: -50px;
 	background: #F7F7F7;
 	box-shadow: 8px 8px 10px rgba(0, 67, 145, 0.3);
 }
+
 section.sidebar__part {
 	position: relative;
 }
+
 section.sidebar__part h3 {
- margin: 0;
-	padding: 19px 39px;
+	display: block;
+	cursor: pointer;
+	width: 190px;
+	margin: 0;
+	padding: 26px 39px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	font-size: 12px;
 	color: #333333;
 }
+
 section.sidebar__part .sidebar-arrow {
 	position: relative;
 	top: 0;
@@ -100,83 +135,85 @@ section.sidebar__part .sidebar-arrow {
 	display: inline-block;
 	width: 8px;
 	height: 5px;
- background-position: -12px 0;
-	background: url(../img/content-img/content_arrows_sidebar.png) no-repeat;
- transition: 0.5s;
-}
-section.sidebar__part .sidebar-arrow:active {
- transform: rotate(180deg);
- transition: 0.5s;
-}
-section.sidebar__part .arrow-down {
-	background-position: 0 0;
-}
-section.sidebar__part .arrow-up {
 	background-position: -12px 0;
+	background: url(../img/content-img/content_arrows_sidebar.png) no-repeat;
+	transition: 0.5s;
+
 }
+
+
 ul.choose-program__checkboxes,
 ul.choose-specialty__checkboxes,
 ul.choose-country__checkboxes {
- position: relative;
- top: -28px;
- left: 23px;
+	display: none;
+	position: relative;
+	top: -28px;
+	left: 23px;
 	list-style: none;
 	padding: 0;
-  margin: 0;
+	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10px;
 	color: #333333;
 }
+
 .checkbox-custom,
 .label {
- position: relative;
- top: 10px;
- right: -35px;
- display: inline-block;
- margin-top: 7px;
- vertical-align: middle;
+	position: relative;
+	top: 10px;
+	right: -35px;
+	display: inline-block;
+	margin-top: 7px;
+	vertical-align: middle;
 }
+
 .label {
- padding-left: 5px;
+	padding-left: 5px;
 }
+
 ul.choose-program__checkboxes span.label,
 ul.choose-specialty__checkboxes span.label {
- display: inline-block;
- max-width: 100px;
- vertical-align: top;
- margin-top: 4px;
+	display: inline-block;
+	max-width: 100px;
+	vertical-align: top;
+	margin-top: 4px;
 }
+
 input [type='checkbox'] {
 	display: inline-block;
 }
+
 .custom__checkbox {
-  display: none;
+	display: none;
 }
+
 .checkbox-custom {
- position: relative;
- bottom: 15px;
- width: 10px;
- height: 10px;
- background: #ffffff;
- border: 1px solid #004391;
- box-sizing: border-box;
+	position: relative;
+	bottom: 15px;
+	width: 10px;
+	height: 10px;
+	background: #ffffff;
+	border: 1px solid #004391;
+	box-sizing: border-box;
 }
-.custom__checkbox:checked + .checkbox-custom::before {
- position: absolute;
- top: 0;
- right: 0;
- bottom: 0;
- left: 0;
- display: block;
- content: '';
- background: #DF5E16;
- outline: 1px solid #FFFFFF;
- outline-offset: -1px;
+
+.custom__checkbox:checked+.checkbox-custom::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	content: '';
+	background: #DF5E16;
+	outline: 1px solid #FFFFFF;
+	outline-offset: -1px;
 }
+
 section.sidebar__part a.show-all {
- position: relative;
- top: -12px;
- left: 42px;
+	position: relative;
+	top: -12px;
+	left: 42px;
 	display: inline-block;
 	margin: 0;
 	border-bottom: 2px solid #DF5E16;
@@ -185,9 +222,11 @@ section.sidebar__part a.show-all {
 	font-size: 10px;
 	color: #333333;
 }
+
 section.sidebar__part.filters {
 	text-align: center;
 }
+
 .button__action.apply {
 	width: 114px;
 	height: 35px;
@@ -197,9 +236,11 @@ section.sidebar__part.filters {
 	letter-spacing: 4px;
 	color: #FFFFFF;
 }
+
 .button__action.apply:hover {
 	background: #F58A4E;
 }
+
 a.reset-filter {
 	display: inline-block;
 	margin: 23px auto 35px;
@@ -211,14 +252,15 @@ a.reset-filter {
 	letter-spacing: 0.4em;
 	color: #333333;
 }
+
 main.schools-list__wrapper {
-	width: 1090px;
 	display: flex;
 	flex-wrap: wrap;
 	margin-bottom: 55px;
 	justify-content: space-between;
 	padding-left: 38px;
 }
+
 .school-card {
 	position: relative;
 	width: 300px;
@@ -227,19 +269,22 @@ main.schools-list__wrapper {
 	background: #F7F7F7;
 	box-shadow: 8px 8px 10px rgba(0, 67, 145, 0.3);
 }
+
 .school-1 .school-card__image {
 	width: 300px;
 	height: 240px;
 	background: url(../img/content-img/St_Johns_St_Augustine_Hall.png) no-repeat;
 	background-size: cover;
 }
+
 .school-1 .school-card__image:hover {
 	position: relative;
 	width: 300px;
 	height: 500px;
 	background: url(../img/content-img/St_Johns_St_Augustine_Hall-big.png) no-repeat;
-cursor: pointer;
+	cursor: pointer;
 }
+
 .school-1 .school-card__image:hover::after {
 	content: "";
 	display: block;
@@ -247,77 +292,86 @@ cursor: pointer;
 	height: 100%;
 	background: rgba(0, 67, 145, 0.6);
 }
+
 .school__info {
 	position: absolute;
 	top: 249px;
 	width: 300px;
 	height: 250px;
 }
-.school-card h2.school-card__name  {
+
+.school-card h2.school-card__name {
 	position: relative;
-	top: 20px;
+	top: 35px;
+	margin-left: 50px;
 	font-family: 'Bebas Neue', sans-serif;
 	font-size: 28px;
 	color: #004391;
-	text-align: center;
 }
+
 .school-card:hover h2.school-card__name.hover {
 	color: white;
 }
+
 .school-card h2.school-card__name.hover {
 	display: block;
 	color: #004391;
 }
+
 .school-card span.school-card__country {
 	position: relative;
-	top: 20px;
-	left: 6px;
+	top: 43px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	margin-left: 50px;
 	color: #333333;
 }
+
 .school-card:hover span.school-card__country.hover {
 	display: block;
 	color: white;
 }
+
 .school-card .button__action.more {
-	margin: 70px auto;
+	margin: 112px auto 0;
 	width: 201px;
 	height: 48px;
 	font-family: 'Bebas Neue', sans-serif;
 	font-size: 18px;
 	letter-spacing: 4px;
 }
+
 .school-card:hover .button__action.more.hover {
 	display: block;
 	background-color: #FFFFFF;
 }
+
 .school-card:hover .button__action a {
 	color: #DF5E16;
 }
+
 .button__action {
 	display: block;
 	border: none;
 	background-color: #DF5E16;
 }
+
 .button__action a {
 	color: #FFFFFF;
 }
+
 .pagi-nav-wrapper {
 	display: flex;
 	justify-content: space-between;
-	width: 296px;
-	margin-left: 222px;
+	width: 278px;
+	margin-left: 228px;
 }
+
 nav.schools-catalogue__pagination {
-	width: 1220px;
-	display: flex;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 35px;
+	padding-bottom: 30px;
 }
-nav.schools-catalogue__pagination  a {
+
+nav.schools-catalogue__pagination a {
 	display: inline-block;
 	padding: 5px 11px;
 	text-align: center;
@@ -326,10 +380,12 @@ nav.schools-catalogue__pagination  a {
 	font-size: 14px;
 	color: #004391;
 }
+
 nav.schools-catalogue__pagination a:not(.pagi-arrow):active {
 	background: #DF5E16;
 	color: #FFFFFF;
 }
+
 .pagi-arrow {
 	position: relative;
 	left: 13px;
@@ -339,6 +395,7 @@ nav.schools-catalogue__pagination a:not(.pagi-arrow):active {
 	margin-left: -21px;
 	background: url(../img/content-img/content_arrows-pagination.png) no-repeat;
 }
+
 a.pagi-arrow-forward {
 	background-position: -5px 10px;
 }

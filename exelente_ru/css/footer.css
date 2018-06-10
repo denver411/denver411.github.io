@@ -3,16 +3,6 @@
 	font-family: 'Bebas Neue', sans-serif;
 	src: url('../fonts/bebas/TTF\'s/BebasNeue Regular.ttf') format("truetype");
 }
-html {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-body {
-	min-width: 1170px;
-	margin: 0 auto;
-	font-family: ''Open Sans', sans-serif', sans-serif;
-}
 a {
 	text-decoration: none;
 }
@@ -178,11 +168,9 @@ a.subscribe__submit {
 	border-bottom: 2px solid #DF5E16;
 }
 .footer__bottom {
-	width: 1280px;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	margin-left: auto;
-	margin-right: auto;
 	background: #FFFFFF;
 }
 span.comp-name {
@@ -194,15 +182,14 @@ span.comp-name {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10px;
 	padding-top: 11px;
-	padding-left: 55px;
 }
 .footer__copyright p {
 	padding: 0;
 	margin: 0;
 }
 .footer__made-by {
-	width: 16.5%;
-	padding: 18px;
+	margin-right: -50px;
+	padding:  13px 61px 25px 27px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	color: #FFFFFF;
@@ -220,4 +207,8 @@ a.developer {
 	border-bottom: 2px solid #FFFFFF;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
+}
+.footer__wrapper{
+	display: flex;
+	justify-content: space-between;
 }
