@@ -127,10 +127,10 @@
 @media (max-width: 576px) {
   .hidden-menu__logo {
     position: absolute;
-    top: -23px;
-    left: -124px;
+    top: 2px;
+    left: -24px;
     z-index: 110;
-    transform: scale(0.3);
+    transform: scale(0.6);
   }
 }
 .hidden-menu__popups i:hover {
@@ -321,7 +321,6 @@
   }
 }
 .menu-block {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 50px;
@@ -655,8 +654,8 @@
 @media (max-width: 576px) {
   .menu-block_from-hidden .menu-block__menu-pic_close {
     position: absolute;
-    right: 20px;
-    top: 15px;
+    right: 26px;
+    top: 12px;
     display: inline-block;
     color: #F36C21;
   }

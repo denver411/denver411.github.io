@@ -20,7 +20,7 @@ body {
 }
 @media (min-width: 577px) {
   body {
-    background-color: #004391;
+    min-width: 1180px;
   }
 }
 @media (max-width: 576px) {
@@ -45,7 +45,7 @@ body {
   }
 }
 .container {
-  background-color: #004391;
+  background-color: #ffffff;
 }
 @keyframes fade-in {
   0% {

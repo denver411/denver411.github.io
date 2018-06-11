@@ -4,13 +4,22 @@
   margin: 0 auto;
 }
 @media (min-width: 577px) {
-  .slider {
-    max-width: 1280px;
-  }
 }
 @media (max-width: 576px) {
   .slider {
     min-width: 320px;
+  }
+}
+@media (min-width: 577px) {
+  .slider__wrapper {
+    height: unset;
+    position: relative;
+  }
+}
+@media (max-width: 576px) {
+  .slider__wrapper {
+    position: absolute;
+    top: 0;
   }
 }
 .slider__items {
@@ -58,7 +67,7 @@
   .slider__navigation {
     position: absolute;
     bottom: 0;
-    right: 50px;
+    right: 0;
     z-index: 5;
   }
 }
@@ -121,7 +130,6 @@
 .site-path {
   position: absolute;
   top: 32px;
-  left: 50px;
   z-index: 3;
 }
 @media (max-width: 576px) {
