@@ -1,4 +1,3 @@
-window.onload = function () {
 let sidebarPartButtonProg = document.querySelector('.sidebar__part-button-prog'),
     sidebarPartButtonSpec = document.querySelector('.sidebar__part-button-spec'),
     sidebarPartButtonCount = document.querySelector('.sidebar__part-button-count'),
@@ -45,4 +44,4 @@ showAll.onclick = function () {
     arrowSpec.style.transform = 'rotate(180deg)';
     arrowCount.style.transform = 'rotate(180deg)';
     return false;
-}}
+}
