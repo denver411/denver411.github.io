@@ -8,6 +8,7 @@
 @media (max-width: 576px) {
   .slider {
     min-width: 320px;
+    margin-top: 50px;
   }
 }
 @media (min-width: 577px) {

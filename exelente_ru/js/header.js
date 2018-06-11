@@ -41,23 +41,18 @@
 
   let mobileMenuButton = document.querySelector('.menu-block__menu-pic');
   let topBlockMobile = document.querySelector('.top-block');
+  let containerBlock = document.querySelector('.container');
 
   mobileMenuButton.onclick = function () {
     if (document.querySelector('.menu-block_from-hidden')) {
       document.querySelector('.menu-block_from-hidden').classList.toggle('menu-block_from-hidden');
+      containerBlock.classList.remove('container__mobile');
       hiddenMenu.style = '';
-      // hiddenMenuButtonClose.style.display = 'none';
-      // scrollForFixedMenu = 100;
       topBlockMobile.style.display = '';
-      // hiddenMenuPopups.style.display = '';
     } else {
       document.querySelector('.menu-block').classList.toggle('menu-block_from-hidden');
-      // hiddenMenuButton.style.color = '#ffffff'
-      // hiddenMenuButton.style.backgroundImage = 'unset';
-      // hiddenMenuButton.style.border = 'solid 2px #ffffff';
       hiddenMenu.style.display = 'flex';
-      // scrollForFixedMenu = 0;
       topBlockMobile.style.display = 'block';
-      // hiddenMenuPopups.style.display = 'flex';
+      containerBlock.classList.add('container__mobile');
     }
   }
