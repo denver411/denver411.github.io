@@ -1,0 +1,673 @@
+a {
+	text-decoration: none;
+}
+
+.title {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding-top: 70px;
+	background-color: #ffffff;
+}
+
+@media (max-width: 576px) {
+	.title {
+		max-width: 320px;
+		background: #F7F7F7;
+	}
+}
+
+.title__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1180px;
+}
+
+.content__main {
+	display: flex;
+	align-items: flex-start;
+}
+
+@media (max-width: 576px) {
+	.content__main {
+		flex-direction: column;
+	}
+}
+
+.section-name {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 48px;
+	color: #DF5E16;
+	margin: 35px 0 40px;
+}
+
+@media (max-width: 576px) {
+	.section-name {
+		display: inline-block;
+		margin: 53px 20px 32px;
+	}
+}
+
+@media (max-width: 576px) {
+	.school-select {
+		display: none;
+	}
+}
+
+.selectbox {
+	z-index: 1;
+	vertical-align: middle;
+	cursor: pointer;
+	margin: 45px 0;
+	background: url(../img/content-img/content_select_arrow-down.png) no-repeat;
+	background-position: 120px center;
+}
+
+.selectbox .select {
+	width: 140px;
+	height: 29px;
+	line-height: 27px;
+	padding-left: 10px;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;
+	color: #000000;
+	border: 1px solid #004391;
+}
+
+.selectbox .dropdown {
+	top: 27px;
+	width: 140px;
+	margin: 0;
+	padding: 4px 0;
+	background: #FFFFFF;
+	border: 1px solid #004391;
+	border-top: none;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;
+	color: #000000;
+}
+
+.selectbox ul {
+	margin: 0;
+	padding: 0;
+}
+
+.selectbox li {
+	padding: 4px 0 4px 10px;
+	color: #000000;
+	list-style: none;
+}
+
+.selectbox li:hover {
+	background: #DF5E16;
+	color: #FFFFFF;
+}
+
+.selectbox li:first-child {
+	display: none;
+}
+
+.selectbox li.disabled {
+	color: #AAAAAA;
+}
+
+.selectbox li.disabled:hover {
+	background: none;
+}
+
+.content__wrapper {
+	max-width: 1180px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+	.content.content__schools {
+		max-width: 320px;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		margin: 0 auto;
+		background: #F7F7F7;
+	}
+}
+
+.sidebar {
+	min-width: 190px;
+	background: #F7F7F7;
+	box-shadow: 8px 8px 10px rgba(0, 67, 145, 0.3);
+}
+
+@media (min-width: 1280px) {
+	.sidebar {
+		margin-left: -50px;
+	}
+}
+
+@media (max-width: 576px) {
+	.sidebar {
+		max-width: 320px;
+		margin: 0 auto;
+		background: #F7F7F7;
+		box-shadow: none;
+	}
+}
+
+.sidebar__part {
+	position: relative;
+}
+
+@media (max-width: 576px) {
+	.sidebar {
+		max-width: 320px;
+		margin: 0 auto;
+		background: #F7F7F7;
+		box-shadow: none;
+	}
+}
+
+.sidebar__part {
+	position: relative;
+}
+
+@media (max-width: 576px) {
+	.sidebar__part {
+		max-width: 320px;
+		margin: 0 auto;
+	}
+}
+
+.sidebar__part-button-prog,
+.sidebar__part-button-spec,
+.sidebar__part-button-count {
+	margin: 0;
+	padding: 33px 39px 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	color: #333333;
+}
+
+@media (max-width: 576px) {
+	.sidebar__part-button-prog,
+	.sidebar__part-button-spec,
+	.sidebar__part-button-count {
+		display: inline-block;
+		margin: 0 0 21px -38px;
+		padding: 0 0 0 0;
+		font-size: 22px;
+		color: #333333;
+	}
+}
+
+@media (max-width: 576px) {
+	.sidebar__part-button-prog:hover,
+	.sidebar__part-button-spec:hover,
+	.sidebar__part-button-count:hover {
+		border-bottom: 2px solid #DF5E16;
+	}
+	.sidebar__part-button-prog,
+	.sidebar__part-button-spec,
+	.sidebar__part-button-count {
+		border-bottom: 2px dashed #DF5E16;
+	}
+}
+
+.sidebar__part .sidebar-arrow {
+	position: relative;
+	top: 0;
+	right: -10px;
+	display: inline-block;
+	width: 8px;
+	height: 5px;
+	background-position: -12px 0;
+	background: url(../img/content-img/content_arrows_sidebar.png) no-repeat;
+	transition: 0.5s;
+}
+
+.sidebar__part .sidebar-arrow:active {
+	transform: rotate(180deg);
+	transition: 0.5s;
+}
+
+.sidebar__part .arrow-down {
+	background-position: 0 0;
+}
+
+.sidebar__part .arrow-up {
+	background-position: -12px 0;
+	background: url(../img/content-img/content_arrows_sidebar.png) no-repeat;
+	transition: 0.5s;
+}
+
+@media (max-width: 576px) {
+	.sidebar__part .sidebar-arrow {
+		display: none;
+	}
+}
+
+.choose-program__checkboxes,
+.choose-specialty__checkboxes,
+.choose-country__checkboxes {
+	position: relative;
+	left: 23px;
+	list-style: none;
+	padding: 0 0 3px 0;
+	margin: -4px 1px 0px 0;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 10px;
+	color: #333333;
+}
+
+@media (max-width: 576px) {
+	.choose-program__checkboxes,
+	.choose-specialty__checkboxes,
+	.choose-country__checkboxes {
+		position: relative;
+		left: 2px;
+		padding-bottom: 23px;
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 576px) {
+	.choose-program__checkboxes li,
+	.choose-specialty__checkboxes li,
+	.choose-country__checkboxes li {
+		padding-bottom: 8px
+	}
+}
+
+.checkbox-custom,
+.label {
+	position: relative;
+	top: 10px;
+	right: -35px;
+	display: inline-block;
+	margin-top: 7px;
+	vertical-align: middle;
+}
+
+@media (max-width: 576px) {
+	.checkbox-custom,
+	.label {
+		position: relative;
+		top: 15px;
+		right: 35px;
+	}
+}
+
+.label {
+	padding-left: 5px;
+}
+
+@media (max-width: 576px) {
+	.label {
+		padding-left: 21px;
+	}
+}
+
+.choose-program__checkboxes span.label,
+.choose-specialty__checkboxes span.label {
+	display: inline-block;
+	max-width: 100px;
+	vertical-align: top;
+	margin-top: 4px;
+}
+
+@media (max-width: 576px) {
+	.choose-program__checkboxes span.label,
+	.choose-specialty__checkboxes span.label {
+		margin-top: 7px;
+	}
+}
+
+input [type='checkbox'] {
+	display: inline-block;
+}
+
+.custom__checkbox {
+	display: none;
+}
+
+.checkbox-custom {
+	position: relative;
+	bottom: 15px;
+	width: 10px;
+	height: 10px;
+	background: #ffffff;
+	border: 1px solid #004391;
+	box-sizing: border-box;
+}
+
+@media (max-width: 576px) {
+	.checkbox-custom {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.custom__checkbox:checked+.checkbox-custom::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	content: '';
+	background: #DF5E16;
+	outline: 1px solid #FFFFFF;
+	outline-offset: -1px;
+}
+
+@media (max-width: 576px) {
+	.custom__checkbox:checked+.checkbox-custom::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: block;
+		content: '';
+		background: #DF5E16;
+		outline: 3px solid #FFFFFF;
+		outline-offset: -3px;
+	}
+}
+
+.sidebar__part a.show-all {
+	display: inline-block;
+	margin: 14px 0 12px 49px;
+	border-bottom: 2px solid #DF5E16;
+	font-family: 'Open Sans', sans-serif;
+	font-style: italic;
+	font-size: 10px;
+	color: #333333;
+}
+
+@media (max-width: 576px) {
+	.sidebar__part a.show-all {
+		display: none;
+	}
+}
+
+.sidebar__part.filters {
+	text-align: center;
+}
+
+.button__action.apply {
+	width: 114px;
+	height: 35px;
+	margin: 30px auto 0;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 12px;
+	letter-spacing: 4px;
+	color: #FFFFFF;
+}
+
+@media (max-width: 576px) {
+	.button__action.apply {
+		width: 202px;
+		height: 46px;
+		margin: 64px auto 0;
+		font-size: 17px;
+	}
+}
+
+.button__action.apply:hover {
+	background: #F58A4E;
+}
+
+@media (max-width: 576px) {
+	.apply a {
+		text-decoration: none;
+	}
+}
+
+@media (max-width: 576px) {
+	.sidebar__part.filters {
+		text-align: center;
+	}
+}
+
+a.reset-filter {
+	display: inline-block;
+	margin: 23px auto 35px;
+	padding-bottom: 3px;
+	text-align: center;
+	border-bottom: 2px solid #DF5E16;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 10px;
+	letter-spacing: 0.4em;
+	color: #333333;
+}
+
+@media (max-width: 576px) {
+	a.reset-filter {
+		margin: 45px auto 45px;
+		font-size: 17px;
+		font-weight: bold;
+		padding-bottom: 6px;
+		letter-spacing: 6.5px;
+	}
+}
+
+main.schools-list__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	/* margin-bottom: 55px; */
+	justify-content: space-between;
+	padding-left: 38px;
+}
+
+@media (max-width: 576px) {
+	main.schools-list__wrapper {
+		max-width: 320px;
+		margin: 0 auto;
+		background: #FFFFFF;
+		padding-left: 0;
+		padding-top: 49px;
+	}
+}
+
+.school-card {
+	position: relative;
+	width: 300px;
+	height: 500px;
+	margin-bottom: 40px;
+	background: #F7F7F7;
+	box-shadow: 8px 8px 10px rgba(0, 67, 145, 0.3);
+}
+
+@media (max-width: 576px) {
+	.school-card {
+		display: block;
+		margin: 0 auto 10px;
+		box-shadow: none;
+	}
+}
+
+.school-1 .school-card__image {
+	width: 300px;
+	height: 240px;
+	background: url(../img/content-img/St_Johns_St_Augustine_Hall.png) no-repeat;
+	background-size: cover;
+}
+
+@media (max-width: 576px) {
+	.school-1 .school-card__image {
+		width: 300px;
+		height: 240px;
+		background: url(../img/content-img/St_Johns_St_Augustine_Hall.png) no-repeat;
+		background-size: cover;
+	}
+}
+
+.school-1 .school-card__image:hover {
+	position: relative;
+	width: 300px;
+	height: 500px;
+	background: url(../img/content-img/St_Johns_St_Augustine_Hall-big.png) no-repeat;
+	cursor: pointer;
+}
+
+.school-1 .school-card__image:hover::after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 67, 145, 0.6);
+}
+
+.school__info {
+	position: absolute;
+	top: 249px;
+	width: 300px;
+	height: 250px;
+}
+
+.school-card h2.school-card__name {
+	position: relative;
+	top: 35px;
+	margin-left: 50px;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 28px;
+	color: #004391;
+}
+
+@media (max-width: 576px) {
+	.school-card h2.school-card__name {
+		top: 35px;
+		display: block;
+	}
+}
+
+.school-card h2.school-card__name.hover {
+	display: block;
+	color: #004391;
+}
+
+.school-card:hover h2.school-card__name.hover {
+	color: white;
+}
+
+.school-card span.school-card__country {
+	position: relative;
+	top: 46px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	margin-left: 50px;
+	color: #333333;
+}
+
+.school-card:hover span.school-card__country.hover {
+	display: block;
+	color: white;
+}
+
+.school-card .button__action.more {
+	margin: 116px auto 0;
+	width: 201px;
+	height: 48px;
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 18px;
+	letter-spacing: 4px;
+}
+
+@media (max-width: 576px) {
+	.school-card .button__action.more {
+		margin: 114px auto;
+		letter-spacing: 3.7px;
+	}
+}
+
+.school-card:hover .button__action.more.hover {
+	display: block;
+	background-color: #FFFFFF;
+}
+
+.school-card:hover .button__action a {
+	color: #DF5E16;
+}
+
+.button__action {
+	display: block;
+	border: none;
+	background-color: #DF5E16;
+}
+
+.button__action a {
+	color: #FFFFFF;
+}
+
+.pagi-nav-wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 278px;
+}
+
+nav.schools-catalogue__pagination {
+	padding-bottom: 35px;
+	margin-top: 55px;
+}
+
+@media (max-width: 576px) {
+	nav.schools-catalogue__pagination {
+		display: none;
+	}
+}
+
+nav.schools-catalogue__pagination a {
+	display: inline-block;
+	padding: 5px 11px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	color: #004391;
+}
+
+nav.schools-catalogue__pagination a:not(.pagi-arrow):active {
+	background: #DF5E16;
+	color: #FFFFFF;
+}
+
+.pagi-arrow {
+	position: relative;
+	left: 13px;
+	display: block;
+	width: 15px;
+	height: 20px;
+	margin-left: -21px;
+	background: url(../img/content-img/content_arrows-pagination.png) no-repeat;
+}
+
+a.pagi-arrow-forward {
+	background-position: -5px 10px;
+}
+
+.show-more {
+	display: none;
+}
+
+@media (max-width: 576px) {
+	.show-more {
+		display: block;
+		max-width: 133px;
+		height: 31px;
+		margin: 74px auto 70px;
+		padding-bottom: 0;
+		font-size: 18px;
+		font-family: 'Bebas Neue', sans-serif;
+		font-weight: bold;
+		text-transform: uppercase;
+		border-bottom: 2px solid #DF5E16;
+		color: #000000;
+		letter-spacing: 4px;
+	}
+}
