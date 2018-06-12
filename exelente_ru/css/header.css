@@ -440,6 +440,9 @@
   font-size: 24px;
   color: #F36C21;
 }
+.menu-block_from-hidden .contacts__info a {
+  color: #F36C21;
+}
 @media (max-width: 576px) {
   .menu-block_from-hidden .contacts__info {
     margin-top: 10px;

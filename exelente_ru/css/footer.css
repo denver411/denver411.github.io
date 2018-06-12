@@ -5,7 +5,7 @@
 
 @media (max-width: 576px) {
 	.footer {
-		max-width: 320px;
+		/* max-width: 320px; */
 		margin: 0 auto;
 		display: flex;
 		flex-wrap: wrap;
@@ -48,7 +48,9 @@
 	display: block;
 	width: 203px;
 	height: 50px;
-	background: url(../img/footer-img/footer_logo_blue-orange.png) no-repeat;
+	background-image: url(../img/logo_white.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 
 @media (max-width: 576px) {
@@ -59,7 +61,6 @@
 		width: 203px;
 		height: 50px;
 		margin: 0 auto 67px;
-		background: url(../img/footer-img/footer_logo_blue-orange.png) no-repeat;
 	}
 }
 
@@ -463,7 +464,7 @@ span.comp-name {
 .license {
 	position: relative;
 	bottom: 10px;
-
+}
 @media (max-width: 576px) {
 	.license {
 		display: none;
