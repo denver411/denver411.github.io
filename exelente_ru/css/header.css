@@ -75,6 +75,9 @@
   font-weight: bold;
   color: #DF5E16;
 }
+.top-block__phone a {
+  color: #DF5E16;
+}
 .top-block__popups {
   display: flex;
   min-width: 25.2%;

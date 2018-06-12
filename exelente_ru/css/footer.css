@@ -360,7 +360,7 @@ a.subscribe__submit {
 
 @media (max-width: 576px) {
 	.footer__bottom {
-		max-width: 320px;
+		/* max-width: 320px; */
 		text-align: center;
 		background: #DF5E16;
 		color: #FFFFFF;
@@ -408,7 +408,7 @@ span.comp-name {
 
 @media (max-width: 576px) {
 		.footer__copyright {
-		max-width: 320px;
+		/* max-width: 320px; */
 		padding-left: 0;
 		padding-top: 0;
 
