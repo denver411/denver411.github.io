@@ -3,7 +3,7 @@
   let mainMenu = document.querySelector('.menu-block');
   let scrollForFixedMenu = 100;
 
-  document.addEventListener('scroll', () => {
+  document.addEventListener('scroll', function() {
     if (window.pageYOffset >= scrollForFixedMenu) {
       hiddenMenu.classList.add('hidden-menu_visible');
     } else {
