@@ -542,6 +542,7 @@
 
 @media (max-width: 576px) {
   .menu-block_from-hidden .main-menu {
+  width: 100%;  
   width: calc(100% - 35px);
 } 
 }
