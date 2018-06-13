@@ -1,37 +1,35 @@
-let chosen = document.querySelector('.chosen'),
+//Регистрация
+
+let bannerChosen = document.querySelector('.banner-chosen'),
     topBlockItemLogin = document.querySelector('.top-block__item_login'),
     chosenContentClose = document.querySelector('.chosen-content__close'),
     hiddenMenuItemLogin = document.querySelector('.hidden-menu__item_login');
 
-hiddenMenuItemLogin.onclick = function () {
-    if (chosen.style.display == 'flex') chosen.style.display = 'none';
-    else chosen.style.display = 'flex';
-}
+
 topBlockItemLogin.onclick = function () {
-    if (chosen.style.display == 'flex') chosen.style.display = 'none';
-    else chosen.style.display = 'flex';
+    bannerChosen.style.display = "block"
 }
 chosenContentClose.onclick = function () {
-    chosen.style.display = 'none';
+    bannerChosen.style.display = 'none';
     return false;
 }
+hiddenMenuItemLogin.onclick = function () {
+    bannerChosen.style.display = "block"
+}
 
-//Добавил скрипты для корзины
-
-let basket = document.querySelector('.basket'),
+//Корзина
+let bannerBasket = document.querySelector('.banner-basket'),
     topBlockItemCart = document.querySelector('.top-block__item_cart'),
     basketContentClose = document.querySelector('.basket-content__close'),
     hiddenMenuItemCart = document.querySelector('.hidden-menu__item_cart');
 
-hiddenMenuItemCart.onclick = function () {
-    if (basket.style.display == 'flex') basket.style.display = 'none';
-    else basket.style.display = 'flex';
-}
 topBlockItemCart.onclick = function () {
-    if (basket.style.display == 'flex') basket.style.display = 'none';
-    else basket.style.display = 'flex';
+    bannerBasket.style.display = 'block';
 }
 basketContentClose.onclick = function () {
-    basket.style.display = 'none';
+    bannerBasket.style.display = 'none';
     return false;
+}
+hiddenMenuItemCart.onclick = function () {
+    bannerBasket.style.display = 'block';
 }
