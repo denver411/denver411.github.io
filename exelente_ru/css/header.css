@@ -553,14 +553,19 @@
   justify-content: flex-start;
   align-items: flex-start;
   list-style: none;
-  flex-direction: column;
+  flex-direction: row;
   max-height: 250px;
 }
 @media (min-width: 577px) {
   .menu-block_from-hidden .main-menu__items {
-    flex-direction: row;
       max-width: 800px;
   }
+}
+
+@media (max-width: 576px) {
+ .menu-block_from-hidden .main-menu__items {
+  max-height: unset;
+} 
 }
 
 .menu-block_from-hidden .main-menu__item { 
@@ -590,7 +595,7 @@
 }
 @media (max-width: 576px) {
   .menu-block_from-hidden .main-menu__item {
-/*     flex-basis: 34%; */
+    flex-basis: 50%;
     margin-bottom: 35px;
     width: 50%;
 /*     margin-right: 68px; */
