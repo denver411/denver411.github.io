@@ -542,7 +542,7 @@
 
 @media (max-width: 576px) {
   .menu-block_from-hidden .main-menu {
-  width: calc(100%-35px);
+  width: calc(100% - 35px);
 } 
 }
 .menu-block_from-hidden .main-menu__items {
