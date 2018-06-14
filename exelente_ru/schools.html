@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Школы</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/slider.css"/>
+    <link rel="stylesheet" href="css/content_schools.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script href="js/prefixfree.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__top-block top-block">
+          <div class="wrapper header__wrapper">
+            <div class="top-block__city"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Владивосток</span>
+              <div class="popup-city">
+                <div class="popup-city__title"><span>Ваш город</span><i class="fa fa-times" aria-hidden="true"></i></div>
+                <div class="popup-city__search">
+                  <input class="popup-city__input" type="text" placeholder="Владивосток"/>
+                  <ul class="popup-city__cities-list">
+                    <li>Владивосток</li>
+                    <li>Владикавказ</li>
+                    <li>Вологоград</li>
+                    <li>Волжское</li>
+                    <li>Волжское</li>
+                    <li>Волжское</li>
+                    <li>Волжское</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="top-block__fill"></div>
+            <div class="top-block__phone">8 800 737-77-05</div>
+            <div class="top-block__popups">
+              <div class="top-block__item top-block__item_login">Вход/ Регистрация<i class="fa fa-user" aria-hidden="true"></i></div>
+              <div class="top-block__item top-block__item_favorite">10<i class="fa fa-star" aria-hidden="true"></i></div>
+              <div class="top-block__item top-block__item_cart">2500 р<i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="header__hidden-menu hidden-menu">
+          <div class="wrapper header__wrapper">
+            <div class="hidden-menu__logo" id="logo_hidden"><a href="index.html"><img src="img/logo_blue-orange.svg" alt="logo"/></a></div>
+            <div class="hidden-menu__popups top-block__popups">
+              <div class="hidden-menu__item hidden-menu__item_input top-block__item"> 
+                <input type="text" placeholder="Поиск..."/><i class="fa fa-search" aria-hidden="true"></i>
+              </div>
+              <div class="hidden-menu__item hidden-menu__item_login top-block__item">Вход/ Регистрация<i class="fa fa-user" aria-hidden="true"></i></div>
+              <div class="hidden-menu__item hidden-menu__item_favorite top-block__item">10<i class="fa fa-star" aria-hidden="true"></i></div>
+              <div class="hidden-menu__item hidden-menu__item_cart top-block__item">2500 р<i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+            </div>
+            <div class="hidden-menu__menu">Меню
+              <div class="hidden-menu__close">
+                <div class="hidden-menu__close-pic"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__menu menu-block">
+          <div class="wrapper header__wrapper">
+            <h1 class="menu-block__logo"><a href="index.html"><img src="img/logo_white.svg" alt="logo"/></a><i class="fa fa-search" aria-hidden="true"></i></h1>
+            <div class="menu-block__menu-pic">
+              <div class="menu-block__menu-pic_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+            </div>
+            <div class="menu-block__contacts contacts">
+              <div class="contacts__item">
+                <p class="contacts__text">Бесплатная линия</p>
+                <p class="contacts__info">8 800 737-77-05</p>
+              </div>
+              <div class="contacts__item">
+                <p class="contacts__text">WhatsApp</p>
+                <p class="contacts__info">8 800 737-77-05</p>
+              </div>
+              <div class="contacts__item">
+                <p class="contacts__text">skype </p>
+                <p class="contacts__info">excelentephone</p>
+              </div>
+              <div class="contacts__item_social-media">подписаться</div>
+              <div class="contacts__social-links"><a href="#">
+                  <div class="contacts__social-link contacts__social-link_instagram"></div></a><a href="#">
+                  <div class="contacts__social-link contacts__social-link_fb"></div></a><a href="#">
+                  <div class="contacts__social-link contacts__social-link_youtube"></div></a><a href="#">
+                  <div class="contacts__social-link contacts__social-link_vk"></div></a></div>
+            </div>
+            <div class="menu-block__menu main-menu">
+              <ul class="main-menu__items">
+                <li class="main-menu__item main-menu__item_about"><a href="#">О компании</a>
+                  <ul class="main-menu__subitems">
+                    <li class="main-menu__subitem"><a href="#">Лицензии и сертификаты</a></li>
+                    <li class="main-menu__subitem"><a href="#">Бонусная программа</a></li>
+                    <li class="main-menu__subitem"><a href="#">Сотрудничество</a></li>
+                    <li class="main-menu__subitem"><a href="#">Вакансии</a></li>
+                    <li class="main-menu__subitem"><a href="#">Политика конфиденциальности</a></li>
+                    <li class="main-menu__subitem"><a href="#">Наши партнеры</a></li>
+                  </ul>
+                </li>
+                <li class="main-menu__item main-menu__item_programs"><a href="#">Программы</a>
+                  <ul class="main-menu__subitems">
+                    <li class="main-menu__subitem"><a href="#">Работа</a></li>
+                    <li class="main-menu__subitem"><a href="#">Стажировка</a></li>
+                    <li class="main-menu__subitem"><a href="#">Каникулярные</a></li>
+                    <li class="main-menu__subitem"><a href="#">Языковые курсы</a></li>
+                    <li class="main-menu__subitem"><a href="#">Высшее образование</a></li>
+                    <li class="main-menu__subitem"><a href="#">Среднее образование</a></li>
+                    <li class="main-menu__subitem"><a href="#">Стипендии и гранты</a></li>
+                  </ul>
+                </li>
+                <li class="main-menu__item main-menu__item_service"> <a href="#">Услуги</a>
+                  <ul class="main-menu__subitems">
+                    <li class="main-menu__subitem"><a href="#">Поступление в зарубежный ВУЗ</a></li>
+                    <li class="main-menu__subitem"><a href="#">Визовое сопровождение</a></li>
+                    <li class="main-menu__subitem"><a href="#">Поиск и бронирование жилья</a></li>
+                    <li class="main-menu__subitem"><a href="#">Волонтерство</a></li>
+                  </ul>
+                </li>
+                <li class="main-menu__item main-menu__item_schools"> <a href="schools.html">школы</a>
+                  <ul class="main-menu__subitems">
+                    <li class="main-menu__subitem"><a href="#">Fanshawe College</a></li>
+                    <li class="main-menu__subitem"><a href="#">St. John's University</a></li>
+                    <li class="main-menu__subitem"><a href="#">University of New South</a></li>
+                    <li class="main-menu__subitem"><a href="#">Wales - UNSW</a></li>
+                    <li class="main-menu__subitem"><a href="#">University of Sheffield</a></li>
+                    <li class="main-menu__subitem"><a href="#">University of Tokyo</a></li>
+                  </ul>
+                </li>
+                <li class="main-menu__item main-menu__item_countries"><a href="#">Страны</a>
+                  <ul class="main-menu__subitems">
+                    <li class="main-menu__subitem"><a href="#">США</a></li>
+                    <li class="main-menu__subitem"><a href="#">Япония</a></li>
+                    <li class="main-menu__subitem"><a href="#">Корея</a></li>
+                    <li class="main-menu__subitem"><a href="#">Австралия</a></li>
+                    <li class="main-menu__subitem"><a href="#">Германия</a></li>
+                    <li class="main-menu__subitem"><a href="#">Англия</a></li>
+                  </ul>
+                </li>
+                <li class="main-menu__item main-menu__item_blog"> <a href="#">Блог</a>
+                  <ul class="main-menu__subitems">
+                    <li class="main-menu__subitem"><a href="#">Акции</a></li>
+                    <li class="main-menu__subitem"><a href="#">Отзывы</a></li>
+                    <li class="main-menu__subitem"><a href="#">Новости</a></li>
+                    <li class="main-menu__subitem"><a href="#">Мероприятия</a></li>
+                  </ul>
+                </li>
+                <li class="main-menu__item main-menu__item_contacts"> <a href="#">Контакты</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="slider slider__schools">
+        <div class="wrapper slider__wrapper">
+          <div class="slider__site-path site-path"> 
+            <ul class="site-path__items">
+              <li class="site-path__item"><a href="#">Главная</a></li>
+              <li class="site-path__item"><a href="#">Школы</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="slider__items">
+          <div class="slider__item slider__item_1 slide">
+            <div class="wrapper slide__wrapper">
+              <h2 class="slide__title">Fanshawe college</h2>
+              <p class="slide__description">набор на новый учебный год</p><a class="slide__button" href="#">подробнее</a>
+            </div>
+          </div>
+          <div class="slider__item slider__item_2 slide">
+            <div class="wrapper slide__wrapper">
+              <h2 class="slide__title">St. John's University</h2>
+              <p class="slide__description">набор на новый учебный год</p><a class="slide__button" href="school-page.html">подробнее</a>
+            </div>
+          </div>
+          <div class="slider__item slider__item_3 slide">
+            <div class="wrapper slide__wrapper">
+              <h2 class="slide__title">University of New South</h2>
+              <p class="slide__description">набор на новый учебный год</p><a class="slide__button" href="#">подробнее</a>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper slider__wrapper">
+          <div class="slider__navigation slider-navigation">
+            <div class="slider-navigation__count slider-navigation__count_this">01</div>
+            <div class="slider-navigation__count slider-navigation__count_all">04</div>
+            <div class="slider-navigation__fill"></div>
+            <div class="slider-navigation__arrows">
+              <div class="slider-navigation__arrow slider-navigation__arrow_left"></div>
+              <div class="slider-navigation__arrow slider-navigation__arrow_right"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="title">
+        <div class="wrapper title__wrapper">
+          <h2 class="section-name">школы</h2>
+          <form class="school-select">
+            <select>
+              <option>Показать по 9</option>
+              <option>9</option>
+              <option>18</option>
+              <option>36</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <section class="content content__schools">
+        <div class="wrapper content__wrapper">
+          <div class="content__main">
+            <aside class="sidebar">
+              <section class="sidebar__part">
+                <h3 class="sidebar__part-button-prog">Программа
+                  <div class="sidebar-arrow arrow-prog"></div>
+                </h3>
+                <ul class="choose-program__checkboxes">
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Каникулярные программы</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Языковые курсы</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Среднее образование</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Высшее образование</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Работа</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Стажировка</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Стипендии и гранты</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Волонтерство</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Международные экзамены</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Ознакомительные поездки</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Foundation</span>
+                    </label>
+                  </li>
+                </ul>
+              </section>
+              <section class="sidebar__part">
+                <h3 class="sidebar__part-button-spec">Специальности
+                  <div class="sidebar-arrow arrow-spec"></div>
+                </h3>
+                <ul class="choose-specialty__checkboxes">
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Менеджмент, бизнес и управление</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Строительство, архитектура</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Сельское и лесное хозяйство</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Искусство, мода и дизайн</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Инженерия и IT</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Гостеприимство и туризм</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Правоведение</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Международные отношения и политика</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Медицина</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Физическая культура и спорт</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Режиссура и кинематография</span>
+                    </label>
+                  </li>
+                </ul>
+              </section>
+              <section class="sidebar__part">
+                <h3 class="sidebar__part-button-count">Страны
+                  <div class="sidebar-arrow arrow-count" style="transform: rotate(180deg);"></div>
+                </h3>
+                <ul class="choose-country__checkboxes">
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">США</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Канада</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Австралия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Новая Зеландия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Сингапур</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Япония</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name="" checked=""/><span class="checkbox-custom"></span><span class="label">Корея</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Филиппины</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Ирландия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Чехия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Испания</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Германия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Мальта</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Таиланд</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Сайпан</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Вьетнам</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">ОАЭ</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Канада</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Кипр</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Китай</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Англия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Индонезия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Куба</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Мексика</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Малайзия</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input class="custom__checkbox" type="checkbox" name=""/><span class="checkbox-custom"></span><span class="label">Франция</span>
+                    </label>
+                  </li>
+                </ul><a class="show-all" href="#">показать все</a>
+                <section class="sidebar__part filters">
+                  <button class="button__action apply" type="button" value=""><a href="#">Применить</a></button><a class="reset-filter" href="#">Сбросить фильтр</a>
+                </section>
+              </section>
+            </aside>
+            <main class="schools-list__wrapper">
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="school-page.html">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="school-card school-1">
+                <div class="school-card__image">
+                  <div class="school__info">
+                    <h2 class="school-card__name">St. John's University</h2><span class="school-card__country">США</span>
+                    <button class="button__action more" type="button" value=""><a href="#">подробнее</a></button>
+                  </div>
+                </div>
+              </div><a class="show-more" href="#">Показать еще			</a>
+              <nav class="schools-catalogue__pagination">
+                <div class="pagi-nav-wrapper"><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="">...</a><a href="#">125</a><a class="pagi-arrow pagi-arrow-forward" href="#"></a></div>
+              </nav>
+            </main>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="footer__top">
+          <div class="footer-logo-button__wrapper"><a href="index.html">
+              <div class="footer-logo"></div></a>
+            <button class="button__action franchise" type="button" value=""><a href="#">приобрести франшизу</a></button>
+          </div>
+          <nav class="footer-menu__items">
+            <div class="items_block-1">
+              <div class="footer-menu__item"> <a href="#">о компании</a></div>
+              <div class="footer-menu__item"><a href="#">программы</a></div>
+              <div class="footer-menu__item"><a href="#">услуги</a></div>
+            </div>
+            <div class="items_block-2">
+              <div class="footer-menu__item"><a href="#">страны</a></div>
+              <div class="footer-menu__item"><a href="schools.html">школы</a></div>
+              <div class="footer-menu__item"><a href="#">контакты</a></div>
+            </div>
+          </nav>
+          <div class="footer__contacts"><a class="footer__phone" href="tel:8-800-737-77-05">8 800 737-77-05</a>
+            <button class="button__action free-line" type="button" value=""><a href="#">бесплатная линия</a></button>
+            <div class="footer__social-links"><a href="#">
+                <div class="footer__social-link footer__social-link_instagram"></div></a><a href="#">
+                <div class="footer__social-link footer__social-link_fb"></div></a><a href="#">
+                <div class="footer__social-link footer__social-link_youtube"></div></a><a href="#">
+                <div class="footer__social-link footer__social-link_vk"></div></a></div><a class="subscribe__submit" href="#" type="submit">Подписаться на рассылку</a>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="wrapper footer__wrapper">
+            <div class="footer__copyright">
+              <p class="copyright"><span class="comp-name">OOO «Экселенте», 2018 г.</span></p><br/>
+              <p class="license">Лицензия ФМС МВД РФ № 20110251124 от 13.08.2010 г. бессрочно</p>
+            </div>
+            <div class="footer__made-by">
+              <p>Разработка сайта<a class="developer" href="#">DVIGA</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="banner-chosen"> 
+        <section class="chosen">
+          <div class="row row1">
+            <h2 class="chosen-content__title">Вы не зарегистрированы</h2><a class="chosen-content__close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+          </div>
+          <div class="row row2">
+            <p class="chosen-content__desc">Зарегистрируйтесь или войдите в личный кабинет, чтобы иметь возможность пользоваться всеми функциями сайта.</p>
+          </div>
+          <div class="row row3">
+            <ul class="chosen-content-ulist">
+              <li class="chosen-content-ulist-list"><a class="chosen-content-ulist-list__sign" href="#">зарегистрироваться</a></li>
+              <li class="chosen-content-ulist-list"><a class="chosen-content-ulist-list__login" href="#">войти в аккаунт</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <div class="banner-basket">   
+        <section class="basket">
+          <div class="row">
+            <h2 class="basket-content__title">В корзине</h2><a class="basket-content__close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+          </div>
+          <div class="row"><a class="basket-content__desc" href="#">Летние каникулы в Christ’s Hospital School</a></div>
+          <div class="row">
+            <ul class="basket-content-ulist">
+              <li class="basket-content-ulist-list"><a class="basket-content-ulist-list__sign" href="#">Перейти в корзину</a></li>
+              <li class="basket-content-ulist-list"><a class="basket-content-ulist-list__login" href="#">продолжить покупки</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <script src="js/header.js"></script>
+      <script src="js/select.js"></script>
+      <script src="js/favorite.js"></script>
+      <script src="js/slider.js"></script>
+      <script src="js/filter.js"></script>
+    </div>
+  </body>
+</html>

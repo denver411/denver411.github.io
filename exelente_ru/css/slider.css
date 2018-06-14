@@ -14,7 +14,7 @@
 }
 @media (min-width: 577px) {
   .slider__wrapper {
-     height: auto;
+    height: auto; //для IE
     height: unset;
     position: relative;
   }

@@ -1,0 +1,119 @@
+.h2-title {
+  padding-top: 16%;
+  font-family: Bebas Neue;
+  font-size: 48px;
+  color: #DF5E16;
+  text-transform: uppercase;
+}
+.images {
+  position: relative;
+  min-height: 540px;
+  height: 1px;
+  margin-top: 30px;
+  background-image: url(../img/slider__item_2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: -570px;
+}
+.images::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 67, 145, 0.4);
+}
+.images__wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+  padding-left: 15px;
+  padding-bottom: 125px;
+}
+.images__site-path {
+  position: static;
+}
+.information {
+  background-color: #ffffff;
+}
+.information__wrapper {
+  width: auto;
+  margin: 0 5%;
+  padding-bottom: 14%;
+}
+.information__text {
+  margin-top: 10%;
+  padding-bottom: 3%;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000000;
+}
+.programs {
+  margin: 0 5%;
+}
+.programs__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.programs__list-item {
+  margin-top: 34px;
+  margin-right: 10%;
+  font-family: Bebas Neue;
+  font-size: 24px;
+  color: #004391;
+  text-transform: uppercase;
+}
+.programs__list-item_active {
+  text-decoration: underline;
+  color: #DF5E16;
+}
+.programs__info {
+  position: relative;
+}
+.programs__info-item {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+}
+.programs__info-item_active {
+  position: static;
+  display: block;
+}
+.programs__text {
+  margin-top: 34px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+.programs__subtitle {
+  margin-top: 35px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #004391;
+  text-transform: capitalize;
+}
+.programs__sublist {
+  margin-top: 15px;
+  list-style-position: inside;
+}
+.programs__sublist-item {
+  font-size: 14px;
+  line-height: 2;
+  color: #000000;
+}
+.programs__submit {
+  display: block;
+  margin: 38px auto;
+  padding: 13px 51px;
+  font-family: Bebas Neue;
+  font-size: 18px;
+  letter-spacing: 4px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  background: #DF5E16;
+}

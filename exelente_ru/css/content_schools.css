@@ -511,14 +511,14 @@ main.schools-list__wrapper {
 	background-size: cover;
 }
 
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
 	.school-1 .school-card__image {
 		width: 300px;
 		height: 240px;
 		background: url(../img/content-img/St_Johns_St_Augustine_Hall.png) no-repeat;
 		background-size: cover;
 	}
-}
+} */
 
 .school-1 .school-card__image:hover {
 	position: relative;
@@ -564,7 +564,7 @@ main.schools-list__wrapper {
 	color: #004391;
 }
 
-.school-card:hover h2.school-card__name.hover {
+.school-card:hover h2.school-card__name{
 	color: white;
 }
 
@@ -577,8 +577,8 @@ main.schools-list__wrapper {
 	color: #333333;
 }
 
-.school-card:hover span.school-card__country.hover {
-	display: block;
+.school-card:hover span.school-card__country {
+	/* display: block; */
 	color: white;
 }
 
@@ -598,7 +598,7 @@ main.schools-list__wrapper {
 	}
 }
 
-.school-card:hover .button__action.more.hover {
+.school-card:hover .button__action.more {
 	display: block;
 	background-color: #FFFFFF;
 }
