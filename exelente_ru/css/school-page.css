@@ -91,7 +91,7 @@
   color: #000000;
 }
 .programs__subtitle {
-  margin-top: 35px;
+  margin-top: 38px;
   font-size: 18px;
   font-weight: bold;
   color: #004391;
@@ -108,10 +108,12 @@
 }
 .programs__submit {
   display: block;
-  margin: 38px auto;
-  padding: 13px 51px;
+  width: 200px;
+  margin: 38px auto 45px;
+  padding: 13px 0;
   font-family: Bebas Neue;
   font-size: 18px;
+  text-align: center;
   letter-spacing: 4px;
   color: #FFFFFF;
   text-transform: uppercase;
