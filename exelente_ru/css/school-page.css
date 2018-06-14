@@ -106,16 +106,17 @@
   line-height: 2;
   color: #000000;
 }
-.programs__submit {
-  display: block;
-  width: 200px;
-  margin: 38px 16% 45px;
-  padding: 13px 0;
+.programs__button {
+  margin: 38px auto 45px;
+  text-align: center;
+}
+.programs__button a {
+  display: inline-block;
+  padding: 13px 51px;
+  background: #DF5E16;
   font-family: Bebas Neue;
   font-size: 18px;
-  text-align: center;
   letter-spacing: 4px;
   color: #FFFFFF;
   text-transform: uppercase;
-  background: #DF5E16;
 }
