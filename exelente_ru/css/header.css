@@ -761,7 +761,7 @@ width: 50%;
   .main-menu__subitems {
     position: absolute;
     display: none;
-    top: 36px;
+    top: 44px;
     left: -17px;
     z-index: 5;
     padding: 12px 70px 30px 17px;
