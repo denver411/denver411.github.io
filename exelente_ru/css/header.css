@@ -639,6 +639,7 @@ width: 50%;
   border: none;
   list-style: none;
 }
+
 .menu-block_from-hidden .main-menu__subitems a {
   font-family: 'Open Sans';
   font-size: 12px;
@@ -740,6 +741,9 @@ width: 50%;
     color: #000000;
     text-transform: unset;
     white-space: nowrap;
+  }
+  .main-menu__subitems:hover {
+    display: block;
   }
 }
 @media (min-width: 577px) {
