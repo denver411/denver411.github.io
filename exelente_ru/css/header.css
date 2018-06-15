@@ -396,6 +396,7 @@
 }
 @media (min-width: 577px) {
   .menu-block__menu {
+    height: 100%;
     width: 682px;
     margin-right: 3px;
   }
@@ -703,6 +704,7 @@ width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+        height: 100%;
     padding-bottom: 7px;
     list-style: none;
   }
@@ -724,13 +726,16 @@ width: 50%;
   color: #DF5E16;
 }
 @media (min-width: 577px) {
-  .main-menu__item a:hover ~ ul {
+  .main-menu__item:hover .main-menu__subitems {
     display: block;
   }
 }
 @media (min-width: 577px) {
   .main-menu__item {
     position: relative;
+        height: 100%;
+    display: flex;
+    align-items: center;
   }
 }
 @media (min-width: 577px) {
