@@ -14,7 +14,7 @@
 }
 @media (min-width: 577px) {
   .slider__wrapper {
-    height: auto; //для IE
+    height: auto;
     height: unset;
     position: relative;
   }
@@ -36,6 +36,7 @@
   height: 100%;
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   z-index: 0;
   opacity: 0;
   transition: opacity 1s;
@@ -51,20 +52,30 @@
   content: '';
 }
 .slider__item_1 {
-  background-image: url(../img/slider__item_1.png);
+  background-image: url(../img/slider_content/FanshaweCollege.png);
   z-index: 1;
   opacity: 1;
 }
 @media (max-width: 576px) {
   .slider__item_1 {
-    background-position-x: -150px;
+    background-image: url(../img/slider_content/FanshaweCollege_mobile.png);
   }
 }
 .slider__item_2 {
-  background-image: url(../img/slider__item_2.png);
+  background-image: url(../img/slider_content/StJohnsUniversity.png);
+}
+@media (max-width: 576px) {
+  .slider__item_2 {
+    background-image: url(../img/slider_content/StJohnsUniversity_mobile.png);
+  }
 }
 .slider__item_3 {
-  background-image: url(../img/slider__item_3.png);
+  background-image: url(../img/slider_content/ChristsHospitalSchool.png);
+}
+@media (max-width: 576px) {
+  .slider__item_3 {
+    background-image: url(../img/slider_content/ChristsHospitalSchool.png);
+  }
 }
 @media (min-width: 577px) {
   .slider__navigation {
@@ -107,6 +118,11 @@
     width: 60vw;
     font-size: 60px;
     line-height: 1.1;
+  }
+}
+@media (min-width: 577px) {
+  .slide__title_blue {
+    color: #004391;
   }
 }
 .slide__description {
