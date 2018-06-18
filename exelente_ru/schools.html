@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/header.css"/>
     <link rel="stylesheet" href="css/slider.css"/>
-    <link rel="stylesheet" href="css/content_schools.css"/>
+    <link rel="stylesheet" href="css/content_login.css"/>
     <link rel="stylesheet" href="css/footer.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script href="js/prefixfree.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/content_schools.css"/>
   </head>
   <body>
     <div class="container">
@@ -39,6 +40,37 @@
             <div class="top-block__fill"></div>
             <div class="top-block__phone">8 800 737-77-05</div>
             <div class="top-block__popups">
+              <section class="login">
+                <h2 class="login-content__title">Вход</h2><a class="login-content__close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+                <div class="row form">
+                  <form class="login-content-form" action="#" metod="get">
+                    <p class="login-content-form__mail-title">Эл. почта</p>
+                    <input class="login-content-form__mail-input" type="text" name="mail" placeholder="user@example.com" required="required" autocomplete="off"/>
+                    <label class="login-content-form__mail-input--error" for="mail">Поле заполненно с ошибкой</label>
+                    <p class="login-content-form__pass-title">Пароль<a href="password-restore-1-step.html">забыл пароль?</a></p>
+                    <input class="login-content-form__pass-input" type="password" name="password" required="required" autocomplete="off"/>
+                    <label class="login-content-form__pass-input--error" for="password">Поле заполненно с ошибкой</label>
+                    <div class="row link"><a class="login-content__social-vk" href="#"></a><a class="login-content__social-fb" href="#"></a></div>
+                    <div class="row button">
+                      <ul class="login-content-ulist">
+                        <li class="login-content-ulist-list">
+                          <input class="login-content-ulist-list__login" type="submit" value="Вход"/>
+                        </li>
+                        <li class="login-content-ulist-list"><a class="login-content-ulist-list__sign" href="login.html">Регистрация</a></li>
+                      </ul>
+                    </div>
+                  </form>
+                </div>
+              </section>
+              <section class="userpage">
+                <h2 class="userpage__title">Андрей</h2><a class="userpage__close" href="#"> <i class="fa fa-times" aria-hidden="true"></i></a>
+                <ul class="userpage-ulist">
+                  <li class="userpage-ulist__list"><a class="userpage-ulist__list-item" href="#">Мой профиль</a></li>
+                  <li class="userpage-ulist__list"><a class="userpage-ulist__list-item" href="#">История заказов</a></li>
+                  <li class="userpage-ulist__list"><a class="userpage-ulist__list-item" href="#">Рассылка</a></li>
+                  <li class="userpage-ulist__list"><a class="userpage-ulist__list-item userpage-ulist__list-item--exit" href="#">Выйти</a></li>
+                </ul>
+              </section>
               <div class="top-block__item top-block__item_login">Вход/ Регистрация<i class="fa fa-user" aria-hidden="true"></i></div>
               <div class="top-block__item top-block__item_favorite">10<i class="fa fa-star" aria-hidden="true"></i></div>
               <div class="top-block__item top-block__item_cart">2500 р<i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
@@ -123,7 +155,7 @@
                 <li class="main-menu__item main-menu__item_schools"> <a href="schools.html">школы</a>
                   <ul class="main-menu__subitems">
                     <li class="main-menu__subitem"><a href="#">Fanshawe College</a></li>
-                    <li class="main-menu__subitem"><a href="#">St. John's University</a></li>
+                    <li class="main-menu__subitem"><a href="school-page.html">St. John's University</a></li>
                     <li class="main-menu__subitem"><a href="#">University of New South</a></li>
                     <li class="main-menu__subitem"><a href="#">Wales - UNSW</a></li>
                     <li class="main-menu__subitem"><a href="#">University of Sheffield</a></li>
@@ -158,8 +190,8 @@
         <div class="wrapper slider__wrapper">
           <div class="slider__site-path site-path"> 
             <ul class="site-path__items">
-              <li class="site-path__item"><a href="#">Главная</a></li>
-              <li class="site-path__item"><a href="#">Школы</a></li>
+              <li class="site-path__item"><a href="index.html">Главная</a></li>
+              <li class="site-path__item"><a href="schools.html">Школы</a></li>
             </ul>
           </div>
         </div>
@@ -629,6 +661,7 @@
       <script src="js/header.js"></script>
       <script src="js/select.js"></script>
       <script src="js/favorite.js"></script>
+      <script src="js/login.js"></script>
       <script src="js/slider.js"></script>
       <script src="js/filter.js"></script>
     </div>
