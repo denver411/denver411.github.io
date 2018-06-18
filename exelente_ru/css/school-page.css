@@ -17,10 +17,8 @@
   min-height: 540px;
   height: 1px;
   margin-top: 30px;
-  background-image: url(../img/slider__item_2.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: -570px;
 }
 .images::before {
   position: absolute;
@@ -31,10 +29,15 @@
   height: 100%;
   background: rgba(0, 67, 145, 0.4);
 }
+@media (max-width: 576px) {
+  .images {
+    background-image: url(../img/slider_content/StJohnsUniversity_mobile.png);
+  }
+}
 @media (min-width: 577px) {
   .images {
     margin-top: 0px;
-    background-position-x: 0;
+    background-image: url(../img/slider_content/StJohnsUniversity.png);
   }
 }
 .images__wrapper {
@@ -43,14 +46,17 @@
   display: flex;
   height: 100%;
   align-items: flex-end;
-  padding-left: 15px;
   padding-bottom: 125px;
+}
+@media (max-width: 576px) {
+  .images__wrapper {
+    padding-left: 15px;
+  }
 }
 @media (min-width: 577px) {
   .images__wrapper {
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 30px;
     padding-top: 32px;
   }
 }
