@@ -3,6 +3,16 @@
 	background-color: #004391;
 }
 
+.button__action {
+	display: block;
+	border: none;
+	background-color: #DF5E16;
+}
+
+.button__action a {
+	color: #FFFFFF;
+}
+
 @media (max-width: 576px) {
 	.footer {
 		/* max-width: 320px; */

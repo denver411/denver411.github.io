@@ -1,5 +1,6 @@
 @import 'css-blocks/popup-city.css';
 @import 'css-blocks/popup-favorite.css';
+@import 'css-blocks/popup-login.css';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic');
 @font-face {
   font-family: 'Bebas Neue';
@@ -13,7 +14,13 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+html {
   box-sizing: border-box;
+}
+a {
+  text-decoration: none;
 }
 body {
   animation: fade-in 0.5s ease;
