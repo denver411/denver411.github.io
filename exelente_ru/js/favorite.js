@@ -1,19 +1,19 @@
 //Регистрация
 
 let bannerChosen = document.querySelector('.banner-chosen'),
-    topBlockItemLogin = document.querySelector('.top-block__item_login'),
+    topBlockItemFavorite = document.querySelector('.top-block__item_favorite'),
     chosenContentClose = document.querySelector('.chosen-content__close'),
-    hiddenMenuItemLogin = document.querySelector('.hidden-menu__item_login');
+    hiddenMenuItemFavorite = document.querySelector('.hidden-menu__item_favorite');
 
 
-topBlockItemLogin.onclick = function () {
+topBlockItemFavorite.onclick = function () {
     bannerChosen.style.display = "block"
 }
 chosenContentClose.onclick = function () {
     bannerChosen.style.display = 'none';
     return false;
 }
-hiddenMenuItemLogin.onclick = function () {
+hiddenMenuItemFavorite.onclick = function () {
     bannerChosen.style.display = "block"
 }
 
