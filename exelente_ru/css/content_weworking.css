@@ -1,0 +1,107 @@
+.content-weworking {
+  position: relative;
+  margin: 0 auto;
+  padding: 67px 0;
+  background: #FFFFFF;
+  min-width: 320px;
+  width: 100%;
+}
+.content-weworking .content-weworking__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Bebas Neue;
+  line-height: 62px;
+  font-size: 48px;
+  color: #004391;
+  margin-bottom: 46px;
+}
+.content-weworking .content-weworking-item {
+  position: relative;
+  padding: 45px 15px 30px 15px;
+  background: #FFFFFF;
+}
+.content-weworking .content-weworking-item .content-weworking-item-text {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.content-weworking .content-weworking-item .content-weworking-item-text .content-weworking-item-text-ulist {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.content-weworking .content-weworking-item .content-weworking-item-text .content-weworking-item-text-ulist .content-weworking-item-text-ulist__list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: Bebas Neue;
+  font-size: 20px;
+  font-weight: bold;
+  color: #004391;
+  margin-bottom: 0px;
+  margin-left: 100px;
+  margin-top: 2px;
+}
+.content-weworking .content-weworking-item .content-weworking-item-text .content-weworking-item-text-ulist .content-weworking-item-text-ulist__list::before {
+  position: absolute;
+  content: "";
+  background-size: cover;
+  display: block;
+  left: 0;
+}
+.content-weworking .content-weworking-item .content-weworking-item-text .content-weworking-item-text-ulist .content-weworking-item-text-ulist__list--open {
+  cursor: pointer;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  outline: none;
+  border: none;
+  top: -32px;
+  right: 6px;
+  background: url(../img/svg-content/open.svg) top left no-repeat;
+  background-size: contain;
+}
+.content-weworking .content-weworking-item .content-weworking-item-text .content-weworking-item-text-ulist__list-desc {
+  display: none;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  font-size: 14px;
+  color: #004391;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.content-weworking .content-weworking-item .content-weworking-item-text .content-weworking-item-text-ulist__list-desc:last-child {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.content-weworking .content-weworking-item-1 .content-weworking-item-1-text .content-weworking-item-1-text-ulist .content-weworking-item-1-text-ulist__list::before {
+  background-image: url(../img/slider_content/conversation.png);
+  width: 70px;
+  height: 69px;
+}
+.content-weworking .content-weworking-item-2 .content-weworking-item-2-text .content-weworking-item-2-text-ulist .content-weworking-item-2-text-ulist__list::before {
+  background-image: url(../img/slider_content/wallet.png);
+  width: 58.8px;
+  height: 58.8px;
+}
+.content-weworking .content-weworking-item-3 .content-weworking-item-3-text .content-weworking-item-3-text-ulist .content-weworking-item-3-text-ulist__list::before {
+  background-image: url(../img/slider_content/search.png);
+  width: 41.65px;
+  height: 49.39px;
+}
+.content-weworking .content-weworking-item-4 .content-weworking-item-4-text .content-weworking-item-4-text-ulist .content-weworking-item-4-text-ulist__list::before {
+  background-image: url(../img/slider_content/docs.png);
+  width: 49.56px;
+  height: 53.34px;
+}
+.content-weworking .content-weworking-item-5 .content-weworking-item-5-text .content-weworking-item-5-text-ulist .content-weworking-item-5-text-ulist__list::before {
+  background-image: url(../img/slider_content/kurator.png);
+  width: 59.39px;
+  height: 55.61px;
+}

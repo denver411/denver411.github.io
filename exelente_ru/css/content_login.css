@@ -51,19 +51,19 @@
 .content-login .row.social .content-login-social__vk {
   background-size: contain;
   margin-right: 20px;
-  background-image: url(../../img/svg-content/vk_blue.svg);
+  background-image: url(../img/svg-content/vk_blue.svg);
 }
 .content-login .row.social .content-login-social__vk:hover {
-  background-image: url(../../img/svg-content/vk_hover.svg);
+  background-image: url(../img/svg-content/vk_hover.svg);
   background-size: contain;
 }
 .content-login .row.social .content-login-social__fb {
   background-size: cover;
   background-position: center;
-  background-image: url(../../img/svg-content/fb_blue.svg);
+  background-image: url(../img/svg-content/fb_blue.svg);
 }
 .content-login .row.social .content-login-social__fb:hover {
-  background-image: url(../../img/svg-content/fb_hover.svg);
+  background-image: url(../img/svg-content/fb_hover.svg);
   background-size: cover;
   background-position: center;
 }
@@ -130,16 +130,16 @@
   border: none;
   text-transform: uppercase;
   background-color: #fff;
-  border-bottom: 2px solid #DF5E16;
+  /* border-bottom: 2px solid #DF5E16; */
+  background-color: #DF5E16;
   font-family: Bebas Neue;
   line-height: 20px;
   font-size: 18px;
   letter-spacing: 4px;
-  color: #333333;
+  color: #FFFFFF;
 }
 .content-login .row.form-sign .content-login-form-sign__button:hover {
-  background-color: #DF5E16;
-  color: #FFFFFF;
+  background-color: #F58A4E;
 }
 .content-login .row.form-sign .content-login-form-sign-reg {
   margin-bottom: -120px;
@@ -186,6 +186,7 @@
 }
 .content-login .row.form-sign .content-login-form-sign-reg .content-login-form-sign-reg__inst a {
   font-weight: bold;
+  text-decoration: underline;
 }
 .content-login .row.form-sign .content-login-form-sign-reg .content-login-form-sign-reg__inst a:visited {
   color: #474A57;
@@ -254,16 +255,16 @@
   border: none;
   text-transform: uppercase;
   background-color: #fff;
-  border-bottom: 2px solid #DF5E16;
+  /* border-bottom: 2px solid #DF5E16; */
+  background-color: #DF5E16;
   font-family: Bebas Neue;
   line-height: 20px;
   font-size: 18px;
   letter-spacing: 4px;
-  color: #333333;
+  color: #FFFFFF;
 }
 .content-login .row.form-log .content-login-form-sign__button:hover {
-  background-color: #DF5E16;
-  color: #FFFFFF;
+  background-color: #F58A4E;
 }
 .content-login .row.form-log .content-login-form-sign-reg {
   margin-bottom: -120px;
@@ -310,6 +311,7 @@
 }
 .content-login .row.form-log .content-login-form-sign-reg .content-login-form-sign-reg__inst a {
   font-weight: bold;
+  text-decoration: underline;
 }
 .content-login .row.form-log .content-login-form-sign-reg .content-login-form-sign-reg__inst a:visited {
   color: #474A57;
@@ -364,16 +366,16 @@
   border: none;
   text-transform: uppercase;
   background-color: #fff;
-  border-bottom: 2px solid #DF5E16;
+  /* border-bottom: 2px solid #DF5E16; */
+  background-color: #DF5E16;
   font-family: Bebas Neue;
   line-height: 20px;
   font-size: 18px;
   letter-spacing: 4px;
-  color: #333333;
+  color: #FFFFFF;
 }
 .content-login .row.form-log .content-login-form-log__button:hover {
-  background-color: #DF5E16;
-  color: #FFFFFF;
+  background-color: #F58A4E;
 }
 .content-login .row.form-log .content-login-form-log__button-link {
   text-decoration: none;
@@ -391,7 +393,7 @@
   letter-spacing: 4px;
 }
 .content-login .row.form-log .content-login-form-log__button-link:hover {
-  background-color: #DF5E16;
+  background-color: #F58A4E;
   color: #FFFFFF;
 }
 .content-login .row.form-log .content-login-form-log__button-link:visited {
@@ -477,19 +479,19 @@
   .content-login .row.form-sign .form-sign-social .form-sign-social__vk {
     background-size: contain;
     margin-right: 12px;
-    background-image: url(../../img/svg-content/vk_blue.svg);
+    background-image: url(../img/svg-content/vk_blue.svg);
   }
   .content-login .row.form-sign .form-sign-social .form-sign-social__vk:hover {
-    background-image: url(../../img/svg-content/vk_hover.svg);
+    background-image: url(../img/svg-content/vk_hover.svg);
     background-size: contain;
   }
   .content-login .row.form-sign .form-sign-social .form-sign-social__fb {
     background-size: cover;
     background-position: center;
-    background-image: url(../../img/svg-content/fb_blue.svg);
+    background-image: url(../img/svg-content/fb_blue.svg);
   }
   .content-login .row.form-sign .form-sign-social .form-sign-social__fb:hover {
-    background-image: url(../../img/svg-content/fb_hover.svg);
+    background-image: url(../img/svg-content/fb_hover.svg);
     background-size: cover;
     background-position: center;
   }
@@ -589,19 +591,19 @@
   .content-login .row.form-log .form-log-social .form-log-social__vk {
     background-size: contain;
     margin-right: 12px;
-    background-image: url(../../img/svg-content/vk_blue.svg);
+    background-image: url(../img/svg-content/vk_blue.svg);
   }
   .content-login .row.form-log .form-log-social .form-log-social__vk:hover {
-    background-image: url(../../img/svg-content/vk_hover.svg);
+    background-image: url(../img/svg-content/vk_hover.svg);
     background-size: contain;
   }
   .content-login .row.form-log .form-log-social .form-log-social__fb {
     background-size: cover;
     background-position: center;
-    background-image: url(../../img/svg-content/fb_blue.svg);
+    background-image: url(../img/svg-content/fb_blue.svg);
   }
   .content-login .row.form-log .form-log-social .form-log-social__fb:hover {
-    background-image: url(../../img/svg-content/fb_hover.svg);
+    background-image: url(../img/svg-content/fb_hover.svg);
     background-size: cover;
     background-position: center;
   }
@@ -650,7 +652,7 @@
     font-size: 14px;
   }
   .content-login .row.form-log .content-login-form-log__button-link:hover {
-    background-color: #DF5E16;
+    background-color: #F58A4E;
     color: #FFFFFF;
   }
 }

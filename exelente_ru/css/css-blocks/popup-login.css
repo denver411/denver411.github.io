@@ -135,8 +135,16 @@
   border: none;
   outline: none;
 }
-.login .row .login-content-ulist .login-content-ulist-list__sign,
 .login .row .login-content-ulist .login-content-ulist-list__login {
+  text-align: center;
+  text-decoration: none;
+  font-family: Bebas Neue;
+  font-size: 14px;
+  letter-spacing: 4px;
+  line-height: 40px;
+  color: #FFFFFF;
+}
+.login .row .login-content-ulist .login-content-ulist-list__sign {
   text-align: center;
   text-decoration: none;
   font-family: Bebas Neue;
@@ -147,12 +155,15 @@
   border-bottom: 2px solid #DF5E16;
 }
 .login .row .login-content-ulist .login-content-ulist-list:hover {
-  line-height: 40px;
-  display: block;
-  background-color: #DF5E16;
-  font-family: Bebas Neue;
-  letter-spacing: 4px;
+  background-color: #F58A4E;
   color: #FFFFFF;
+}
+.login .row .login-content-ulist .login-content-ulist-list:first-child {
+  background-color: #DF5E16;
+  color: #FFFFFF;
+}
+.login .row .login-content-ulist .login-content-ulist-list:first-child:hover {
+  background-color: #F58A4E;
 }
 .login .row .login-content-ulist .login-content-ulist-list:hover a,
 .login .row .login-content-ulist .login-content-ulist-list:hover input {
