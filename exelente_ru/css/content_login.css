@@ -8,6 +8,17 @@
   padding: 0 20px 158px 20px;
   background-color: #FFFFFF;
 }
+.content-login input[type="text"],
+.content-login input[type="submit"],
+.content-login input[type="tel"],
+.content-login input[type="password"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-radius: 0;
+  outline: none;
+}
 .content-login .content-login-items {
   display: none;
 }
@@ -120,6 +131,10 @@
   transform-origin: 0 0;
 }
 .content-login .row.form-sign .content-login-form-sign__button {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-radius: 0;
   display: block;
   margin: 0 auto;
   margin-top: 42px;
@@ -245,6 +260,10 @@
   transform-origin: 0 0;
 }
 .content-login .row.form-log .content-login-form-sign__button {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-radius: 0;
   display: block;
   margin: 0 auto;
   margin-top: 42px;
@@ -356,6 +375,10 @@
   color: #004391;
 }
 .content-login .row.form-log .content-login-form-log__button {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-radius: 0;
   display: block;
   margin: 0 auto;
   margin-top: 42px;

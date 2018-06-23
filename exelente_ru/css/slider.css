@@ -123,6 +123,7 @@
 @media (min-width: 577px) {
   .slide__title_blue {
     color: #004391;
+    line-height: 80px;
   }
 }
 .slide__description {
@@ -268,15 +269,8 @@
     background-repeat: no-repeat;
   }
 }
-@media (min-width: 577px) {
-  .slider-navigation__arrow_right {
-    transform: rotate(180deg);
-  }
-}
-@media (max-width: 576px) {
-  .slider-navigation__arrow_right {
-    transform: rotate(180deg);
-  }
+.slider-navigation__arrow_right {
+  transform: rotate(180deg);
 }
 @media (min-width: 577px) {
   .slider-navigation__arrow:hover {

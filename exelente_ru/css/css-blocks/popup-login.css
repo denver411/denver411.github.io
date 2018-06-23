@@ -14,6 +14,17 @@
   box-shadow: 5px 5px 10px rgba(0, 67, 145, 0.3);
   padding: 18px;
 }
+.login input[type="text"],
+.login input[type="submit"],
+.login input[type="tel"],
+.login input[type="password"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-radius: 0;
+  outline: none;
+}
 .login .login-content__title {
   font-family: Bebas Neue;
   font-size: 18px;
@@ -46,15 +57,18 @@
   font-size: 12px;
   color: #004391;
 }
+.login .row .login-content-form__pass-title {
+  clear: both;
+}
 .login .row .login-content-form__pass-title a {
   text-decoration: none;
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
-  line-height: 20px;
   font-size: 10px;
   color: #333333;
-  margin-left: 77px;
+  display: block;
+  float: right;
 }
 .login .row .login-content-form__mail-input {
   margin-bottom: 22px;
@@ -131,6 +145,10 @@
   margin-bottom: 3px;
 }
 .login .row .login-content-ulist .login-content-ulist-list__login {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border-radius: 0;
   background: inherit;
   border: none;
   outline: none;

@@ -15,7 +15,7 @@
   .slider__item_1 {
     background-image: url(../img/slider_content/main-page.png);
     background-size: contain;
-    background-position-x: 250px;
+    background-position-x: 317px;
   }
   .slider__item_1::before {
     display: none;
@@ -63,7 +63,7 @@
 }
 @media (min-width: 577px) {
   .slide__button {
-    margin-top: 55px;
+    margin-top: 45px;
     margin-bottom: 65px;
   }
 }

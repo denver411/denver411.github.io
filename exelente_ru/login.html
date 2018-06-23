@@ -46,10 +46,10 @@
                   <form class="login-content-form" action="#" method="get">
                     <p class="login-content-form__mail-title">Эл. почта</p>
                     <input class="login-content-form__mail-input" type="text" name="mail" placeholder="user@example.com" required="required" autocomplete="off"/>
-                    <label class="login-content-form__mail-input--error" for="mail">Поле заполненно с ошибкой</label>
+                    <label class="login-content-form__mail-input--error" for="mail">Поле заполнено с ошибкой</label>
                     <p class="login-content-form__pass-title">Пароль<a href="password-restore-1-step.html">забыл пароль?</a></p>
                     <input class="login-content-form__pass-input" type="password" name="password" required="required" autocomplete="off"/>
-                    <label class="login-content-form__pass-input--error" for="password">Поле заполненно с ошибкой</label>
+                    <label class="login-content-form__pass-input--error" for="password">Поле заполнено с ошибкой</label>
                     <div class="row link"><a class="login-content__social-vk" href="#"></a><a class="login-content__social-fb" href="#"></a></div>
                     <div class="row button">
                       <ul class="login-content-ulist">
@@ -204,13 +204,13 @@
               <input class="content-login-form-sign__input" type="text" name="name" required="required" autocomplete="off" placeholder="Иван"/>
               <label class="content-login-form-sign__label" for="phone">Телефон *</label>
               <input class="content-login-form-sign__input" type="tel" name="phone" placeholder="+7 (123) ___-__-__" required="required" autocomplete="off"/>
-              <label class="content-login-form-sign__label--error" for="phone">Поле заполненно с ошибкой</label>
+              <label class="content-login-form-sign__label--error" for="phone">Поле заполнено с ошибкой</label>
               <label class="content-login-form-sign__label" for="mail">Эл. почта *</label>
               <input class="content-login-form-sign__input" type="text" name="mail" placeholder="user@example.com" required="required" autocomplete="off"/>
-              <label class="content-login-form-sign__label--error" for="mail">Поле заполненно с ошибкой</label>
+              <label class="content-login-form-sign__label--error" for="mail">Поле заполнено с ошибкой</label>
               <label class="content-login-form-sign__label" for="pass">Пароль *</label>
               <input class="content-login-form-sign__input" type="password" name="pass" required="required" autocomplete="off"/>
-              <label class="content-login-form-sign__label--error" for="pass">Поле заполненно с ошибкой</label>
+              <label class="content-login-form-sign__label--error" for="pass">Поле заполнено с ошибкой</label>
               <label class="content-login-form-sign__label" for="reqpass">Подтверждение пароля *</label>
               <input class="content-login-form-sign__input" type="password" name="reqpass" required="required" autocomplete="off"/>
               <label class="content-login-form-sign__label--error" for="reqpass">Введенные пароли не совпадают</label>
@@ -233,10 +233,10 @@
             <form class="content-login-form-log" action="#" method="get">
               <label class="content-login-form-log__label" for="mail">Эл. почта *</label>
               <input class="content-login-form-log__input" type="text" name="mail" placeholder="user@example.com" required="required" autocomplete="off"/>
-              <label class="content-login-form-log__label--error" for="mail">Поле заполненно с ошибкой</label>
+              <label class="content-login-form-log__label--error" for="mail">Поле заполнено с ошибкой</label>
               <label class="content-login-form-log__label" for="pass">Пароль *</label>
               <input class="content-login-form-log__input" type="password" name="pass" required="required" autocomplete="off"/>
-              <label class="content-login-form-log__label--error" for="pass">Поле заполненно с ошибкой</label>
+              <label class="content-login-form-log__label--error" for="pass">Поле заполнено с ошибкой</label>
               <input class="content-login-form-log__button" type="submit" value="Вход"/><a class="content-login-form-log__button-link" href="password-restore-1-step.html">Забыл пароль</a>
             </form>
           </div>
@@ -311,10 +311,42 @@
           </div>
         </section>
       </div>
+      <section class="login">
+        <h2 class="login-content__title">Вход</h2><a class="login-content__close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <div class="row form">
+          <form class="login-content-form" action="#" method="get">
+            <p class="login-content-form__mail-title">Эл. почта</p>
+            <input class="login-content-form__mail-input" type="text" name="mail" placeholder="user@example.com" required="required" autocomplete="off"/>
+            <label class="login-content-form__mail-input--error" for="mail">Поле заполнено с ошибкой</label>
+            <p class="login-content-form__pass-title">Пароль<a href="password-restore-1-step.html">забыл пароль?</a></p>
+            <input class="login-content-form__pass-input" type="password" name="password" required="required" autocomplete="off"/>
+            <label class="login-content-form__pass-input--error" for="password">Поле заполнено с ошибкой</label>
+            <div class="row link"><a class="login-content__social-vk" href="#"></a><a class="login-content__social-fb" href="#"></a></div>
+            <div class="row button">
+              <ul class="login-content-ulist">
+                <li class="login-content-ulist-list">
+                  <input class="login-content-ulist-list__login" type="submit" value="Вход"/>
+                </li>
+                <li class="login-content-ulist-list"><a class="login-content-ulist-list__sign" href="login.html">Регистрация</a></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="userpage">
+        <h2 class="userpage__title">Андрей</h2><a class="userpage__close" href="#"> <i class="fa fa-times" aria-hidden="true"></i></a>
+        <ul class="userpage-ulist">
+          <li class="userpage-ulist__list"><a class="userpage-ulist__list-item" href="#">Мой профиль</a></li>
+          <li class="userpage-ulist__list"><a class="userpage-ulist__list-item" href="#">История заказов</a></li>
+          <li class="userpage-ulist__list"><a class="userpage-ulist__list-item" href="#">Рассылка</a></li>
+          <li class="userpage-ulist__list"><a class="userpage-ulist__list-item userpage-ulist__list-item--exit" href="#">Выйти</a></li>
+        </ul>
+      </section>
       <script src="js/header.js"></script>
       <script src="js/select.js"></script>
       <script src="js/favorite.js"></script>
       <script src="js/login.js"></script>
+      <script src="js/popup-login.js"></script>
     </div>
   </body>
 </html>
