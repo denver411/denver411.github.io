@@ -539,7 +539,7 @@ main.schools-list__wrapper {
 	height: 250px;
 }
 
-.school-card h2.school-card__name {
+.school-card h3.school-card__name {
 	position: relative;
 	top: 35px;
 	margin-left: 50px;
@@ -549,18 +549,18 @@ main.schools-list__wrapper {
 }
 
 @media (max-width: 576px) {
-	.school-card h2.school-card__name {
+	.school-card h3.school-card__name {
 		top: 35px;
 		display: block;
 	}
 }
 
-.school-card h2.school-card__name.hover {
+.school-card h3.school-card__name.hover {
 	display: block;
 	color: #004391;
 }
 
-.school-card:hover h2.school-card__name{
+.school-card:hover h3.school-card__name{
 	color: white;
 }
 

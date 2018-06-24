@@ -11,6 +11,15 @@
   src: url('../fonts/bebas/TTF\'s/BebasNeue Bold.ttf') format("truetype");
   font-weight: bold;
 }
+.pp {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
 * {
   margin: 0;
   padding: 0;
@@ -41,7 +50,7 @@ body {
 }
 @media (min-width: 577px) {
   .wrapper {
-    width: 1170px;
+    width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
     height: 100%;

@@ -55,21 +55,21 @@
   font-size: 20px;
   font-weight: bold;
   color: #004391;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   margin-left: 100px;
   margin-top: 2px;
 }
 .content-weworking .content-weworking-item .content-weworking-item-text .content-weworking-item-text-ulist .content-weworking-item-text-ulist__list--open {
   cursor: pointer;
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
   outline: none;
   border: none;
   top: -32px;
   right: 6px;
   background: url(../img/svg-content/open.svg) top left no-repeat;
-  background-size: contain;
+  background-size: auto;
 }
 .content-weworking .content-weworking-item .content-weworking-item-text .content-weworking-item-text-ulist__list-desc {
   display: none;

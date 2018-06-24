@@ -42,11 +42,6 @@
   font-size: 36px;
   color: #004391;
 }
-.content-login .row.title.mobile .content-login-mobile__sign:hover,
-.content-login .row.title.mobile .content-login-mobile__login:hover {
-  color: #DF5E16;
-  border-bottom: 2px dotted #DF5E16;
-}
 .content-login .row.social {
   display: flex;
   height: 35px;
