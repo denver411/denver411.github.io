@@ -13,12 +13,12 @@
     <link rel="stylesheet" href="css/footer.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script href="js/prefixfree.min.js" type="text/javascript"></script>
-<!--     <script>
+    <script>
       $(window).resize(function(){
       window.setTimeout('location.reload()', 500);
       });
       
-    </script> -->
+    </script>
     <link rel="stylesheet" href="css/content_login.css"/>
   </head>
   <body>
@@ -212,7 +212,7 @@
               <label class="content-login-form-sign__label" for="name">Имя *</label>
               <input class="content-login-form-sign__input" type="text" name="name" required="required" autocomplete="off" placeholder="Иван"/>
               <label class="content-login-form-sign__label" for="phone">Телефон *</label>
-              <input class="content-login-form-sign__input" type="tel" name="phone" placeholder="+7 (123) ___-__-__" required="required" autocomplete="off"/>
+              <input class="content-login-form-sign__input" id="phone" type="tel" name="phone" placeholder="+7 (123) ___-__-__" required="required" autocomplete="off"/>
               <label class="content-login-form-sign__label--error" for="phone">Поле заполнено с ошибкой</label>
               <label class="content-login-form-sign__label" for="mail">Эл. почта *</label>
               <input class="content-login-form-sign__input" type="text" name="mail" placeholder="user@example.com" required="required" autocomplete="off"/>
@@ -251,6 +251,29 @@
           </div>
         </div>
       </div>
+      <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function(){
+        $('#phone').mask('+7 (000) 000-00-00');
+        });
+        
+        
+        
+        
+        
+        
+        
+        
+          //- script(src="jquery.js")
+          //- script(src='jquery.maskedinput.min.js')
+          //- script.
+          //-   //Код jQuery, установливающий маску для ввода телефона элементу input
+          //-   //1. После загрузки страницы,  когда все элементы будут доступны выполнить...
+          //-   $(function(){
+          //-   //2. Получить элемент, к которому необходимо добавить маску
+          //-   $("#phone").mask("8(999) 999-9999");
+          //-   });
+      </script>
       <footer class="footer">
         <div class="footer__top">
           <div class="footer-logo-button__wrapper"><a href="index.html">
