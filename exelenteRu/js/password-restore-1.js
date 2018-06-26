@@ -1,7 +1,7 @@
 //Проверка поля почта
 
-let restore-button_1 = document.querySelector('.button-action__reset-password');
-restore-button_1.onclick = function () {
+let restoreButton1 = document.querySelector('.button-action__reset-password');
+restoreButton1.onclick = function () {
     let checkMailInput = document.querySelector('.e-mail__field').value;
     let checkMailInputLink = document.querySelector('.e-mail__field > a');
 
