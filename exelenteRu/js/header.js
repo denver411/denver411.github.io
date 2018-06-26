@@ -54,5 +54,6 @@
       hiddenMenu.style.display = 'flex';
       topBlockMobile.style.display = 'block';
       containerBlock.classList.add('container__mobile');
+      window.scrollTo(0,0);
     }
   }
