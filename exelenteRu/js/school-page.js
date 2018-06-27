@@ -1,6 +1,8 @@
 'use strict'
 let programItemList = document.querySelectorAll('.programs__list-item');
 let programItemInfo = document.querySelectorAll('.programs__info-item');
+programItemList.forEach = Array.prototype.forEach;
+
 
 programItemList.forEach(function (item, index){
   item.onclick = function() {
