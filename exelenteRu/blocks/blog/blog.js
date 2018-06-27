@@ -1,6 +1,7 @@
 'use strict'
 let blogMenu = document.querySelectorAll('.blog__menu-item');
 let blogNews = document.querySelectorAll('.blog__news-list');
+console.log(blogMenu);
 
 blogMenu.forEach(function (item, index) {
   item.onclick = function () {
