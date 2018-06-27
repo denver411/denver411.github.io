@@ -2,11 +2,10 @@
 let blogMenu = document.querySelectorAll('.blog__menu-item');
 let blogNews = document.querySelectorAll('.blog__news-list');
 
+console.log(blogNews);
+
 if (navigator.userAgent.search(/MSIE/) > 0 || navigator.userAgent.search(/NET CLR /) > 0) {
-  for (let i = 0; i < blogMenu.length; i++)  {
-   
-    console.log(blogMenu[i]);
-    
+  for (let i = 0; i < blogMenu.length; i++)  { 
     blogMenu[i].onclick = function () {
       let activeBlogMenu = document.querySelector('.blog__menu-item_active');
       let activeBlogNews = document.querySelector('.blog__news-list_active');
