@@ -22,19 +22,19 @@ contentWeworking.onclick = function (event) {
             switch (item.querySelector(".content-weworking-item-text-ulist-img").src.substring(item.querySelector(".content-weworking-item-text-ulist-img").src.lastIndexOf("/") + 1)) {
                 case "conversation-white.svg":
                     item.querySelector(".content-weworking-item-text-ulist-img").src = "img/svg-content/conversation.svg"
-                    break
+                    break;
                 case "kurator-white.svg":
                     item.querySelector(".content-weworking-item-text-ulist-img").src = "img/svg-content/kurator.svg"
-                    break
+                    break;
                 case "docs-white.svg":
                     item.querySelector(".content-weworking-item-text-ulist-img").src = "img/svg-content/docs.svg"
-                    break
+                    break;
                 case "search-white.svg":
                     item.querySelector(".content-weworking-item-text-ulist-img").src = "img/svg-content/search.svg"
-                    break
+                    break;
                 case "wallet-white.svg":
                     item.querySelector(".content-weworking-item-text-ulist-img").src = "img/svg-content/wallet.svg"
-                    break
+                    break;
             }
 
         }
