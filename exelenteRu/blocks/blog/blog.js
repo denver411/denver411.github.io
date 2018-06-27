@@ -23,4 +23,3 @@ for (let i = 0; i <= blogMenu.length; i++)  {
     activeBlogNews.classList.remove('blog__news-list_active');
     blogNews[i].classList.add('blog__news-list_active')
   }
-})
