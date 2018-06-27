@@ -2,7 +2,7 @@
 let blogMenu = document.querySelectorAll('.blog__menu-item');
 let blogNews = document.querySelectorAll('.blog__news-list');
 
-console.log(blogNews[0], blogNews[1],);
+console.log(blogNews[0], blogNews[1]);
 
 if (navigator.userAgent.search(/MSIE/) > 0 || navigator.userAgent.search(/NET CLR /) > 0) {
   for (let i = 0; i < blogMenu.length; i++)  { 
