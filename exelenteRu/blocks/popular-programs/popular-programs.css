@@ -134,11 +134,13 @@
 @media (min-width: 577px) {
   .item-card__title {
     color: #df5e16;
+	max-width: 100%;
   }
 }
 @media (min-width: 577px) {
   .item-card__text {
     color: #004391;
+	max-width: 100%;
   }
 }
 .item-card__button {
