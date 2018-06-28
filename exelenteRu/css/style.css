@@ -4,13 +4,13 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic');
 @font-face {
   font-family: 'Bebas Neue';
-  src: url('../fonts/BebasNeue/BebasNeueRegular.eot?') format("eot"),
+  src: url('../fonts/BebasNeue/BebasNeueRegular.eot?#iefix') format("embedded-opentype"),
        url('../fonts/BebasNeue/BebasNeueRegular.woff') format("woff"),
        url('../fonts/BebasNeue/BebasNeueRegular.ttf') format("truetype");
 }
 @font-face {
   font-family: 'Bebas Neue';
-  src: url('../fonts/BebasNeue/BebasNeueBold.eot?') format("eot"),
+  src: url('../fonts/BebasNeue/BebasNeueBold.eot?#iefix') format("embedded-opentype"),
        url('../fonts/BebasNeue/BebasNeueBold.woff') format("woff"),
        url('../fonts/BebasNeue/BebasNeueBold.ttf') format("truetype");
   font-weight: bold;
