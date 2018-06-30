@@ -1,6 +1,7 @@
 'use strict'
 let programItemList = document.querySelectorAll('.programs__list-item');
 let programItemInfo = document.querySelectorAll('.programs__info-item');
+
 if (navigator.userAgent.search(/MSIE/) > 0 || navigator.userAgent.search(/NET CLR /) > 0) {
   programItemList.forEach = Array.prototype.forEach;
 }
