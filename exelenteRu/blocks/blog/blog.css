@@ -93,7 +93,21 @@
   color: #DF5E16;
 }
 @media (max-width: 576px) {
+  .blog__news .navigation {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 577px) {
+  .blog__news .navigation {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
   .blog__news {
+    position: relative;
     max-width: 290px;
     margin: 0 auto;
     overflow: hidden;

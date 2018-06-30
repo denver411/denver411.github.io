@@ -14,8 +14,6 @@
 @media (min-width: 577px) {
   .slider__item_1 {
     background-image: url(../img/slider_content/main-page.png);
-    background-size: contain;
-    background-position-x: 317px;
   }
   .slider__item_1::before {
     display: none;
