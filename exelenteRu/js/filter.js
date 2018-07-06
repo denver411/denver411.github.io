@@ -1,47 +1,47 @@
-let sidebarPartButtonProg = document.querySelector('.sidebar__part-button-prog'),
-    sidebarPartButtonSpec = document.querySelector('.sidebar__part-button-spec'),
-    sidebarPartButtonCount = document.querySelector('.sidebar__part-button-count'),
-    chooseProgramCheckboxes = document.querySelector('.choose-program__checkboxes'),
-    chooseSpecialtyCheckboxes = document.querySelector('.choose-specialty__checkboxes'),
-    chooseCountryCheckboxes = document.querySelector('.choose-country__checkboxes'),
-    showAll = document.querySelector('.show-all'),
-    arrowProg = document.querySelector('.arrow-prog'),
-    arrowSpec = document.querySelector('.arrow-spec'),
-    arrowCount = document.querySelector('.arrow-count');
+let sidebarPart = document.getElementsByClassName('sidebar__part'),
+    buttonOpenShowAll = document.querySelectorAll('.show-all'),
+    buttonOpen = document.querySelectorAll('.sidebar__part-button');
 
-sidebarPartButtonProg.onclick = function () {
-    if (chooseProgramCheckboxes.style.display == 'block') {
-        chooseProgramCheckboxes.style.display = 'none';
-        arrowProg.style.transform = 'rotate(0deg)';
-    } else {
-        chooseProgramCheckboxes.style.display = 'block';
-        arrowProg.style.transform = 'rotate(180deg)';
+
+function hiddenAllListItems() {
+    sidebarPart.forEach = Array.prototype.forEach
+    sidebarPart.forEach(function (elem) {
+        let listItems = elem.querySelectorAll('li');
+        for (let i = 8; i < listItems.length; i++) {
+            listItems[i].classList.toggle('hidden')
+        }
+    })
+}
+
+document.addEventListener('DOMContentLoaded', hiddenAllListItems);
+
+function openAllListItems(event) {
+    event.preventDefault();
+    let listItems = event.currentTarget.parentNode.querySelectorAll("li")
+    for (let i = 8; i < listItems.length; i++) {
+        listItems[i].classList.toggle('hidden')
     }
+    event.currentTarget.innerHTML = listItems[8].classList.contains('hidden') ?
+        'показать все' :
+        'скрыть';
 }
-sidebarPartButtonSpec.onclick = function () {
-    if (chooseSpecialtyCheckboxes.style.display == 'block') {
-        chooseSpecialtyCheckboxes.style.display = 'none';
-        arrowSpec.style.transform = 'rotate(0deg)';
-    } else {
-        chooseSpecialtyCheckboxes.style.display = 'block';
-        arrowSpec.style.transform = 'rotate(180deg)';
-    }
+
+function openList(event) {
+    let list = event.currentTarget.parentNode.querySelector("ul")
+    list.classList.toggle('hidden')
+    event.currentTarget.parentNode.querySelector(".show-all").classList.toggle('hidden')
+    let arrow = event.currentTarget.querySelector(".sidebar-arrow")
+    event.currentTarget.querySelector(".sidebar-arrow").style.transform = list.classList.contains('hidden') ?
+        'rotate(0deg)' :
+        'rotate(180deg)';
 }
-sidebarPartButtonCount.onclick = function () {
-    if (chooseCountryCheckboxes.style.display == 'none') {
-        chooseCountryCheckboxes.style.display = 'block';
-        arrowCount.style.transform = 'rotate(180deg)';
-    } else {
-        chooseCountryCheckboxes.style.display = 'none';
-        arrowCount.style.transform = 'rotate(0deg)';
-    }
-}
-showAll.onclick = function () {
-    chooseProgramCheckboxes.style.display = 'block';
-    chooseSpecialtyCheckboxes.style.display = 'block';
-    chooseCountryCheckboxes.style.display = 'block';
-    arrowProg.style.transform = 'rotate(180deg)';
-    arrowSpec.style.transform = 'rotate(180deg)';
-    arrowCount.style.transform = 'rotate(180deg)';
-    return false;
-}
+buttonOpen.forEach = Array.prototype.forEach
+buttonOpenShowAll.forEach = Array.prototype.forEach
+
+buttonOpen.forEach((function (element) {
+    element.addEventListener('click', openList)
+}))
+
+buttonOpenShowAll.forEach(function (element) {
+    element.addEventListener('click', openAllListItems)
+})
