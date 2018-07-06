@@ -16,7 +16,7 @@
   min-height: 50px;
   padding-top: 3px;
   height: 1px;
-  font-size: 10px;
+  font-size: 14px;
   color: #004391;
   background-color: #ffffff;
 }
@@ -92,7 +92,7 @@
 }
 @media (min-width: 577px) {
   .top-block__item i {
-    margin-left: 5px;
+    margin-left: 9px;
   }
 }
 .top-block__item:hover {
@@ -747,9 +747,9 @@
 @media (min-width: 577px) {
   .main-menu__subitems a {
     font-family: 'Open Sans';
-    font-size: 12px;
+    font-size: 14px;
     font-weight: normal;
-    line-height: initial;
+    line-height: 24px;
     color: #000000;
     text-transform: unset;
     white-space: nowrap;

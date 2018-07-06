@@ -6,6 +6,11 @@
     padding: 0;
   }
 }
+@media (min-width: 577px) {
+  .slider__item::before {
+    display: none;
+  }
+}
 @media (max-width: 576px) {
   .slider__item_1 {
     background-image: url(../img/slider_content/main-page_mobile.png);
@@ -14,9 +19,6 @@
 @media (min-width: 577px) {
   .slider__item_1 {
     background-image: url(../img/slider_content/main-page.png);
-  }
-  .slider__item_1::before {
-    display: none;
   }
 }
 @media (max-width: 576px) {
@@ -64,4 +66,7 @@
     margin-top: 45px;
     margin-bottom: 65px;
   }
+}
+.site-path {
+  display: none;
 }

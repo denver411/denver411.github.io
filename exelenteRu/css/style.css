@@ -4,15 +4,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic');
 @font-face {
   font-family: 'Bebas Neue';
-  src: url('../fonts/BebasNeue/BebasNeueRegular.eot?') format("eot"),
-       url('../fonts/BebasNeue/BebasNeueRegular.woff') format("woff"),
-       url('../fonts/BebasNeue/BebasNeueRegular.ttf') format("truetype");
+  src: url('../fonts/BebasNeue/BebasNeueRegular.eot?') format("eot"), url('../fonts/BebasNeue/BebasNeueRegular.woff') format("woff"), url('../fonts/BebasNeue/BebasNeueRegular.ttf') format("truetype");
 }
 @font-face {
   font-family: 'Bebas Neue';
-  src: url('../fonts/BebasNeue/BebasNeueBold.eot?') format("eot"),
-       url('../fonts/BebasNeue/BebasNeueBold.woff') format("woff"),
-       url('../fonts/BebasNeue/BebasNeueBold.ttf') format("truetype");
+  src: url('../fonts/BebasNeue/BebasNeueBold.eot?') format("eot"), url('../fonts/BebasNeue/BebasNeueBold.woff') format("woff"), url('../fonts/BebasNeue/BebasNeueBold.ttf') format("truetype");
   font-weight: bold;
 }
 .pp {
@@ -78,6 +74,42 @@ body {
 .container__mobile {
   max-height: 1100px;
   overflow: hidden;
+}
+.site-path {
+  position: absolute;
+  top: 132px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+@media (max-width: 576px) {
+  .site-path {
+    display: none;
+  }
+}
+.site-path__items {
+  display: flex;
+}
+.site-path__item {
+  list-style: none;
+  color: #FFFFFF;
+}
+.site-path__item a {
+  font-family: Open Sans;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+.site-path__item a:hover {
+  text-decoration: underline;
+}
+.site-path__item:not(:first-child)::before {
+  margin: 0 14px;
+  content: "\2000 \203a \2000";
 }
 @keyframes fade-in {
   0% {

@@ -674,3 +674,13 @@
     color: #FFFFFF;
   }
 }
+@media (min-width: 577px) {
+  .site-path a {
+    color: #000000;
+  }
+}
+@media (min-width: 577px) {
+  .site-path__item:not(:first-child)::before {
+    color: #000000;
+  }
+}

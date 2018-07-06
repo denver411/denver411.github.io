@@ -135,13 +135,14 @@
 
 .sidebar {
 	min-width: 190px;
+	padding-bottom: 4px;
 	background: #F7F7F7;
 	box-shadow: 8px 8px 10px rgba(0, 67, 145, 0.3);
 }
 
 @media (min-width: 1280px) {
 	.sidebar {
-		margin-left: -50px;
+		margin-left: -39px;
 	}
 }
 
@@ -175,6 +176,9 @@
 	.sidebar__part {
 		max-width: 320px;
 		margin: 0 auto;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: flex-start;
 	}
 }
 
@@ -182,13 +186,20 @@
 .sidebar__part-button-spec,
 .sidebar__part-button-count {
 	margin: 0;
-	padding: 33px 39px 0;
+	padding: 39px 0 0 38px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 14px;
 	color: #333333;
+	letter-spacing: 0.5px;
 	cursor: pointer;
 }
+
+.sidebar__part-button-spec,
+.sidebar__part-button-count {
+	padding: 13px 0 0 38px;
+}
+
 
 @media (max-width: 576px) {
 	.sidebar__part-button-prog,
@@ -217,8 +228,8 @@
 
 .sidebar__part .sidebar-arrow {
 	position: relative;
-	top: 0;
-	right: -10px;
+	top: -2px;
+	right: -7px;
 	display: inline-block;
 	width: 8px;
 	height: 5px;
@@ -254,13 +265,13 @@
 .choose-specialty__checkboxes,
 .choose-country__checkboxes {
 	position: relative;
-	display: none;
-	left: 23px;
+	display: block;
+	left: 9px;
 	list-style: none;
 	padding: 0 0 3px 0;
 	margin: -4px 1px 0px 0;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 10px;
+	font-size: 12px;
 	color: #333333;
 }
 
@@ -273,7 +284,7 @@
 	.choose-specialty__checkboxes,
 	.choose-country__checkboxes {
 		position: relative;
-		display: none;
+		display: block;
 		left: 2px;
 		padding-bottom: 23px;
 		font-size: 18px;
@@ -294,10 +305,10 @@
 .checkbox-custom,
 .label {
 	position: relative;
-	top: 10px;
-	right: -35px;
+	top: 19px;
+	right: -32px;
 	display: inline-block;
-	margin-top: 7px;
+	margin-top: 3px;
 	vertical-align: middle;
 }
 
@@ -311,7 +322,7 @@
 }
 
 .label {
-	padding-left: 5px;
+	padding-left: 7px;
 }
 
 @media (max-width: 576px) {
@@ -390,17 +401,29 @@ input [type='checkbox'] {
 
 .sidebar__part a.show-all {
 	display: inline-block;
-	margin: 14px 0 12px 49px;
+	margin: 32px 0 0 40px;
+	padding-bottom: 4px;
 	border-bottom: 2px solid #DF5E16;
 	font-family: 'Open Sans', sans-serif;
 	font-style: italic;
-	font-size: 10px;
+	font-size: 12px;
 	color: #333333;
+}
+
+.sidebar__part a.show-all.hidden {
+	display: none;
 }
 
 @media (max-width: 576px) {
 	.sidebar__part a.show-all {
-		display: none;
+		display: block;
+		margin: 0;
+		margin-bottom: 20px;
+		padding: 0;
+		position: relative;
+		left: -30px;
+		font-style: italic;
+		font-size: 14px;
 	}
 }
 
@@ -411,9 +434,10 @@ input [type='checkbox'] {
 .button__action.apply {
 	width: 114px;
 	height: 35px;
-	margin: 30px auto 0;
+	margin: 47px auto 0;
+	padding-left: 9px;
 	font-family: 'Bebas Neue', sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 	letter-spacing: 4px;
 	color: #FFFFFF;
 }
@@ -450,8 +474,8 @@ a.reset-filter {
 	text-align: center;
 	border-bottom: 2px solid #DF5E16;
 	font-family: 'Bebas Neue', sans-serif;
-	font-size: 10px;
-	letter-spacing: 0.4em;
+	font-size: 12px;
+	letter-spacing: 0.25em;
 	color: #333333;
 }
 
@@ -560,7 +584,7 @@ main.schools-list__wrapper {
 	color: #004391;
 }
 
-.school-card:hover h3.school-card__name{
+.school-card:hover h3.school-card__name {
 	color: white;
 }
 
@@ -677,5 +701,18 @@ a.pagi-arrow-forward {
 		border-bottom: 2px solid #DF5E16;
 		color: #000000;
 		letter-spacing: 4px;
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+@media (min-width: 577px) {
+	.site-path a {
+		color: #ffffff;
+	}
+	.site-path__item:not(:first-child)::before {
+		color: #ffffff;
 	}
 }
