@@ -241,6 +241,9 @@
 		color: #FFFFFF;
 		letter-spacing: 0.2px;
 	}
+	.footer__phone a {
+	color: #FFFFFF;
+	}
 }
 
 .footer__social-links {
