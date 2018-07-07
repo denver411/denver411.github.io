@@ -1,47 +1,26 @@
-'use strict'
-// console.log(onProgressIndicator);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-let dataLink = document.getElementsByClassName('active')[0].getAttribute('href');
-let contentTarget = document.getElementById('content');
-let onProgressIndicator = document.getElementById('preloader');
-let buttons = Array.from(document.getElementsByClassName('tabs')[0].getElementsByTagName('a'));
-let contentXhr = new XMLHttpRequest();
-contentXhr.open("GET", dataLink, true);
+  <title>Задача 2. Табы | Домашнее задание к лекции 2.3</title>
 
-contentXhr.timeout = 3000;
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="tabs">
+    <nav>
+      <a href="components/email-tab.html" class="active">Email</a>
+      <a href="components/sms-tab.html">SMS</a>
+    </nav>
 
-contentXhr.addEventListener("loadstart", onLoadStart);
-contentXhr.addEventListener("timeout", onLoadEnd);
-contentXhr.addEventListener("load", onLoadContent);
-contentXhr.send();
+    <div id="content">
 
-
-function onLoadContent() {
-  contentTarget.innerHTML = contentXhr.responseText;
-}
-
-function tabChange(event) {
-  event.preventDefault();
-  buttons.forEach(btn => {
-    btn.classList.remove('active');
-  });
-  event.currentTarget.classList.add('active');
-  dataLink = event.currentTarget.getAttribute('href');
-  contentXhr.open("GET", dataLink, true);
-  contentXhr.send();
-  contentTarget.innerHTML = contentXhr.responseText;
-}
-
-function onLoadStart() {
-  console.log('start');
-  onProgressIndicator.classList.remove('hidden');
-}
-
-function onLoadEnd() {
-  console.log('end');
-  onProgressIndicator.classList.add('hidden');
-}
-
-buttons.forEach(btn => {
-  btn.addEventListener('click', tabChange);
-});
+    </div>
+    <div id="preloader" class="hidden">Загрузка...</div>
+  </div>
+  <script src="js/loadTabs.js"></script>
+</body>
+</html>
