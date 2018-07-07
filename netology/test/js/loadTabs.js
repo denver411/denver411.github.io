@@ -6,7 +6,7 @@ let contentTarget = document.getElementById('content');
 let onProgressIndicator = document.getElementById('preloader');
 let buttons = Array.from(document.getElementsByClassName('tabs')[0].getElementsByTagName('a'));
 let contentXhr = new XMLHttpRequest();
-contentXhr.open("GET", dataLink, false);
+contentXhr.open("GET", dataLink, true);
 contentXhr.addEventListener("loadstart", onLoadStart);
 contentXhr.addEventListener("loadend", onLoadEnd);
 contentXhr.send();
@@ -20,7 +20,7 @@ function tabChange(event) {
   });
   event.currentTarget.classList.add('active');
   dataLink = event.currentTarget.getAttribute('href');
-  contentXhr.open("GET", dataLink, false);
+  contentXhr.open("GET", dataLink, true);
   contentXhr.send();
   contentTarget.innerHTML = contentXhr.responseText;
 }
