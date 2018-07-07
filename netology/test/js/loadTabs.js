@@ -1,5 +1,5 @@
 'use strict'
-// console.log('test');
+// console.log(onProgressIndicator);
 
 let dataLink = document.getElementsByClassName('active')[0].getAttribute('href');
 let contentTarget = document.getElementById('content');
@@ -9,9 +9,13 @@ let contentXhr = new XMLHttpRequest();
 contentXhr.open("GET", dataLink, true);
 contentXhr.addEventListener("loadstart", onLoadStart);
 contentXhr.addEventListener("loadend", onLoadEnd);
+contentXhr.addEventListener("load", onLoadContent);
 contentXhr.send();
-contentTarget.innerHTML = contentXhr.responseText;
 
+
+function onLoadContent() {
+  contentTarget.innerHTML = contentXhr.responseText;
+}
 
 function tabChange(event) {
   event.preventDefault();
