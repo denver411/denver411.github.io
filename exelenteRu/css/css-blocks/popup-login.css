@@ -1,6 +1,6 @@
 .login {
   position: absolute;
-  display: none;
+  display: block;
   flex-flow: column nowrap;
   justify-content: start;
   z-index: 999;
@@ -59,6 +59,7 @@
 }
 .login .row .login-content-form__pass-title {
   clear: both;
+  margin-top: 19px;
 }
 .login .row .login-content-form__pass-title a {
   text-decoration: none;
@@ -71,24 +72,7 @@
   float: right;
 }
 .login .row .login-content-form__mail-input {
-  margin-bottom: 22px;
   font-style: italic;
-}
-.login .row .login-content-form__mail-input--error,
-.login .row .login-content-form__pass-input--error {
-  display: none;
-  font-family: Open Sans;
-  font-style: italic;
-  font-weight: normal;
-  margin-top: -14px;
-  margin-bottom: 35px;
-  letter-spacing: -0.7px;
-  font-size: 10px;
-  color: #C82E2E;
-  position: absolute;
-}
-.login .row .login-content-form__pass-input--error {
-  top: 222px;
 }
 .login .row .login-content-form__mail-input,
 .login .row .login-content-form__pass-input {
@@ -122,6 +106,10 @@
 .login .row .login-content__social-fb:hover {
   background-image: url(../../img/svg-content/fb_hover.svg);
   background-size: contain;
+}
+.login .row .form--error {
+  margin: 0;
+  margin-top: 2px;
 }
 .login .row .login-content-ulist {
   width: 100%;
@@ -201,11 +189,14 @@
 .login .row.button {
   margin-top: 10px;
 }
+.login.hidden {
+  display: none;
+}
 .userpage {
   position: fixed;
   top: 465px;
   right: 14.6%;
-  display: none;
+  display: block;
   width: 231px;
   height: 209px;
   background: #F2F2F2;
@@ -255,4 +246,7 @@
   position: absolute;
   top: 0.5px;
   right: -30px;
+}
+.userpage.hidden {
+  display: none;
 }

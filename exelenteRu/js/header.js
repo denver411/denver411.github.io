@@ -1,9 +1,11 @@
-// фиксированное меню
+document.addEventListener('DOMContentLoaded', function () {
+
+  // фиксированное меню
   let hiddenMenu = document.querySelector('.hidden-menu');
   let mainMenu = document.querySelector('.menu-block');
   let scrollForFixedMenu = 100;
 
-  document.addEventListener('scroll', function() {
+  document.addEventListener('scroll', function () {
     if (window.pageYOffset >= scrollForFixedMenu) {
       hiddenMenu.classList.add('hidden-menu_visible');
     } else {
@@ -54,6 +56,8 @@
       hiddenMenu.style.display = 'flex';
       topBlockMobile.style.display = 'block';
       containerBlock.classList.add('container__mobile');
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
     }
   }
+
+});

@@ -257,7 +257,7 @@
   }
 }
 @media (min-width: 577px) {
-  .site-path__item:not(:first-child)::before {
+  .site-path__item {
     color: #ffffff;
   }
 }

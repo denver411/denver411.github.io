@@ -1,5 +1,6 @@
 'use strict'
 
+document.addEventListener('DOMContentLoaded', function(){
 // переключение по заголовкам
 let blogMenu = Array.from(document.querySelectorAll('.blog__menu-item'));
 let blogNews = Array.from(document.querySelectorAll('.blog__news-list'));
@@ -53,3 +54,4 @@ blogClickPrev.onclick = function () {
   blogMenu[blogPosition].classList.add('blog__menu-item_active');
   blogNews[blogPosition].classList.add('blog__news-list_active');
 }
+});

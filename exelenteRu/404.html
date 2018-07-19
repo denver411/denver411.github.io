@@ -17,15 +17,12 @@
   </head>
   <body>
     <div class="container">
-      <!--delete-->
-      <!--img(class = 'pp' src="resourses/главная.jpg", alt="")-->
-      <!--delete-->
       <header class="header">
         <div class="header__top-block top-block">
           <div class="wrapper header__wrapper">
             <div class="top-block__city"><i class="fa fa-map-marker" aria-hidden="true"></i><span>Владивосток</span>
               <div class="popup-city">
-                <div class="popup-city__title"><span>Ваш город</span><i class="fa fa-times" aria-hidden="true"></i></div>
+                <div class="popup-city__title"><span>Ваш город</span><i class="fa fa-times popup-city__close" aria-hidden="true"></i></div>
                 <div class="popup-city__search">
                   <input class="popup-city__input" type="text" placeholder="Владивосток"/>
                   <ul class="popup-city__cities-list">
@@ -41,18 +38,18 @@
               </div>
             </div>
             <div class="top-block__fill"></div>
-            <div class="top-block__phone">8 800 737-77-05</div>
+            <div class="top-block__phone"> <a href="tel:+78007377705">8 800 737-77-05</a></div>
             <div class="top-block__popups">
-              <section class="login">
+              <section class="login hidden">
                 <h2 class="login-content__title">Вход</h2><a class="login-content__close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
                 <div class="row form">
                   <form class="login-content-form" action="#" method="get">
                     <p class="login-content-form__mail-title">Эл. почта</p>
-                    <input class="login-content-form__mail-input" type="text" name="mail" placeholder="user@example.com" required="required" autocomplete="off"/>
-                    <label class="login-content-form__mail-input--error" for="mail">Поле заполнено с ошибкой</label>
-                    <p class="login-content-form__pass-title">Пароль<a href="password-restore-1-step.html">забыл пароль?</a></p>
-                    <input class="login-content-form__pass-input" type="password" name="password" required="required" autocomplete="off"/>
-                    <label class="login-content-form__pass-input--error" for="password">Поле заполнено с ошибкой</label>
+                    <input class="login-content-form__mail-input" type="text" name="mail" placeholder="user@example.com" autocomplete="off"/>
+                    <output class="form--error"></output>
+                    <p class="login-content-form__pass-title">Пароль<a href="password-restore-1-step.html">забыли пароль?</a></p>
+                    <input class="login-content-form__pass-input" type="password" name="password" autocomplete="off"/>
+                    <output class="form--error"></output>
                     <div class="row link"><a class="login-content__social-vk" href="#"></a><a class="login-content__social-fb" href="#"></a></div>
                     <div class="row button">
                       <ul class="login-content-ulist">
@@ -65,8 +62,8 @@
                   </form>
                 </div>
               </section>
-              <section class="userpage">
-                <h2 class="userpage__title">Андрей</h2><a class="userpage__close" href="#"> <i class="fa fa-times" aria-hidden="true"></i></a>
+              <section class="userpage hidden">
+                <h2 class="userpage__title">Андрей</h2><a class="userpage__close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
                 <ul class="userpage-ulist">
                   <li class="userpage-ulist__list"><a class="userpage-ulist__list-item" href="#">Мой профиль</a></li>
                   <li class="userpage-ulist__list"><a class="userpage-ulist__list-item" href="#">История заказов</a></li>
@@ -75,8 +72,10 @@
                 </ul>
               </section>
               <div class="top-block__item top-block__item_login">Вход/ Регистрация<i class="fa fa-user" aria-hidden="true"></i></div>
-              <div class="top-block__item top-block__item_favorite">10<i class="fa fa-star" aria-hidden="true"></i></div>
-              <div class="top-block__item top-block__item_cart">2500 р<i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+              <div class="top-block__outer">
+                <div class="top-block__item top-block__item_favorite">10<i class="fa fa-star" aria-hidden="true"></i></div>
+                <div class="top-block__item top-block__item_cart">2500 р<i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+              </div>
             </div>
           </div>
         </div>
@@ -106,16 +105,13 @@
             </div>
             <div class="menu-block__contacts contacts">
               <div class="contacts__item">
-                <p class="contacts__text">Бесплатная линия</p>
-                <p class="contacts__info">8 800 737-77-05</p>
+                <p class="contacts__text">Бесплатная линия</p><a class="contacts__info" href="tel:+78007377705">8 800 737-77-05</a>
               </div>
               <div class="contacts__item">
-                <p class="contacts__text">WhatsApp</p>
-                <p class="contacts__info">8 800 737-77-05</p>
+                <p class="contacts__text">WhatsApp</p><a class="contacts__info" href="tel:+78007377705">8 800 737-77-05</a>
               </div>
               <div class="contacts__item">
-                <p class="contacts__text">skype </p>
-                <p class="contacts__info">excelentephone</p>
+                <p class="contacts__text">skype </p><a class="contacts__info" href="#">excelentephone</a>
               </div>
               <div class="contacts__item_social-media">подписаться</div>
               <div class="contacts__social-links"><a href="#">
@@ -221,8 +217,7 @@
               <div class="footer-menu__item"><a href="#">контакты</a></div>
             </div>
           </nav>
-          <div class="footer__contacts">
-            <p class="footer__phone">8 800 737-77-05</p><a class="free-line" href="tel:8-800-737-77-05">бесплатная линия</a>
+          <div class="footer__contacts"><a class="footer__phone" href="tel:8-800-737-77-05">8 800 737-77-05</a><a class="free-line" href="tel:8-800-737-77-05">бесплатная линия</a>
             <div class="footer__social-links"><a href="#">
                 <div class="footer__social-link footer__social-link_instagram"></div></a><a href="#">
                 <div class="footer__social-link footer__social-link_fb"></div></a><a href="#">
@@ -241,7 +236,7 @@
           </div>
         </div>
       </footer>
-      <div class="banner-chosen"> 
+      <div class="banner-chosen hidden">
         <section class="chosen">
           <div class="row row1">
             <h2 class="chosen-content__title">Вы не зарегистрированы</h2><a class="chosen-content__close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
@@ -257,7 +252,7 @@
           </div>
         </section>
       </div>
-      <div class="banner-basket">   
+      <div class="banner-basket hidden">   
         <section class="basket">
           <div class="row">
             <h2 class="basket-content__title">В корзине</h2><a class="basket-content__close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
@@ -271,16 +266,16 @@
           </div>
         </section>
       </div>
-      <section class="login">
+      <section class="login hidden">
         <h2 class="login-content__title">Вход</h2><a class="login-content__close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
         <div class="row form">
           <form class="login-content-form" action="#" method="get">
             <p class="login-content-form__mail-title">Эл. почта</p>
-            <input class="login-content-form__mail-input" type="text" name="mail" placeholder="user@example.com" required="required" autocomplete="off"/>
-            <label class="login-content-form__mail-input--error" for="mail">Поле заполнено с ошибкой</label>
-            <p class="login-content-form__pass-title">Пароль<a href="password-restore-1-step.html">забыл пароль?</a></p>
-            <input class="login-content-form__pass-input" type="password" name="password" required="required" autocomplete="off"/>
-            <label class="login-content-form__pass-input--error" for="password">Поле заполнено с ошибкой</label>
+            <input class="login-content-form__mail-input" type="text" name="mail" placeholder="user@example.com" autocomplete="off"/>
+            <output class="form--error"></output>
+            <p class="login-content-form__pass-title">Пароль<a href="password-restore-1-step.html">забыли пароль?</a></p>
+            <input class="login-content-form__pass-input" type="password" name="password" autocomplete="off"/>
+            <output class="form--error"></output>
             <div class="row link"><a class="login-content__social-vk" href="#"></a><a class="login-content__social-fb" href="#"></a></div>
             <div class="row button">
               <ul class="login-content-ulist">
@@ -293,8 +288,8 @@
           </form>
         </div>
       </section>
-      <section class="userpage">
-        <h2 class="userpage__title">Андрей</h2><a class="userpage__close" href="#"> <i class="fa fa-times" aria-hidden="true"></i></a>
+      <section class="userpage hidden">
+        <h2 class="userpage__title">Андрей</h2><a class="userpage__close" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
         <ul class="userpage-ulist">
           <li class="userpage-ulist__list"><a class="userpage-ulist__list-item" href="#">Мой профиль</a></li>
           <li class="userpage-ulist__list"><a class="userpage-ulist__list-item" href="#">История заказов</a></li>
@@ -306,6 +301,8 @@
       <script src="js/select.js"></script>
       <script src="js/favorite.js"></script>
       <script src="js/popup-login.js"></script>
+      <script src="js/validation.js"></script>
+      <script src="blocks/popup-city/popup-city.js"></script>
       <script src="js/404.js"></script>
     </div>
   </body>

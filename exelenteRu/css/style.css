@@ -1,4 +1,4 @@
-@import 'css-blocks/popup-city.css';
+@import '../blocks/popup-city/popup-city.css';
 @import 'css-blocks/popup-favorite.css';
 @import 'css-blocks/popup-login.css';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic');
@@ -11,19 +11,11 @@
   src: url('../fonts/BebasNeue/BebasNeueBold.eot?') format("eot"), url('../fonts/BebasNeue/BebasNeueBold.woff') format("woff"), url('../fonts/BebasNeue/BebasNeueBold.ttf') format("truetype");
   font-weight: bold;
 }
-.pp {
-  position: absolute;
-  opacity: 0.5;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  outline: none !important;
 }
 html {
   box-sizing: border-box;
@@ -46,6 +38,12 @@ body {
     width: 100%;
     min-width: unset;
     padding: 0;
+  }
+}
+@media (min-width: 577px) {
+  input[type='submit'],
+  button {
+    cursor: pointer;
   }
 }
 @media (min-width: 577px) {
@@ -95,10 +93,14 @@ body {
 }
 .site-path__item {
   list-style: none;
+  font-family: 'Open Sans';
+  font-size: 14px;
   color: #FFFFFF;
+  text-decoration: none;
+  text-transform: lowercase;
 }
 .site-path__item a {
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-size: 14px;
   color: #FFFFFF;
   text-decoration: none;
