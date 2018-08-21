@@ -1,0 +1,71 @@
+.slider {
+  &__item {
+    background-position-x: center;
+    @media (min-width: 577px) {
+      padding: 0;
+    }
+	 &::before {
+	  @media (min-width: 577px) {
+          display: none;
+        }
+	}
+    &_1 {
+      @media (max-width: 576px) {
+        background-image: url(../img/slider_content/main-page_mobile.png);
+      }
+      @media (min-width: 577px) {
+        background-image: url(../img/slider_content/main-page.png);
+        // background-size: contain;
+        // background-position-x: 317px;
+       
+      }
+    }
+    &_3 {
+      @media (max-width: 576px) {
+        background-image: url(../img/slider_content/Mexico_mobile.png);
+      }
+      @media (min-width: 577px) {
+        background-image: url(../img/slider_content/Mexico.png);
+      }
+    }
+    &_4 {
+      @media (max-width: 576px) {
+        font-size: 14px;
+        background-image: url(../img/slider_content/VisaService_mobile.png);
+      }
+      @media (min-width: 577px) {
+        background-image: url(../img/slider_content/VisaService.png);
+      }
+    }
+  }
+}
+
+.slide {
+  &__wrapper {
+    @media (min-width: 577px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+  }
+  &__title {
+    @media (max-width: 576px) {
+      font-size: 3em;
+      line-height: 1.1;
+    }
+  }
+  &__button {
+    @media (max-width: 576px) {
+      margin-top: 30px;
+    }
+    @media (min-width: 577px) {
+      margin-top: 45px;
+      margin-bottom: 65px;
+    }
+  }
+}
+
+.site-path {
+  display: none;
+}

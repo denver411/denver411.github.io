@@ -1,0 +1,233 @@
+.customer-reviews {
+  background-color: #ffffff;
+  &__wrapper {
+    @media (max-width: 576px) {
+      width: auto;
+      margin: 0 5%;
+    }
+    @media (min-width: 577px) {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 72px;
+      padding-bottom: 100px;
+      margin: 0 auto;
+    }
+  }
+  &__title {
+    font-family: Bebas Neue;
+    font-size: 48px;
+    color: #DF5E16;
+    text-transform: uppercase;
+    @media (max-width: 576px) {
+      margin-bottom: 17px;
+      padding-top: 16%;
+    }
+    @media (min-width: 577px) {
+      width: 100%;
+      order: 0;
+      margin-bottom: 52px;
+    }
+  }
+  &__image-block {
+    overflow: hidden;
+    @media (max-width: 576px) {}
+    @media (min-width: 577px) {
+      order: 2;
+      width: 83%;
+      margin-right: -10%;
+    }
+  }
+  &__images {
+    list-style: none;
+    display: flex;
+    transition: margin 1s;
+    @media (max-width: 576px) {
+      width: 100%;
+    }
+    @media (min-width: 577px) {
+      width: 990px;
+      height: 650px;
+    }
+  }
+  &__image {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    picture {
+      display: block;
+      font-size: 0;
+      &::after {
+        @media (min-width: 577px) {
+          position: absolute;
+          content: '';
+          display: block;
+          top: 0;
+          height: ~"calc(100% - 50px)";
+          width: 100%;
+          background-color: rgba(0, 67, 145, 0.5);
+        }
+      }
+    }
+    @media (max-width: 576px) {
+      min-width: 100%;
+      font-size: 0;
+    }
+    @media (min-width: 577px) {
+      margin: 0 15px;
+      width: ~"calc(33.33% - 30px)";
+      flex-shrink: 0;
+    }
+    &_active {
+      picture {
+        &::after {
+          @media (min-width: 577px) {
+            content: '';
+            display: none;
+          }
+        }
+      }
+      &>div {
+        @media (min-width: 577px) {
+          color: #004391;
+          background-color: #ffffff;
+          background-image: url(img/customer-reviews__image-name_active.svg);
+          border: 2px solid #004391;
+        }
+      }
+    }
+  }
+  &__image-name {
+    @media (min-width: 577px) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      min-width: 145px;
+      height: 50px;
+      padding: 0 30px 0 25%;
+      font-family: Bebas Neue;
+      line-height: 50px;
+      font-size: 24px;
+      text-align: right;
+      text-transform: uppercase;
+      background-color: #004391;
+      background-image: url(img/customer-reviews__image-name.svg);
+      background-repeat: no-repeat;
+      background-position: 24px center;
+      color: #ffffff;
+    }
+  }
+  &__flag {
+    position: absolute;
+    width: 56px;
+    height: 41px;
+    left: 0;
+    background-size: contain;
+    border: solid 0.5px #DF5E16;
+    @media (max-width: 576px) {
+      top: -79px;
+    }
+    @media (min-width: 577px) {
+      top: 0;
+    }
+    &_italy {
+      background-image: url(img/flag_of_Italy.png);
+    }
+    &_cyprus {
+      background-image: url(img/flag_of_Cyprus.svg);
+    }
+  }
+  &__review {
+    @media (min-width: 577px) {
+      position: relative;
+      order: 1;
+      width: 22%;
+      margin-right: 30px;
+      padding-bottom: 50px;
+    }
+  }
+  &__review-item {
+    display: none;
+    @media (max-width: 576px) {
+      position: relative;
+    }
+    &_active {
+      display: block;
+    }
+  }
+  &__name {
+    font-weight: bold;
+    font-size: 24px;
+    @media (max-width: 576px) {
+      margin-top: 38px;
+    }
+    @media (min-width: 577px) {
+      margin-top: 120px;
+    }
+  }
+  &__place {
+    font-size: 18px;
+    @media (max-width: 576px) {
+      margin-top: 8px;
+    }
+    @media (min-width: 577px) {
+      margin-top: 9px;
+    }
+  }
+  &__text {
+    font-size: 14px;
+    @media (max-width: 576px) {
+      margin-top: 11%;
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+    @media (min-width: 577px) {
+      margin-top: 30px;
+      margin-bottom: 21px;
+      line-height: 1.75;
+    }
+  }
+  &__navigation {
+    @media (max-width: 576px) {
+      margin: 47px 0;
+    }
+    @media (min-width: 577px) {
+      order: 4;
+      margin-top: -48px;
+      z-index: 1;
+    }
+  }
+}
+
+.navigation {
+  display: flex;
+  &__arrow {
+    border: 2px solid #DF5E16;
+    background-image: url(../../img/slider-navigation__arrow_orange.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    @media (max-width: 576px) {
+      height: 34px;
+      width: 34px;
+    }
+    @media (min-width: 577px) {
+      width: 48px;
+      height: 48px;
+      &:hover {
+        cursor: pointer;
+        background-image: url(../../img/slider-navigation__arrow.svg);
+        background-color: #DF5E16;
+      }
+    }
+    &_right {
+      margin-left: 18px;
+      transform: rotate(180deg);
+      @media (max-width: 576px) {}
+      @media (min-width: 577px) {
+        &:hover {
+          background-image: url(../../img/slider-navigation__arrow.svg);
+        }
+      }
+    }
+  }
+}

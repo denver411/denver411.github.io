@@ -1,0 +1,31 @@
+extends modules/layout-main
+
+block pageTitle
+  title Компания «Экселенте»
+
+append pageLinks
+  link(rel="stylesheet", href="css/main-page.css")
+  link(rel="stylesheet", href="css/select-programm.css")
+  link(rel="stylesheet", href="css/content_weworking.css")
+  link(rel="stylesheet", href="blocks/countries/countries.css")
+  link(rel="stylesheet", href="blocks/popular-programs/popular-programs.css")
+  link(rel="stylesheet", href="blocks/customer-reviews/customer-reviews.css")
+  link(rel="stylesheet", href="blocks/blog/blog.css")
+
+block content
+  include modules/slider_main
+  include modules/select-programm
+  include modules/content_weworking
+  include blocks/countries/countries
+  include blocks/popular-programs/popular-programs
+  include blocks/customer-reviews/customer-reviews
+  include blocks/blog/blog
+
+append pageScripts
+  script(src="js/slider.js")
+  script(src="js/select.js")
+  script(src="js/content_weworking.js")
+  script(src="blocks/countries/countries.js")
+  script(src="blocks/customer-reviews/customer-reviews.js")
+  script(src="blocks/popular-programs/popular-programs.js")
+  script(src="blocks/blog/blog.js")

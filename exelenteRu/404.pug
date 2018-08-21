@@ -1,0 +1,13 @@
+extends modules/layout-main
+
+block pageTitle 
+		title Not Found
+
+append pageLinks
+	link(rel="stylesheet", href="css/content_404.css")
+
+block content
+	include modules/content_404
+
+append pageScripts
+	script(src="js/404.js")

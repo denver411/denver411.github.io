@@ -1,0 +1,124 @@
+@import '../blocks/popup-city/popup-city.css';
+@import 'css-blocks/popup-favorite.css';
+@import 'css-blocks/popup-login.css';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic');
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../fonts/BebasNeue/BebasNeueRegular.eot?') format("eot"), url('../fonts/BebasNeue/BebasNeueRegular.woff') format("woff"), url('../fonts/BebasNeue/BebasNeueRegular.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../fonts/BebasNeue/BebasNeueBold.eot?') format("eot"), url('../fonts/BebasNeue/BebasNeueBold.woff') format("woff"), url('../fonts/BebasNeue/BebasNeueBold.ttf') format("truetype");
+  font-weight: bold;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  outline: none !important;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  animation: fade-in 0.5s ease;
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+  @media(min-width: 577px) {
+    min-width: 1180px;
+  }
+  @media(max-width: 576px) {
+    width: 100%;
+    min-width: unset;
+    padding: 0;
+  }
+}
+
+input[type='submit'],
+button {
+  @media(min-width: 577px) {
+    cursor: pointer;
+  }
+}
+
+.wrapper {
+  @media(min-width: 577px) {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
+  }
+  @media(max-width: 576px) {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+  }
+}
+
+.container {
+  background-color: #ffffff;
+  @media (max-width: 576px) {
+    background-color: #f7f7f7;
+  }
+  &__mobile {
+    max-height: 1100px;
+    overflow: hidden;
+  }
+}
+
+.site-path {
+  position: absolute;
+  top: 132px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  @media (max-width: 576px) {
+    display: none;
+  }
+  &__items {
+    display: flex;
+  }
+  &__item {
+    list-style: none;
+    color: #FFFFFF;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: lowercase;
+    a {
+      font-family: 'Open Sans';
+      font-size: 14px;
+      color: #FFFFFF;
+      text-decoration: none;
+      text-transform: lowercase;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &:not(:first-child)::before {
+      margin: 0 14px;
+      content: "\2000 \203a \2000";
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

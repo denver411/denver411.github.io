@@ -1,0 +1,243 @@
+.slider {
+  position: relative;
+  height: 540px;
+  min-height: 540px;
+  margin: 0 auto;
+  @media (min-width: 577px) {
+    // max-width: 1280px;
+  }
+  @media (max-width: 576px) {
+    min-width: 320px;
+    margin-top: 30px;
+  }
+  &__wrapper {
+    @media (min-width: 577px) {
+      height: auto; //для IE
+      height: unset;
+      position: relative;
+    }
+    @media (max-width: 576px) {
+      position: absolute;
+      top: 0;
+    }
+  }
+  &__items {
+    height: 100%;
+    margin: 0 auto;
+  }
+  &__item {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s;
+    &::before {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      background-color: rgba(0, 67, 145, 0.4);
+      content: '';
+    }
+    &_1 {
+      background-image: url(../img/slider_content/FanshaweCollege.png);
+      z-index: 1;
+      opacity: 1;
+      @media (max-width: 576px) {
+        background-image: url(../img/slider_content/FanshaweCollege_mobile.png);
+      }
+    }
+    &_2 {
+      background-image: url(../img/slider_content/StJohnsUniversity.png);
+      @media (max-width: 576px) {
+        background-image: url(../img/slider_content/StJohnsUniversity_mobile.png);
+      }
+    }
+    &_3 {
+      background-image: url(../img/slider_content/ChristsHospitalSchool.png);
+      @media (max-width: 576px) {
+        background-image: url(../img/slider_content/ChristsHospitalSchool.png);
+      }
+    }
+  }
+  &__navigation {
+    @media (min-width: 577px) {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 5;
+    }
+  }
+}
+
+.slide {
+  @media (min-width: 577px) {
+    padding-top: 230px;
+  }
+  @media (max-width: 576px) {
+    padding-left: 44px;
+    padding-bottom: 70px;
+  }
+  &__wrapper {
+    @media (max-width: 576px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+  }
+  &__title {
+    font-family: Bebas Neue;
+    color: #FFFFFF;
+    @media(min-width: 577px) {
+      font-size: 64px;
+    }
+    @media (max-width: 576px) {
+      width: 60vw;
+      font-size: 60px;
+      line-height: 1.1;
+    }
+    &_blue {
+      @media(min-width: 577px) {
+        color: #004391;
+        line-height: 80px;
+      }
+    }
+  }
+  &__description {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    @media (max-width: 576px) {
+      max-width: 60%;
+      margin-top: 0;
+    }
+  }
+  &__button {
+    display: inline-block;
+    padding: 15px 66px;
+    font-family: Bebas Neue;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 4px;
+    text-decoration: none;
+    color: #FFFFFF;
+    background: #DF5E16;
+    &:hover {
+      background-color: #F58A4E;
+    }
+    @media(min-width: 577px) {
+      margin-top: 95px;
+    }
+    @media (max-width: 576px) {
+      margin-top: 50px;
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.slider-navigation {
+  @media(min-width: 577px) {
+    width: 67px;
+    height: 114px;
+    background-color: #004391;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 9px 10px 1px;
+  }
+  @media (max-width: 576px) {
+    position: absolute;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    margin-left: 45px;
+    min-width: 230px;
+    z-index: 5;
+  }
+  &__count {
+    @media(min-width: 577px) {
+      // margin: 9px;
+      text-align: center;
+      font-family: Bebas Neue;
+      font-size: 24px;
+      letter-spacing: 4px;
+      color: #FFFFFF;
+    }
+    @media (max-width: 576px) {
+      padding-left: 9px;
+      margin: 9px 0;
+      text-align: center;
+      font-family: Bebas Neue;
+      font-size: 24px;
+      letter-spacing: 4px;
+      color: #FFFFFF;
+    }
+    &_this {
+      @media(min-width: 577px) {
+        border-bottom: solid 2px #FFFFFF
+      }
+      @media (max-width: 576px) {
+        padding-right: 9px;
+        border-right: solid 2px #FFFFFF;
+      }
+    }
+  }
+  &__arrows {
+    @media(min-width: 577px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 576px) {
+      display: flex;
+      order: -2;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__arrow {
+    @media(min-width: 577px) {
+      width: 9px;
+      height: 16px;
+      margin: 6px;
+      background-image: url(../img/slider-navigation__arrow.svg);
+      background-repeat: no-repeat;
+    }
+    &_right {
+      transform: rotate(180deg);
+    }
+    &:hover {
+      @media(min-width: 577px) {
+        cursor: pointer;
+      }
+    }
+  }
+  @media (max-width: 576px) {
+    &__arrows &__arrow {
+      display: inline-block;
+      height: 34px;
+      width: 34px;
+      margin: 6px;
+      background-image: url(../img/slider-navigation__arrow.svg);
+      background-repeat: no-repeat;
+      background-size: 30%;
+      background-position: center center;
+      border: 2px solid #FFFFFF;
+    }
+  }
+  &__fill {
+    @media(max-width: 576px) {
+      flex: 1;
+      order: -1;
+    }
+  }
+}

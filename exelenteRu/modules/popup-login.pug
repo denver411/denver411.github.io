@@ -1,0 +1,35 @@
+section.login.hidden
+    h2.login-content__title Вход
+    a.login-content__close(href='#')
+        i.fa.fa-times(aria-hidden='true')
+    .row.form
+        form(action="#", method="get").login-content-form
+            p.login-content-form__mail-title Эл. почта
+            input(type="text", name="mail", placeholder="user@example.com", autocomplete="off").login-content-form__mail-input
+            output.form--error
+            p.login-content-form__pass-title Пароль
+                a(href="password-restore-1-step.html") забыли пароль?
+            input(type="password", name="password", autocomplete="off").login-content-form__pass-input
+            output.form--error
+            .row.link
+                a(href="#").login-content__social-vk
+                a(href="#").login-content__social-fb
+            .row.button
+                ul.login-content-ulist
+                    li.login-content-ulist-list
+                        input(type="submit", value="Вход").login-content-ulist-list__login
+                    li.login-content-ulist-list
+                        a(href="login.html").login-content-ulist-list__sign Регистрация
+section.userpage.hidden
+    h2.userpage__title Андрей
+    a.userpage__close(href='#')
+        i.fa.fa-times(aria-hidden='true')
+    ul.userpage-ulist
+        li.userpage-ulist__list
+            a(href="#").userpage-ulist__list-item Мой профиль
+        li.userpage-ulist__list
+            a(href="#").userpage-ulist__list-item История заказов
+        li.userpage-ulist__list
+            a(href="#").userpage-ulist__list-item Рассылка
+        li.userpage-ulist__list
+            a(href="#").userpage-ulist__list-item.userpage-ulist__list-item--exit Выйти

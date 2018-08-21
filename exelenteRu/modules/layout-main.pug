@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    block pageTitle
+      title Document
+    block pageLinks
+      link(rel="stylesheet", href="css/font-awesome.min.css")
+      link(rel="stylesheet", href="css/style.css")
+      link(rel="stylesheet", href="css/header.css")
+      link(rel="stylesheet", href="css/slider.css")
+      link(rel="stylesheet", href="css/content_login.css")
+      link(rel="stylesheet", href="css/footer.css")
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js')
+      script(href="js/prefixfree.min.js", type="text/javascript")
+
+  body
+    .container
+      include header
+
+      block content
+
+      include footer
+      include popup-favorite
+      include popup-basket
+      include popup-login
+      block pageScripts
+        script(src="js/header.js")
+        script(src="js/select.js")
+        script(src="js/favorite.js")
+        script(src="js/popup-login.js")
+        script(src="js/validation.js")
+        script(src="blocks/popup-city/popup-city.js")

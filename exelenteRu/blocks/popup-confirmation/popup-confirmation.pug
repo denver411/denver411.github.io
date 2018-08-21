@@ -1,0 +1,16 @@
+head
+  link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.1.0/css/all.css")
+  link(rel="stylesheet", href="popup-confirmation.css")
+body
+  section.popup-confirmation.confirmation
+    .confirmation__block
+      .confirmation__header
+        .confirmation__warning !
+        a.confirmation__close(href='#')
+          i.fa.fa-times(aria-hidden='true')
+      .confirmation__text
+        p На вашу почту отправлено письмо для подтверждения регистрации
+        p Пожалуйста, проверьте почту.
+      
+  input.confirmation__button(type = 'submit' value = 'Показать')
+  script(src="popup-confirmation.js")

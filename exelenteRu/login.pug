@@ -1,0 +1,13 @@
+extends modules/layout-main
+
+block pageTitle 
+		title Вход/Регистрация
+
+append pageLinks
+	link(rel="stylesheet", href="css/content_login.css")
+
+block content
+	include modules/content_login
+
+append pageScripts
+	script(src="js/login.js")

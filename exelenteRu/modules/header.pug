@@ -1,0 +1,158 @@
+header.header
+  .header__top-block.top-block
+    .wrapper.header__wrapper
+      .top-block__city
+        i.fa.fa-map-marker(aria-hidden='true')
+        span Владивосток
+        include ../blocks/popup-city/popup-city
+      .top-block__fill
+      .top-block__phone 
+        a(href="tel:+78007377705") 8 800 737-77-05
+      .top-block__popups
+        include popup-login
+        .top-block__item.top-block__item_login Вход/ Регистрация
+          i.fa.fa-user(aria-hidden='true')
+        .top-block__outer
+          .top-block__item.top-block__item_favorite 10
+            i.fa.fa-star(aria-hidden='true')
+          .top-block__item.top-block__item_cart 2500 р
+            i.fa.fa-shopping-cart(aria-hidden='true')
+
+  .header__hidden-menu.hidden-menu
+    .wrapper.header__wrapper
+      .hidden-menu__logo#logo_hidden
+        a(href="index.html")
+           img(src="img/logo_blue-orange.svg", alt="logo")
+      .hidden-menu__popups.top-block__popups
+        .hidden-menu__item.hidden-menu__item_input.top-block__item 
+          input(type = 'text' placeholder="Поиск...")
+          i.fa.fa-search(aria-hidden='true')
+        .hidden-menu__item.hidden-menu__item_login.top-block__item Вход/ Регистрация
+          i.fa.fa-user(aria-hidden='true')
+        .hidden-menu__item.hidden-menu__item_favorite.top-block__item 10
+          i.fa.fa-star(aria-hidden='true')
+        .hidden-menu__item.hidden-menu__item_cart.top-block__item 2500 р
+          i.fa.fa-shopping-cart(aria-hidden='true')
+      .hidden-menu__menu Меню
+        .hidden-menu__close
+          .hidden-menu__close-pic
+
+  .header__menu.menu-block
+    .wrapper.header__wrapper
+      h1.menu-block__logo
+        a(href="index.html")
+          img(src="img/logo_white.svg", alt="logo")
+        i.fa.fa-search(aria-hidden='true')
+      .menu-block__menu-pic
+        .menu-block__menu-pic_close
+          i.fa.fa-times(aria-hidden='true')
+      .menu-block__contacts.contacts
+        .contacts__item
+          p.contacts__text Бесплатная линия
+          a(href="tel:+78007377705").contacts__info 8 800 737-77-05
+        .contacts__item
+          p.contacts__text WhatsApp
+          a(href="tel:+78007377705").contacts__info 8 800 737-77-05
+        .contacts__item
+          p.contacts__text skype 
+          a(href="#").contacts__info excelentephone
+        .contacts__item_social-media подписаться
+        .contacts__social-links
+          a(href="#")
+            .contacts__social-link.contacts__social-link_instagram
+          a(href="#")
+            .contacts__social-link.contacts__social-link_fb
+          a(href="#")
+            .contacts__social-link.contacts__social-link_youtube
+          a(href="#")
+            .contacts__social-link.contacts__social-link_vk
+
+      .menu-block__menu.main-menu
+        ul.main-menu__items
+          li.main-menu__item.main-menu__item_about
+            a(href="#") О компании
+            ul.main-menu__subitems
+              li.main-menu__subitem
+                a(href="#") Лицензии и сертификаты
+              li.main-menu__subitem
+                a(href="#") Бонусная программа
+              li.main-menu__subitem
+                a(href="#") Сотрудничество
+              li.main-menu__subitem
+                a(href="#") Вакансии
+              li.main-menu__subitem
+                a(href="#") Политика конфиденциальности
+              li.main-menu__subitem
+                a(href="#") Наши партнеры
+          li.main-menu__item.main-menu__item_programs
+            a(href="#") Программы
+            ul.main-menu__subitems
+              li.main-menu__subitem
+                a(href="#") Работа
+              li.main-menu__subitem
+                a(href="#") Стажировка
+              li.main-menu__subitem
+                a(href="#") Каникулярные
+              li.main-menu__subitem
+                a(href="#") Языковые курсы
+              li.main-menu__subitem
+                a(href="#") Высшее образование
+              li.main-menu__subitem
+                a(href="#") Среднее образование
+              li.main-menu__subitem
+                a(href="#") Стипендии и гранты
+          li.main-menu__item.main-menu__item_service 
+            a(href="#") Услуги
+            ul.main-menu__subitems
+              li.main-menu__subitem
+                a(href="#") Поступление в зарубежный ВУЗ
+              li.main-menu__subitem
+                a(href="#") Визовое сопровождение
+              li.main-menu__subitem
+                a(href="#") Поиск и бронирование жилья
+              li.main-menu__subitem
+                a(href="#") Волонтерство
+          li.main-menu__item.main-menu__item_schools 
+            a(href="schools.html") школы
+            ul.main-menu__subitems
+              li.main-menu__subitem
+                a(href="#") Fanshawe College
+              li.main-menu__subitem
+                a(href="school-page.html") St. John's University
+              li.main-menu__subitem
+                a(href="#") University of New South
+              li.main-menu__subitem
+                a(href="#") Wales - UNSW
+              li.main-menu__subitem
+                a(href="#") University of Sheffield
+              li.main-menu__subitem
+                a(href="#") University of Tokyo
+          li.main-menu__item.main-menu__item_countries
+            a(href="#") Страны
+            ul.main-menu__subitems
+              li.main-menu__subitem
+                a(href="#") США
+              li.main-menu__subitem
+                a(href="#") Япония
+              li.main-menu__subitem
+                a(href="#") Корея
+              li.main-menu__subitem
+                a(href="#") Австралия
+              li.main-menu__subitem
+                a(href="#") Германия
+              li.main-menu__subitem
+                a(href="#") Англия
+          li.main-menu__item.main-menu__item_blog 
+            a(href="#") Блог
+            ul.main-menu__subitems
+              li.main-menu__subitem
+                a(href="#") Акции
+              li.main-menu__subitem
+                a(href="#") Отзывы
+              li.main-menu__subitem
+                a(href="#") Новости
+              li.main-menu__subitem
+                a(href="#") Мероприятия
+          li.main-menu__item.main-menu__item_contacts 
+            a(href="#") Контакты
+  include site-path

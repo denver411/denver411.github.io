@@ -1,0 +1,82 @@
+.wrapper
+    .content-login
+        .row.title.mobile
+            a(href="#").content-login-mobile__sign Регистрация
+            a(href="#").content-login-mobile__login Вход
+        .row.social
+            a(href="#").content-login-social__vk
+            a(href="#").content-login-social__fb
+        .row.form-sign
+            h2.form-sign__title Регистрация
+            .form-sign-social
+                a(href="#").form-sign-social__vk
+                a(href="#").form-sign-social__fb
+            form(action="#", method="get").content-login-form-sign
+                label(for="surname").content-login-form-sign__label Фамилия *
+                input(type="text", name="surname", autocomplete="off", placeholder="Иванов", data-name="form-sign-input-surname").content-login-form-sign__input
+                output.form--error
+                label(for="name").content-login-form-sign__label Имя *
+                input(type="text", name="name", autocomplete="off", placeholder="Иван", data-name="form-sign-input-name").content-login-form-sign__input
+                output.form--error
+                label(for="phone").content-login-form-sign__label Телефон *
+                input(id = "phone",type="tel", name="phone", placeholder="+7 (123) ___-__-__", autocomplete="off", data-name="form-sign-input-phone").content-login-form-sign__input
+                output.form--error
+                label(for="mail").content-login-form-sign__label Эл. почта *
+                input(type="text", name="mail", placeholder="user@example.com", autocomplete="off", data-name="form-sign-input-mail").content-login-form-sign__input
+                output.form--error
+                label(for="pass").content-login-form-sign__label Пароль *
+                input(type="password", name="pass", autocomplete="off", data-name="form-sign-input-pass").content-login-form-sign__input
+                output.form--error
+                label(for="reqpass").content-login-form-sign__label Подтверждение пароля *
+                input(type="password", name="reqpass", autocomplete="off", data-name="form-sign-input-reqpass").content-login-form-sign__input
+                output.form--error
+                .capcha
+                    script(src="https://www.google.com/recaptcha/api.js" async defer)
+                    .g-recaptcha(data-sitekey="your_site_key")
+                input(type="submit", value="Регистрация").content-login-form-sign__button
+                .content-login-form-sign-reg
+                    label().content-login-form-sign-reg_lable
+                        input(type="checkbox", name="checkbox").content-login-form-sign-reg__check
+                        span.content-login-form-sign-reg__check-cust
+                    p.content-login-form-sign-reg__inst
+                        | Я подтверждаю, что ознакомлен с  
+                        a(href="#") Политикой в области защиты персональных данных ООО  «Экселенте» 
+                        |  и даю свое согласие на работу с моими персональными данными.
+        .row.form-log
+            h2.form-log__title Вход
+            .form-log-social
+                a(href="#").form-log-social__vk
+                a(href="#").form-log-social__fb
+            form(action="#", method="get", data-name="form-login").content-login-form-log
+                label(for="mail").content-login-form-log__label Эл. почта *
+                input(type="text", name="mail", placeholder="user@example.com", autocomplete="off", data-name="form-login-input-mail").content-login-form-log__input.field
+                output.form--error
+                label(for="pass").content-login-form-log__label Пароль *
+                input(type="password", name="pass", autocomplete="off", data-name="form-login-input-pass").content-login-form-log__input.field
+                output.form--error
+                input(type="submit", value="Вход", data-name="form-login-input-submit").content-login-form-log__button
+                a(href="password-restore-1-step.html").content-login-form-log__button-link Забыли пароль
+script(type='text/javascript', src='js/jquery.mask.min.js')
+script(type='text/javascript').
+  $(document).ready(function(){
+  $('#phone').mask('+7 (000) 000-00-00');
+  });
+
+
+
+
+
+
+
+
+    //- script(src="jquery.js")
+    //- script(src='jquery.maskedinput.min.js')
+    //- script.
+    //-   //Код jQuery, установливающий маску для ввода телефона элементу input
+    //-   //1. После загрузки страницы,  когда все элементы будут доступны выполнить...
+    //-   $(function(){
+    //-   //2. Получить элемент, к которому необходимо добавить маску
+    //-   $("#phone").mask("8(999) 999-9999");
+    //-   });
+
+

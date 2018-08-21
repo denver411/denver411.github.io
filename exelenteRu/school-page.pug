@@ -1,0 +1,15 @@
+extends modules/layout-main
+
+block pageTitle 
+    title St. John's University
+
+append pageLinks
+  link(rel="stylesheet", href="css/school-page.css")
+
+block content
+  include modules/images_school-page
+  include modules/information_school-page
+  include modules/programs_school-page
+
+append pageScripts
+  script(src="js/school-page.js")
