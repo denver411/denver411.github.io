@@ -17,21 +17,21 @@ let wsConnection;
 let dragMenu = null;
 const comments = [];
 const drawData = {};
-const mainPath = 'denver411.github.io/netology/js-diploma/index.html';
+const mainPath = 'https://denver411.github.io/netology/js-diploma/index.html';
 
 
 // ~~~~~~~~~~ functions ~~~~~~~~~~ //
-function toWindowCenter(block) {
+function menuPositionCalc(block) {
   let windowHeight = document.documentElement.clientHeight;
   let windowWidth = document.documentElement.clientWidth;
   let blockHeight = block.offsetHeight;
   let blockWidth = block.offsetWidth;
-  let height = windowHeight / 2 - blockHeight / 2;
-  let width = (windowWidth - blockWidth) / 2;
+  let height = localStorage.menuTop ? localStorage.menuTop : (windowHeight - blockHeight) / 2;
+  let width = localStorage.menuLeft ? localStorage.menuLeft : (windowWidth - blockWidth) / 2;
   block.style.setProperty('--menu-top', height + "px");
   block.style.setProperty('--menu-left', width + "px");
-  if (width > (windowWidth - block.offsetWidth) / 2) {
-    toWindowCenter(menu);
+  if (width > (windowWidth - block.offsetWidth) / 2 && !localStorage.menuTop) {
+    menuPositionCalc(menu);
   }
 }
 
@@ -49,6 +49,11 @@ function createElement(node) {
   }
 
   const element = document.createElement(node.name);
+
+  // [].concat(node.cls || []).forEach(
+  //     className => element.classList.add(className)
+  // );
+
   if (node.props) {
     Object.keys(node.props).forEach(
       key => element.setAttribute(key, node.props[key])
@@ -69,10 +74,18 @@ function showError(text) {
   document.querySelector('.error__message').innerText = text;
   document.querySelector('.error').style.display = '';
   setTimeout(() => {
+
     window.location.reload();
+    window.location.href = mainPath;
     // menu.style.display = '';
-   // document.querySelector('.error').style.display = 'none';
+    // document.querySelector('.error').style.display = 'none';
   }, 2500)
+}
+
+function startingApp() {
+  menu.dataset.state = 'initial';
+  burgerMenu.style.display = 'none';
+  menuPositionCalc(menu);
 }
 
 function loadBackground(file) {
@@ -117,11 +130,28 @@ function shareImage(data) {
   if (data) {
     document.querySelector('.menu__url').setAttribute('value', `${mainPath}?${data.id}`);
     window.location.href = `${mainPath}?${data.id}`;
-    toWindowCenter(menu);
+    menuPositionCalc(menu);
+  }
+}
+
+function toCommentsMenu() {
+  Array.from(menu.children).forEach(item => {
+    item.dataset.state = '';
+  })
+  menu.dataset.state = 'selected';
+  commentsMenu.dataset.state = 'selected';
+
+  if (commentsToggle[0].hasAttribute('checked')) {
+    comments.forEach(item => {
+      item.style.display = '';
+    })
   }
 }
 
 function drawingMask() {
+  menu.dataset.state = 'selected';
+  drawMenu.dataset.state = 'selected';
+
   let drawColor = drawMenu.nextElementSibling.querySelector('[checked]').getAttribute('value');
   let drawing = false;
   drawArea.style.cssText = 'position: absolute; \
@@ -194,7 +224,7 @@ function wsEvents(id) {
         menu.style.display = '';
         app.insertBefore(drawArea, background);
       })
-      if (wsData.pic.mask){
+      if (wsData.pic.mask) {
         updateMask(wsData.pic.mask);
       }
     }
@@ -251,8 +281,11 @@ function getUrlId() {
 // ~~~~~~~~~~ events ~~~~~~~~~~ //
 //загрузка страницы
 document.addEventListener('DOMContentLoaded', () => {
-
+  //установка позиции меню
+  menuPositionCalc(menu);
+  //удаление ссылки на фон
   background.removeAttribute('src');
+  //скрытие комментариев
   comments.push(document.querySelector('.comments__form'));
   comments.forEach(item => {
     item.style.display = 'none';
@@ -304,14 +337,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const [file] = event.currentTarget.files;
     loadBackground(file);
   });
+
+  //Проверка ссылки, попытка загрузки с сервера
   let shareUrl = getUrlId();
   if (shareUrl) {
-    wsEvents(shareUrl.id);
-    //shareImage(shareUrl);
+    // wsEvents(shareUrl.id);
+    fetch(`https://neto-api.herokuapp.com/pic/${shareUrl.id}`)
+      .then(data => {
+        return data.json();
+      })
+      .then(data => {
+        document.querySelector('.menu__url').setAttribute('value', `${mainPath}?${data.id}`);
+        wsEvents(data.id);
+        toCommentsMenu();
+      })
+      .catch(data => {
+        showError('Изображение по ссылке не найдено');
+      })
+
   } else {
-    menu.dataset.state = 'initial';
-    burgerMenu.style.display = 'none';
-    toWindowCenter(menu);
+    startingApp();
   }
 })
 
@@ -340,18 +385,24 @@ document.addEventListener('mousemove', event => {
 
     if (event.pageX - dragMenu.offsetWidth / 2 < 0) {
       menu.style.setProperty('--menu-left', 0 + 'px')
+      localStorage.menuLeft = 0;
     } else if (event.pageX + menu.offsetWidth > document.documentElement.clientWidth - dragMenu.offsetWidth / 2) {
-      menu.style.setProperty('--menu-left', document.documentElement.clientWidth - menu.offsetWidth - 1 + 'px')
+      menu.style.setProperty('--menu-left', document.documentElement.clientWidth - menu.offsetWidth - 1 + 'px');
+      localStorage.menuLeft = document.documentElement.clientWidth - menu.offsetWidth - 1;
     } else {
       menu.style.setProperty('--menu-left', event.pageX - dragMenu.offsetWidth / 2 + 'px');
+      localStorage.menuLeft = event.pageX - dragMenu.offsetWidth / 2;
     }
 
     if (event.pageY - dragMenu.offsetHeight / 2 < 0) {
       menu.style.setProperty('--menu-top', 0 + 'px')
+      localStorage.menuTop = 0;
     } else if (event.pageY + menu.offsetHeight > document.documentElement.clientHeight - dragMenu.offsetWidth / 2) {
-      menu.style.setProperty('--menu-top', document.documentElement.clientHeight - menu.offsetHeight + 'px')
+      menu.style.setProperty('--menu-top', document.documentElement.clientHeight - menu.offsetHeight + 'px');
+      localStorage.menuTop = document.documentElement.clientHeight - menu.offsetHeight;
     } else {
       menu.style.setProperty('--menu-top', event.pageY - dragMenu.offsetHeight / 2 + 'px');
+      localStorage.menuTop = event.pageY - dragMenu.offsetHeight / 2;
     }
 
   }
@@ -364,41 +415,29 @@ menu.firstElementChild.addEventListener('mouseup', event => {
 });
 //клики
 menu.addEventListener('click', event => {
-  if (event.target === burgerMenu) {
+  if (event.target === burgerMenu || event.target.parentNode === burgerMenu) {
     Array.from(menu.children).forEach(item => {
       item.dataset.state = '';
     })
     menu.dataset.state = 'default';
   }
 
-  if (event.target === shareMenu) {
+  if (event.target === shareMenu || event.target.parentNode === shareMenu) {
     Array.from(menu.children).forEach(item => {
       item.dataset.state = '';
     })
     shareImage();
   }
 
-  if (event.target === drawMenu) {
+  if (event.target === drawMenu || event.target.parentNode === drawMenu) {
     Array.from(menu.children).forEach(item => {
       item.dataset.state = '';
     })
-    menu.dataset.state = 'selected';
-    drawMenu.dataset.state = 'selected';
     drawingMask();
   }
 
-  if (event.target === commentsMenu) {
-    Array.from(menu.children).forEach(item => {
-      item.dataset.state = '';
-    })
-    menu.dataset.state = 'selected';
-    commentsMenu.dataset.state = 'selected';
-
-    if (commentsToggle[0].hasAttribute('checked')) {
-      comments.forEach(item => {
-        item.style.display = '';
-      })
-    }
+  if (event.target === commentsMenu || event.target.parentNode === commentsMenu) {
+    toCommentsMenu();
   }
 })
 
