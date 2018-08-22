@@ -17,6 +17,7 @@ let wsConnection;
 let dragMenu = null;
 const comments = [];
 const drawData = {};
+const mainPath = 'denver411.github.io/netology/js-diploma/index.html';
 
 
 // ~~~~~~~~~~ functions ~~~~~~~~~~ //
@@ -48,11 +49,6 @@ function createElement(node) {
   }
 
   const element = document.createElement(node.name);
-
-  // [].concat(node.cls || []).forEach(
-  //     className => element.classList.add(className)
-  // );
-
   if (node.props) {
     Object.keys(node.props).forEach(
       key => element.setAttribute(key, node.props[key])
@@ -119,8 +115,8 @@ function shareImage(data) {
   menu.dataset.state = 'selected';
   shareMenu.dataset.state = 'selected';
   if (data) {
-    document.querySelector('.menu__url').setAttribute('value', `http://127.0.0.1:5500/index.html?${data.id}`);
-    window.location.href = `http://127.0.0.1:5500/index.html?${data.id}`;
+    document.querySelector('.menu__url').setAttribute('value', `${mainPath}?${data.id}`);
+    window.location.href = `${mainPath}?${data.id}`;
     toWindowCenter(menu);
   }
 }
