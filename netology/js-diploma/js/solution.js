@@ -116,7 +116,7 @@ const newComment = {
     }
   ]
 }
-const mainPath = https://denver411.github.io/netology/js-diploma/index.html';
+const mainPath = 'https://denver411.github.io/netology/js-diploma/index.html';
 
 
 // ~~~~~~~~~~ functions ~~~~~~~~~~ //
