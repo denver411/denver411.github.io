@@ -365,6 +365,7 @@ body {
   position: absolute;
   top: calc(4 * var(--menu-top));
   left: calc(3 * var(--menu-left));  
+  z-index: 3;
 }
 
 .comments__marker {
@@ -401,13 +402,17 @@ body {
   overflow-y: scroll;
 }
 
+.comments__body.active {
+  display: block;
+}
+
 .comments__marker:checked {
   border: 0.1rem solid red;
 }
 
-.comments__marker-checkbox:checked + .comments__body {
+/* .comments__marker-checkbox:checked + .comments__body {
   display: block;
-}
+} */
 
 .comment {
   width: 20.9rem;
