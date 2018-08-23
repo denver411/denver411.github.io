@@ -17,7 +17,106 @@ let wsConnection;
 let dragMenu = null;
 const comments = [];
 const drawData = {};
-const mainPath = 'https://denver411.github.io/netology/js-diploma/index.html';
+const newCommentForm = {
+  name: 'form',
+  attributes: {
+    'class': "comments__form"
+  },
+  childs: [{
+      name: 'span',
+      attributes: {
+        'class': "comments__marker"
+      }
+    },
+    {
+      name: 'input',
+      attributes: {
+        'type': "checkbox",
+        'class': "comments__marker-checkbox"
+      }
+    },
+    {
+      name: 'div',
+      attributes: {
+        'class': "comments__body active",
+      },
+      childs: [{
+          name: 'div',
+          attributes: {
+            'class': "comment"
+          },
+          childs: {
+            name: 'div',
+            attributes: {
+              'class': "loader",
+              'style': "display: none"
+            },
+            childs: [{
+                name: 'span'
+              },
+              {
+                name: 'span'
+              },
+              {
+                name: 'span'
+              },
+              {
+                name: 'span'
+              },
+              {
+                name: 'span'
+              }
+            ]
+          }
+        },
+        {
+          name: 'textarea',
+          attributes: {
+            'class': "comments__input",
+            'type': "text",
+            'placeholder': "Напишите ваш комментарий..."
+          }
+        },
+        {
+          name: 'input',
+          attributes: {
+            'class': "comments__close",
+            'type': "button",
+            'value': "Закрыть"
+          }
+        },
+        {
+          name: 'input',
+          attributes: {
+            'class': "comments__submit",
+            'type': "submit",
+            'value': "Отправить"
+          }
+        }
+      ]
+    }
+  ]
+}
+const newComment = {
+  name: 'div',
+  attributes: {
+    'class': "comment"
+  },
+  childs: [{
+      name: 'p',
+      attributes: {
+        'class': "comment__time"
+      }
+    },
+    {
+      name: 'p',
+      attributes: {
+        'class': "comment__message"
+      }
+    }
+  ]
+}
+const mainPath = https://denver411.github.io/netology/js-diploma/index.html';
 
 
 // ~~~~~~~~~~ functions ~~~~~~~~~~ //
@@ -50,13 +149,9 @@ function createElement(node) {
 
   const element = document.createElement(node.name);
 
-  // [].concat(node.cls || []).forEach(
-  //     className => element.classList.add(className)
-  // );
-
-  if (node.props) {
-    Object.keys(node.props).forEach(
-      key => element.setAttribute(key, node.props[key])
+  if (node.attributes) {
+    Object.keys(node.attributes).forEach(
+      key => element.setAttribute(key, node.attributes[key])
     );
   }
 
@@ -118,7 +213,7 @@ function createBackground(img) {
       return data.json();
     })
     .then(data => {
-      wsEvents(data.id);
+      wsConnect(data.id);
       shareImage(data);
     })
     .catch(showError);
@@ -142,10 +237,123 @@ function toCommentsMenu() {
   commentsMenu.dataset.state = 'selected';
 
   if (commentsToggle[0].hasAttribute('checked')) {
-    comments.forEach(item => {
-      item.style.display = '';
-    })
+    showComments();
   }
+  //скрыть / показать комментарии
+  commentsToggle[0].addEventListener('change', event => {
+    commentsToggle[1].removeAttribute('checked');
+    commentsToggle[0].setAttribute('checked', '');
+    showComments();
+  });
+
+  commentsToggle[1].addEventListener('change', event => {
+    commentsToggle[0].removeAttribute('checked');
+    commentsToggle[1].setAttribute('checked', '');
+    hideComments();
+  })
+}
+
+function showComments() {
+  Array.from(document.querySelectorAll('.comments__form')).forEach(item => {
+    item.style.display = '';
+  })
+}
+
+function hideComments() {
+  Array.from(document.querySelectorAll('.comments__form')).forEach(item => {
+    item.style.display = 'none';
+  })
+}
+
+function closeComments() {
+  Array.from(document.querySelectorAll('.comments__body')).forEach(item => {
+    if ((Array.from(item.children)).length === 4) {
+      item.parentNode.parentNode.removeChild(item.parentNode);
+    }
+  });
+  Array.from(document.querySelectorAll('.comments__body.active')).forEach(item => {
+    item.classList.remove('active');
+  })
+
+}
+
+function loadComments(comments) {
+  Object.keys(comments).forEach(key => {
+    const commentId = comments[key].left + "&" + comments[key].top;
+    let idCount = 0;
+    Array.from(app.querySelectorAll('.comments__form')).forEach(item => {
+      if (item.dataset.commentId === commentId) {
+        idCount++;
+      }
+    })
+    if (idCount === 0) {
+      createNewComment(comments[key].left, comments[key].top, key);
+    }
+    createNewCommentText(commentId, comments[key].timestamp, comments[key].message);
+    closeComments();
+  });
+}
+
+function createNewComment(x, y) {
+  // closeComments();
+  let commentForm = createElement(newCommentForm);
+  app.appendChild(commentForm);
+  commentForm.setAttribute('style', `top:${y}px; left:${x}px`);
+  commentForm.dataset.commentId = x + '&' + y;
+  // comments.push(commentForm);
+  commentForm.children[1].addEventListener('click', event => {
+    if (commentForm.lastElementChild.classList.contains('active')) {
+      commentForm.lastElementChild.classList.remove('active');
+    } else {
+      closeComments();
+      commentForm.lastElementChild.classList.add('active');
+    }
+  })
+  commentForm.querySelector('.comments__close').addEventListener('click', event => {
+    closeComments();
+  })
+  commentForm.querySelector('.comments__submit').addEventListener('click', event => {
+    event.preventDefault();
+    let commentText = commentForm.querySelector('.comments__input');
+    if (commentText.value) {
+      commentForm.querySelector('.loader').style.display = '';
+      let commentData = 'message=' + encodeURIComponent(commentText.value) + '&left=' + encodeURIComponent(x) +
+        '&top=' + encodeURIComponent(y);
+      let pic = getUrlId();
+      fetch(`https://neto-api.herokuapp.com/pic/${pic.id}/comments`, {
+          body: commentData,
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        })
+        // .then(data => {
+        //   return data.json();
+        // })
+        // .then(data => {
+        //   console.log(data);
+        // })
+        .catch(showError);
+    }
+
+
+  })
+}
+
+function createNewCommentText(commentId, time, text) {
+  Array.from(app.querySelectorAll('.comments__form')).forEach(item => {
+    if (item.dataset.commentId === commentId) {
+      const commentText = createElement(newComment);
+      const commentTime = new Date(time);
+      const lastComment = item.querySelector('.loader').parentElement;
+      const commentsArea = item.querySelector('.comments__body');
+      commentText.firstElementChild.innerText = commentTime.toLocaleString('ru-RU');
+      commentText.lastElementChild.innerText = text;
+      commentsArea.insertBefore(commentText, lastComment);
+      item.querySelector('.loader').style.display = 'none';
+      item.querySelector('.comments__input').value = '';
+    }
+  })
 }
 
 function drawingMask() {
@@ -154,14 +362,6 @@ function drawingMask() {
 
   let drawColor = drawMenu.nextElementSibling.querySelector('[checked]').getAttribute('value');
   let drawing = false;
-  drawArea.style.cssText = 'position: absolute; \
-    top: 50%; \
-    left: 50%; \
-    transform: translate(-50%, -50%); \
-    z-index: 2;'
-
-  drawArea.width = background.offsetWidth;
-  drawArea.height = background.offsetHeight;
 
   Array.from(drawMenu.nextElementSibling.children).forEach(item => {
 
@@ -184,13 +384,18 @@ function drawingMask() {
 
   drawArea.addEventListener("mousedown", (event) => {
     event.preventDefault();
-    drawing = true;
-    drawCreate(event.offsetX, event.offsetY);
+    if (drawMenu.dataset.state === 'selected') {
+      drawing = true;
+      drawCreate(event.offsetX, event.offsetY);
+    }
   });
 
-  drawArea.addEventListener("mouseup", () => {
+  drawArea.addEventListener("mouseup", event => {
+    event.stopPropagation();
     drawing = false;
-    sendMask();
+    if (drawMenu.dataset.state === 'selected') {
+      sendMask();
+    }
   });
 
   drawArea.addEventListener("mouseleave", () => {
@@ -206,7 +411,7 @@ function drawingMask() {
 
 }
 
-function wsEvents(id) {
+function wsConnect(id) {
   wsConnection = new WebSocket(`wss://neto-api.herokuapp.com/pic/${id}`);
   wsConnection.addEventListener('message', event => {
     let wsData = JSON.parse(event.data);
@@ -217,9 +422,22 @@ function wsEvents(id) {
     if (wsData.event === 'error') {
       console.log(wsData);
     }
+    if (wsData.event === 'comment') {
+      let commentId = wsData.comment.left + "&" + wsData.comment.top;
+      createNewCommentText(commentId, wsData.comment.timestamp, wsData.comment.message);
+    }
     if (wsData.event === 'pic') {
       background.src = wsData.pic.url;
       background.addEventListener('load', () => {
+        //добавляем размеры и позицию канвасу
+        drawArea.width = background.offsetWidth;
+        drawArea.height = background.offsetHeight;
+        drawArea.style.cssText = 'position: absolute; \
+    top: 50%; \
+    left: 50%; \
+    transform: translate(-50%, -50%); \
+    z-index: 2;'
+        //скрытие прелоадера
         document.querySelector('.image-loader').style.display = 'none';
         menu.style.display = '';
         app.insertBefore(drawArea, background);
@@ -227,25 +445,27 @@ function wsEvents(id) {
       if (wsData.pic.mask) {
         updateMask(wsData.pic.mask);
       }
+      if (wsData.pic.comments) {
+        loadComments(wsData.pic.comments);
+      }
     }
   })
 }
 
 function sendMask() {
   //костыль для объединения слоев
-  if (mask.src) {
-    ctx.drawImage(mask, 0, 0);
-  }
+  // if (mask.src) {
+  //   ctx.drawImage(mask, 0, 0);
+  // }
   //костыль для объединения слоев
   drawArea.toBlob(blob => {
-    console.log(blob);
     wsConnection.send(blob);
   })
 }
 
 function updateMask(url) {
   //костыль для объединения слоев
-  mask.crossOrigin = "anonymous";
+  // mask.crossOrigin = "anonymous";
   //костыль для объединения слоев
   if (mask.src) {
     mask.src = url;
@@ -278,6 +498,8 @@ function getUrlId() {
   };
 }
 
+
+
 // ~~~~~~~~~~ events ~~~~~~~~~~ //
 //загрузка страницы
 document.addEventListener('DOMContentLoaded', () => {
@@ -286,25 +508,25 @@ document.addEventListener('DOMContentLoaded', () => {
   //удаление ссылки на фон
   background.removeAttribute('src');
   //скрытие комментариев
-  comments.push(document.querySelector('.comments__form'));
-  comments.forEach(item => {
-    item.style.display = 'none';
-  })
+  // comments.push(document.querySelector('.comments__form'));
+  // comments.forEach(item => {
+  //   item.style.display = 'none';
+  // })
   //вставка инпута в меню
   const newInputImage = {
     name: 'label',
-    props: {
+    attributes: {
       'class': "menu__item"
     },
     childs: [{
         name: 'i',
-        props: {
+        attributes: {
           'class': "menu__icon new-icon"
         }
       },
       {
         name: 'span',
-        props: {
+        attributes: {
           'class': "menu__item-title"
         },
         childs: ['Загрузить',
@@ -316,7 +538,7 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       {
         name: 'input',
-        props: {
+        attributes: {
           'type': "file",
           'style': "display: none;",
           'accept': "image/jpeg, image/pjpeg, image/png"
@@ -324,6 +546,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     ]
   }
+
+
+
 
   inputImage.innerText = '';
   inputImage.style.padding = 0;
@@ -341,14 +566,14 @@ document.addEventListener('DOMContentLoaded', () => {
   //Проверка ссылки, попытка загрузки с сервера
   let shareUrl = getUrlId();
   if (shareUrl) {
-    // wsEvents(shareUrl.id);
+    // wsConnect(shareUrl.id);
     fetch(`https://neto-api.herokuapp.com/pic/${shareUrl.id}`)
       .then(data => {
         return data.json();
       })
       .then(data => {
         document.querySelector('.menu__url').setAttribute('value', `${mainPath}?${data.id}`);
-        wsEvents(data.id);
+        wsConnect(data.id);
         toCommentsMenu();
       })
       .catch(data => {
@@ -413,7 +638,7 @@ menu.firstElementChild.addEventListener('mouseup', event => {
     dragMenu = null;
   }
 });
-//клики
+//клики меню
 menu.addEventListener('click', event => {
   if (event.target === burgerMenu || event.target.parentNode === burgerMenu) {
     Array.from(menu.children).forEach(item => {
@@ -440,28 +665,31 @@ menu.addEventListener('click', event => {
     toCommentsMenu();
   }
 })
+//создание комментариев
+drawArea.addEventListener('click', event => {
+  closeComments();
+  if (commentsMenu.dataset.state === 'selected') {
+    createNewComment(event.pageX, event.pageY);
+  }
+})
 
+//копирование ссылки
+
+document.querySelector('.menu_copy').addEventListener('click', event => {
+  menu.querySelector('.menu__url').select();
+  try {
+    let successful = document.execCommand('copy');
+    let msg = successful ? 'успешно ' : 'не';
+    console.log(`URL ${msg} скопирован`);
+  } catch (err) {
+    console.log('Ошибка копирования');
+  }
+  window.getSelection().removeAllRanges();
+})
 
 
 // ~~~~~~~~~~ code ~~~~~~~~~~ //
 
-//скрыть / показать комментарии
-Array.from(commentsToggle).forEach(item => {
-  item.addEventListener('change', event => {
-    if (item.getAttribute('value') === 'on') {
-      commentsToggle[1].removeAttribute('checked');
-      commentsToggle[0].setAttribute('checked', '');
-      comments.forEach(item => {
-        item.style.display = '';
-      })
-    } else {
-      commentsToggle[0].removeAttribute('checked');
-      commentsToggle[1].setAttribute('checked', '');
-      comments.forEach(item => {
-        item.style.display = 'none';
-      })
-    }
-  })
-})
+
 
 console.log('ok');
