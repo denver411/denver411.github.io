@@ -430,6 +430,10 @@ function wsConnect(id) {
     if (wsData.event === 'pic') {
       background.src = wsData.pic.url;
       background.addEventListener('load', () => {
+        //ограничиваем размеры картинки экраном
+        if (background.offsetWidth > document.documentElement.clientWidth){
+        background.width =document.documentElement.clientWidth - 40; 
+        }
         //добавляем размеры и позицию канвасу
         drawArea.width = background.offsetWidth;
         drawArea.height = background.offsetHeight;
