@@ -303,7 +303,8 @@ function createNewComment(x, y) {
   // comments.push(commentForm);
   commentForm.children[1].addEventListener('click', event => {
     if (commentForm.lastElementChild.classList.contains('active')) {
-      commentForm.lastElementChild.classList.remove('active');
+      //commentForm.lastElementChild.classList.remove('active');
+      closeComments();
     } else {
       closeComments();
       commentForm.lastElementChild.classList.add('active');
