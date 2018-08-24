@@ -673,7 +673,7 @@ menu.addEventListener('click', event => {
 //создание комментариев (добавил проверку состояния переключателя скрыть/показать комменты)
 drawArea.addEventListener('click', event => {
   closeComments();
-  if (commentsMenu.dataset.state === 'selected' && commentsToggle.[0].hasAttribute('checked')) {
+  if (commentsMenu.dataset.state === 'selected' && commentsToggle[0].hasAttribute('checked')) {
     createNewComment(event.pageX, event.pageY);
   }
 })
