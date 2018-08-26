@@ -376,18 +376,22 @@ function drawingMask() {
   })
 
   function drawCreate(x, y) {
-    ctx.beginPath();
+
     ctx.strokeStyle = drawColor;
     ctx.fillStyle = drawColor;
-    ctx.arc(x, y, 2, 0, 2 * Math.PI);
-    ctx.fill();
+    ctx.lineCap='round';
+    ctx.lineJoin='round';
+    ctx.lineWidth = 4;
+    ctx.lineTo(x, y);
+    ctx.stroke();
   }
 
   drawArea.addEventListener("mousedown", (event) => {
     event.preventDefault();
     if (drawMenu.dataset.state === 'selected') {
       drawing = true;
-      drawCreate(event.offsetX, event.offsetY);
+      ctx.beginPath();
+      ctx.moveTo(x, y);
     }
   });
 
