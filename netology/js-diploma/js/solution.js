@@ -15,8 +15,6 @@ const ctx = drawArea.getContext("2d");
 const mask = new Image;
 let wsConnection;
 let dragMenu = null;
-const comments = [];
-const drawData = {};
 const newCommentForm = {
   name: 'form',
   attributes: {
@@ -116,7 +114,8 @@ const newComment = {
     }
   ]
 }
-const mainPath = 'https://denver411.github.io/netology/js-diploma/index.html';
+const mainPath = 'http://127.0.0.1:5500/index.html';
+//'https://denver411.github.io/netology/js-diploma/index.html';
 
 
 // ~~~~~~~~~~ functions ~~~~~~~~~~ //
@@ -165,15 +164,11 @@ function createElement(node) {
 function showError(text) {
   menu.style.display = 'none';
   document.querySelector('.image-loader').style.display = 'none';
-
   document.querySelector('.error__message').innerText = text;
   document.querySelector('.error').style.display = '';
   setTimeout(() => {
-
     window.location.reload();
     window.location.href = mainPath;
-    // menu.style.display = '';
-    // document.querySelector('.error').style.display = 'none';
   }, 2500)
 }
 
@@ -193,6 +188,7 @@ function loadBackground(file) {
     return;
   }
   background.removeAttribute('src');
+  mask.removeAttribute('src');
   burgerMenu.style.display = '';
   createBackground(file);
 }
@@ -215,6 +211,7 @@ function createBackground(img) {
     .then(data => {
       wsConnect(data.id);
       shareImage(data);
+      console.log('!');
     })
     .catch(showError);
 }
@@ -224,7 +221,7 @@ function shareImage(data) {
   shareMenu.dataset.state = 'selected';
   if (data) {
     document.querySelector('.menu__url').setAttribute('value', `${mainPath}?${data.id}`);
-    window.location.href = `${mainPath}?${data.id}`;
+    // window.location.href = `${mainPath}?${data.id}`;
     menuPositionCalc(menu);
   }
 }
@@ -278,36 +275,44 @@ function closeComments() {
 }
 
 function loadComments(comments) {
+  const oldComments = Array.from(app.querySelectorAll('.comments__form'));
+  const activeComment = app.querySelector('.comments__body.active');
   Object.keys(comments).forEach(key => {
     const commentId = comments[key].left + "&" + comments[key].top;
     let idCount = 0;
-    Array.from(app.querySelectorAll('.comments__form')).forEach(item => {
+    oldComments.forEach(item => {
       if (item.dataset.commentId === commentId) {
         idCount++;
       }
     })
     if (idCount === 0) {
-      createNewComment(comments[key].left, comments[key].top, key);
+      createNewCommentBlock(comments[key].left, comments[key].top);
     }
     createNewCommentText(commentId, comments[key].timestamp, comments[key].message);
-    closeComments();
+
   });
+  closeComments();
+  if (activeComment) {
+    activeComment.classList.add('active');
+  }
 }
 
-function createNewComment(x, y) {
+function createNewCommentBlock(x, y) {
   // closeComments();
   let commentForm = createElement(newCommentForm);
   app.appendChild(commentForm);
   commentForm.setAttribute('style', `top:${y}px; left:${x}px`);
   commentForm.dataset.commentId = x + '&' + y;
-  // comments.push(commentForm);
+  let commentText = commentForm.querySelector('.comments__input');
+  commentText.focus();
+  // события для созданной формы комментария
   commentForm.children[1].addEventListener('click', event => {
     if (commentForm.lastElementChild.classList.contains('active')) {
-      //commentForm.lastElementChild.classList.remove('active');
       closeComments();
     } else {
       closeComments();
       commentForm.lastElementChild.classList.add('active');
+      commentText.focus();
     }
   })
   commentForm.querySelector('.comments__close').addEventListener('click', event => {
@@ -316,11 +321,13 @@ function createNewComment(x, y) {
   commentForm.querySelector('.comments__submit').addEventListener('click', event => {
     event.preventDefault();
     let commentText = commentForm.querySelector('.comments__input');
+    commentText.focus();
     if (commentText.value) {
       commentForm.querySelector('.loader').style.display = '';
       let commentData = 'message=' + encodeURIComponent(commentText.value) + '&left=' + encodeURIComponent(x) +
         '&top=' + encodeURIComponent(y);
       let pic = getUrlId();
+      commentText.value = '';
       fetch(`https://neto-api.herokuapp.com/pic/${pic.id}/comments`, {
           body: commentData,
           method: 'POST',
@@ -352,7 +359,6 @@ function createNewCommentText(commentId, time, text) {
       commentText.lastElementChild.innerText = text;
       commentsArea.insertBefore(commentText, lastComment);
       item.querySelector('.loader').style.display = 'none';
-      item.querySelector('.comments__input').value = '';
     }
   })
 }
@@ -379,9 +385,10 @@ function drawingMask() {
 
     ctx.strokeStyle = drawColor;
     ctx.fillStyle = drawColor;
-    ctx.lineCap='round';
-    ctx.lineJoin='round';
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
     ctx.lineWidth = 4;
+    // ctx.arc(x, y, 2, 0, 2 * Math.PI);
     ctx.lineTo(x, y);
     ctx.stroke();
   }
@@ -391,7 +398,7 @@ function drawingMask() {
     if (drawMenu.dataset.state === 'selected') {
       drawing = true;
       ctx.beginPath();
-      ctx.moveTo(x, y);
+      ctx.moveTo(event.offsetX, event.offsetY);
     }
   });
 
@@ -413,7 +420,6 @@ function drawingMask() {
       drawCreate(event.offsetX, event.offsetY);
     }
   });
-
 }
 
 function wsConnect(id) {
@@ -428,24 +434,21 @@ function wsConnect(id) {
       console.log(wsData);
     }
     if (wsData.event === 'comment') {
-      let commentId = wsData.comment.left + "&" + wsData.comment.top;
-      createNewCommentText(commentId, wsData.comment.timestamp, wsData.comment.message);
+      loadComments({
+        "comment": wsData.comment
+      });
     }
     if (wsData.event === 'pic') {
       background.src = wsData.pic.url;
       background.addEventListener('load', () => {
-        //ограничиваем размеры картинки экраном
-        if (background.offsetWidth > document.documentElement.clientWidth){
-        background.width =document.documentElement.clientWidth - 40; 
-        }
         //добавляем размеры и позицию канвасу
         drawArea.width = background.offsetWidth;
         drawArea.height = background.offsetHeight;
         drawArea.style.cssText = 'position: absolute; \
-    top: 50%; \
-    left: 50%; \
-    transform: translate(-50%, -50%); \
-    z-index: 2;'
+        top: 50%; \
+        left: 50%; \
+        transform: translate(-50%, -50%); \
+        z-index: 2;'
         //скрытие прелоадера
         document.querySelector('.image-loader').style.display = 'none';
         menu.style.display = '';
@@ -462,20 +465,12 @@ function wsConnect(id) {
 }
 
 function sendMask() {
-  //костыль для объединения слоев
-  // if (mask.src) {
-  //   ctx.drawImage(mask, 0, 0);
-  // }
-  //костыль для объединения слоев
   drawArea.toBlob(blob => {
     wsConnection.send(blob);
   })
 }
 
 function updateMask(url) {
-  //костыль для объединения слоев
-  // mask.crossOrigin = "anonymous";
-  //костыль для объединения слоев
   if (mask.src) {
     mask.src = url;
     mask.addEventListener('load', () => {
@@ -507,8 +502,6 @@ function getUrlId() {
   };
 }
 
-
-
 // ~~~~~~~~~~ events ~~~~~~~~~~ //
 //загрузка страницы
 document.addEventListener('DOMContentLoaded', () => {
@@ -516,11 +509,6 @@ document.addEventListener('DOMContentLoaded', () => {
   menuPositionCalc(menu);
   //удаление ссылки на фон
   background.removeAttribute('src');
-  //скрытие комментариев
-  // comments.push(document.querySelector('.comments__form'));
-  // comments.forEach(item => {
-  //   item.style.display = 'none';
-  // })
   //вставка инпута в меню
   const newInputImage = {
     name: 'label',
@@ -556,14 +544,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
   }
 
-
-
-
   inputImage.innerText = '';
   inputImage.style.padding = 0;
   inputImage.appendChild(createElement(newInputImage));
 
-  //загрузка нового фона по нажатию "Загрузить"
+  //загрузка нового фона по событию "Загрузки"
   const inputNewImage = document.querySelector('.menu__item.new input');
 
   inputNewImage.addEventListener('change', event => {
@@ -575,7 +560,6 @@ document.addEventListener('DOMContentLoaded', () => {
   //Проверка ссылки, попытка загрузки с сервера
   let shareUrl = getUrlId();
   if (shareUrl) {
-    // wsConnect(shareUrl.id);
     fetch(`https://neto-api.herokuapp.com/pic/${shareUrl.id}`)
       .then(data => {
         return data.json();
@@ -647,6 +631,7 @@ menu.firstElementChild.addEventListener('mouseup', event => {
     dragMenu = null;
   }
 });
+
 //клики меню
 menu.addEventListener('click', event => {
   if (event.target === burgerMenu || event.target.parentNode === burgerMenu) {
@@ -674,15 +659,16 @@ menu.addEventListener('click', event => {
     toCommentsMenu();
   }
 })
-//создание комментариев (добавил проверку состояния переключателя скрыть/показать комменты)
+
+//создание комментариев
 drawArea.addEventListener('click', event => {
   closeComments();
   if (commentsMenu.dataset.state === 'selected' && commentsToggle[0].hasAttribute('checked')) {
-    createNewComment(event.pageX, event.pageY);
+    createNewCommentBlock(event.pageX, event.pageY);
   }
 })
-//копирование ссылки
 
+//копирование ссылки
 document.querySelector('.menu_copy').addEventListener('click', event => {
   menu.querySelector('.menu__url').select();
   try {
@@ -694,10 +680,3 @@ document.querySelector('.menu_copy').addEventListener('click', event => {
   }
   window.getSelection().removeAllRanges();
 })
-
-
-// ~~~~~~~~~~ code ~~~~~~~~~~ //
-
-
-
-console.log('ok');
