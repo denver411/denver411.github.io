@@ -114,8 +114,7 @@ const newComment = {
     }
   ]
 }
-const mainPath = 'http://127.0.0.1:5500/index.html';
-//'https://denver411.github.io/netology/js-diploma/index.html';
+const mainPath = 'https://denver411.github.io/netology/js-diploma/index.html';
 
 
 // ~~~~~~~~~~ functions ~~~~~~~~~~ //
