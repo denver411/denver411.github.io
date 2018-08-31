@@ -15,6 +15,7 @@ const ctx = drawArea.getContext("2d");
 const mask = new Image;
 let wsConnection;
 let dragMenu = null;
+let drawing = false;
 const newCommentForm = {
   name: 'form',
   attributes: {
@@ -114,7 +115,8 @@ const newComment = {
     }
   ]
 }
-const mainPath = 'https://denver411.github.io/netology/js-diploma/index.html';
+const mainPath = 'http://127.0.0.1:5500/index.html';
+//'https://denver411.github.io/netology/js-diploma/index.html';
 
 
 // ~~~~~~~~~~ functions ~~~~~~~~~~ //
@@ -125,11 +127,15 @@ function menuPositionCalc(block) {
   let blockWidth = block.offsetWidth;
   let height = localStorage.menuTop ? localStorage.menuTop : (windowHeight - blockHeight) / 2;
   let width = localStorage.menuLeft ? localStorage.menuLeft : (windowWidth - blockWidth) / 2;
+
+  //защита от переламывания меню 
+  blockWidth > 0 ? blockWidth : blockWidth = 708;
+  if (width > (windowWidth - blockWidth)) {
+    width = (windowWidth - blockWidth);
+    localStorage.menuLeft = width;
+  }
   block.style.setProperty('--menu-top', height + "px");
   block.style.setProperty('--menu-left', width + "px");
-  if (width > (windowWidth - block.offsetWidth) / 2 && !localStorage.menuTop) {
-    menuPositionCalc(menu);
-  }
 }
 
 function createElement(node) {
@@ -196,7 +202,7 @@ function createBackground(img) {
   const imageForSend = new FormData;
   imageForSend.append('title', 'This is just background');
   imageForSend.append('image', img);
-
+  hideComments();
   menu.style.display = 'none';
   document.querySelector('.image-loader').style.display = '';
 
@@ -210,7 +216,6 @@ function createBackground(img) {
     .then(data => {
       wsConnect(data.id);
       shareImage(data);
-      console.log('!');
     })
     .catch(showError);
 }
@@ -220,9 +225,8 @@ function shareImage(data) {
   shareMenu.dataset.state = 'selected';
   if (data) {
     document.querySelector('.menu__url').setAttribute('value', `${mainPath}?${data.id}`);
-    // window.location.href = `${mainPath}?${data.id}`;
-    menuPositionCalc(menu);
   }
+  menuPositionCalc(menu);
 }
 
 function toCommentsMenu() {
@@ -297,10 +301,12 @@ function loadComments(comments) {
 }
 
 function createNewCommentBlock(x, y) {
-  // closeComments();
   let commentForm = createElement(newCommentForm);
   app.appendChild(commentForm);
-  commentForm.setAttribute('style', `top:${y}px; left:${x}px`);
+  console.log(x, y);
+  let formX = x + (drawArea.offsetLeft - drawArea.offsetWidth / 2);
+  let formY = y + (drawArea.offsetTop - drawArea.offsetHeight / 2);
+  commentForm.setAttribute('style', `top:${formY}px; left:${formX}px`);
   commentForm.dataset.commentId = x + '&' + y;
   let commentText = commentForm.querySelector('.comments__input');
   commentText.focus();
@@ -325,9 +331,11 @@ function createNewCommentBlock(x, y) {
       commentForm.querySelector('.loader').style.display = '';
       let commentData = 'message=' + encodeURIComponent(commentText.value) + '&left=' + encodeURIComponent(x) +
         '&top=' + encodeURIComponent(y);
-      let pic = getUrlId();
+      let start = wsConnection.url.indexOf('pic/');
+      let pic = wsConnection.url.substring(start + 4);
+      console.log(pic);
       commentText.value = '';
-      fetch(`https://neto-api.herokuapp.com/pic/${pic.id}/comments`, {
+      fetch(`https://neto-api.herokuapp.com/pic/${pic}/comments`, {
           body: commentData,
           method: 'POST',
           headers: {
@@ -367,7 +375,6 @@ function drawingMask() {
   drawMenu.dataset.state = 'selected';
 
   let drawColor = drawMenu.nextElementSibling.querySelector('[checked]').getAttribute('value');
-  let drawing = false;
 
   Array.from(drawMenu.nextElementSibling.children).forEach(item => {
 
@@ -387,7 +394,6 @@ function drawingMask() {
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     ctx.lineWidth = 4;
-    // ctx.arc(x, y, 2, 0, 2 * Math.PI);
     ctx.lineTo(x, y);
     ctx.stroke();
   }
@@ -427,7 +433,9 @@ function wsConnect(id) {
     let wsData = JSON.parse(event.data);
     console.log(wsData);
     if (wsData.event === 'mask') {
+      // if (!drawing) {
       updateMask(wsData.url);
+      // }
     }
     if (wsData.event === 'error') {
       console.log(wsData);
@@ -452,13 +460,14 @@ function wsConnect(id) {
         document.querySelector('.image-loader').style.display = 'none';
         menu.style.display = '';
         app.insertBefore(drawArea, background);
+
+        if (wsData.pic.mask) {
+          updateMask(wsData.pic.mask);
+        }
+        if (wsData.pic.comments) {
+          loadComments(wsData.pic.comments);
+        }
       })
-      if (wsData.pic.mask) {
-        updateMask(wsData.pic.mask);
-      }
-      if (wsData.pic.comments) {
-        loadComments(wsData.pic.comments);
-      }
     }
   })
 }
@@ -470,23 +479,21 @@ function sendMask() {
 }
 
 function updateMask(url) {
-  if (mask.src) {
-    mask.src = url;
-    mask.addEventListener('load', () => {
-      ctx.clearRect(0, 0, drawArea.width, drawArea.height);
-    })
-  } else {
-    mask.src = url;
+  if (!mask.src) {
     mask.style.cssText = 'position: absolute; \
     top: 50%; \
     left: 50%; \
     transform: translate(-50%, -50%); \
     z-index: 1;';
-    mask.addEventListener('load', () => {
-      ctx.clearRect(0, 0, drawArea.width, drawArea.height);
-      app.insertBefore(mask, background);
-    })
+    app.insertBefore(mask, background);
   }
+  mask.src = url;
+  mask.addEventListener('load', clearCanvas);
+}
+
+function clearCanvas() {
+  ctx.clearRect(0, 0, drawArea.width, drawArea.height);
+  mask.removeEventListener('load', clearCanvas);
 }
 
 function getUrlId() {
@@ -547,6 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
   inputImage.style.padding = 0;
   inputImage.appendChild(createElement(newInputImage));
 
+
   //загрузка нового фона по событию "Загрузки"
   const inputNewImage = document.querySelector('.menu__item.new input');
 
@@ -592,14 +600,13 @@ app.addEventListener('drop', event => {
 })
 
 //перетаскивание меню
-menu.firstElementChild.addEventListener('mousedown', (event) => {
+menu.firstElementChild.addEventListener('mousedown', event => {
   dragMenu = event.currentTarget;
 })
 
 document.addEventListener('mousemove', event => {
   if (dragMenu) {
     event.preventDefault();
-
     if (event.pageX - dragMenu.offsetWidth / 2 < 0) {
       menu.style.setProperty('--menu-left', 0 + 'px')
       localStorage.menuLeft = 0;
@@ -625,7 +632,7 @@ document.addEventListener('mousemove', event => {
   }
 })
 
-menu.firstElementChild.addEventListener('mouseup', event => {
+document.addEventListener('mouseup', event => {
   if (dragMenu) {
     dragMenu = null;
   }
@@ -657,13 +664,16 @@ menu.addEventListener('click', event => {
   if (event.target === commentsMenu || event.target.parentNode === commentsMenu) {
     toCommentsMenu();
   }
+  menuPositionCalc(menu);
 })
 
 //создание комментариев
 drawArea.addEventListener('click', event => {
   closeComments();
   if (commentsMenu.dataset.state === 'selected' && commentsToggle[0].hasAttribute('checked')) {
-    createNewCommentBlock(event.pageX, event.pageY);
+    let formX = event.pageX - (drawArea.offsetLeft - drawArea.offsetWidth / 2);
+    let formY = event.pageY - (drawArea.offsetTop - drawArea.offsetHeight / 2);
+    createNewCommentBlock(formX, formY);
   }
 })
 
