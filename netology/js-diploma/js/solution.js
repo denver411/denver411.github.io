@@ -16,6 +16,7 @@ const mask = new Image;
 let wsConnection;
 let dragMenu = null;
 let drawing = false;
+let menuHeight = menu.offsetHeight;
 const newCommentForm = {
   name: 'form',
   attributes: {
@@ -115,7 +116,14 @@ const newComment = {
     }
   ]
 }
-const mainPath = 'https://denver411.github.io/netology/js-diploma/index.html';
+const formContainer = createElement({
+  name: 'div',
+  attributes: {
+    'class': "form-container"
+  }
+});
+const mainPath = 'http://127.0.0.1:5500/index.html';
+//'https://denver411.github.io/netology/js-diploma/index.html';
 
 
 // ~~~~~~~~~~ functions ~~~~~~~~~~ //
@@ -124,17 +132,22 @@ function menuPositionCalc(block) {
   let windowWidth = document.documentElement.clientWidth;
   let blockHeight = block.offsetHeight;
   let blockWidth = block.offsetWidth;
-  let height = localStorage.menuTop ? localStorage.menuTop : (windowHeight - blockHeight) / 2;
-  let width = localStorage.menuLeft ? localStorage.menuLeft : (windowWidth - blockWidth) / 2;
+  let posTop = localStorage.menuTop ? localStorage.menuTop : (windowHeight - blockHeight) / 2;
+  let posLeft = localStorage.menuLeft ? localStorage.menuLeft : (windowWidth - blockWidth) / 2;
 
+  block.style.setProperty('--menu-top', posTop + "px");
   //защита от переламывания меню 
-  blockWidth > 0 ? blockWidth : blockWidth = 708;
-  if (width > (windowWidth - blockWidth)) {
-    width = (windowWidth - blockWidth);
-    localStorage.menuLeft = width;
+  checkWidth(menu, posLeft);
+}
+
+function checkWidth(block, posLeft) {
+  if (block.offsetHeight > menuHeight) {
+    posLeft--;
+    block.style.setProperty('--menu-left', posLeft + 'px');
+    checkWidth(block, posLeft);
+  } else {
+    return;
   }
-  block.style.setProperty('--menu-top', height + "px");
-  block.style.setProperty('--menu-left', width + "px");
 }
 
 function createElement(node) {
@@ -167,13 +180,22 @@ function createElement(node) {
 
 function showError(text) {
   menu.style.display = 'none';
+  background.style.display = 'none';
+  drawArea.style.display = 'none';
+  mask.style.display = 'none';
   document.querySelector('.image-loader').style.display = 'none';
   document.querySelector('.error__message').innerText = text;
   document.querySelector('.error').style.display = '';
-  setTimeout(() => {
-    window.location.reload();
-    window.location.href = mainPath;
-  }, 2500)
+  app.addEventListener('click', hideError);
+}
+
+function hideError() {
+  app.removeEventListener('click', hideError);
+  menu.style.display = '';
+  background.style.display = '';
+  document.querySelector('.error').style.display = 'none';
+  drawArea.style.display = '';
+  mask.style.display = '';
 }
 
 function startingApp() {
@@ -183,7 +205,6 @@ function startingApp() {
 }
 
 function loadBackground(file) {
-
   const {
     type
   } = file;
@@ -204,7 +225,6 @@ function createBackground(img) {
   hideComments();
   menu.style.display = 'none';
   document.querySelector('.image-loader').style.display = '';
-
   fetch('https://neto-api.herokuapp.com/pic', {
       body: imageForSend,
       method: 'POST'
@@ -213,7 +233,7 @@ function createBackground(img) {
       return data.json();
     })
     .then(data => {
-      wsConnect(data.id);
+      wsConnect(data.id)
       shareImage(data);
     })
     .catch(showError);
@@ -250,6 +270,7 @@ function toCommentsMenu() {
     commentsToggle[1].setAttribute('checked', '');
     hideComments();
   })
+  formContainer.style.zIndex = '3';
 }
 
 function showComments() {
@@ -277,11 +298,11 @@ function closeComments() {
 }
 
 function loadComments(comments) {
-  const oldComments = Array.from(app.querySelectorAll('.comments__form'));
   const activeComment = app.querySelector('.comments__body.active');
   Object.keys(comments).forEach(key => {
     const commentId = comments[key].left + "&" + comments[key].top;
     let idCount = 0;
+    const oldComments = Array.from(app.querySelectorAll('.comments__form'));
     oldComments.forEach(item => {
       if (item.dataset.commentId === commentId) {
         idCount++;
@@ -301,11 +322,8 @@ function loadComments(comments) {
 
 function createNewCommentBlock(x, y) {
   let commentForm = createElement(newCommentForm);
-  app.appendChild(commentForm);
-  console.log(x, y);
-  let formX = x + (drawArea.offsetLeft - drawArea.offsetWidth / 2);
-  let formY = y + (drawArea.offsetTop - drawArea.offsetHeight / 2);
-  commentForm.setAttribute('style', `top:${formY}px; left:${formX}px`);
+  formContainer.appendChild(commentForm);
+  commentForm.setAttribute('style', `top:${y}px; left:${x}px`);
   commentForm.dataset.commentId = x + '&' + y;
   let commentText = commentForm.querySelector('.comments__input');
   commentText.focus();
@@ -319,9 +337,9 @@ function createNewCommentBlock(x, y) {
       commentText.focus();
     }
   })
-  commentForm.querySelector('.comments__close').addEventListener('click', event => {
-    closeComments();
-  })
+
+  commentForm.querySelector('.comments__close').addEventListener('click', closeComments);
+
   commentForm.querySelector('.comments__submit').addEventListener('click', event => {
     event.preventDefault();
     let commentText = commentForm.querySelector('.comments__input');
@@ -341,16 +359,8 @@ function createNewCommentBlock(x, y) {
             'Content-Type': 'application/x-www-form-urlencoded'
           }
         })
-        // .then(data => {
-        //   return data.json();
-        // })
-        // .then(data => {
-        //   console.log(data);
-        // })
         .catch(showError);
     }
-
-
   })
 }
 
@@ -432,9 +442,9 @@ function wsConnect(id) {
     let wsData = JSON.parse(event.data);
     console.log(wsData);
     if (wsData.event === 'mask') {
-      // if (!drawing) {
       updateMask(wsData.url);
-      // }
+    } else {
+
     }
     if (wsData.event === 'error') {
       console.log(wsData);
@@ -445,28 +455,45 @@ function wsConnect(id) {
       });
     }
     if (wsData.event === 'pic') {
+      sessionStorage.backgroundId = wsData.pic.id;
+      //удаление примера чата комментария
+      if (document.querySelector('.comments__form')) {
+        document.querySelector('.comments__form').parentNode
+          .removeChild(document.querySelector('.comments__form'));
+      }
       background.src = wsData.pic.url;
       background.addEventListener('load', () => {
         //добавляем размеры и позицию канвасу
         drawArea.width = background.offsetWidth;
         drawArea.height = background.offsetHeight;
         drawArea.style.cssText = 'position: absolute; \
-        top: 50%; \
-        left: 50%; \
-        transform: translate(-50%, -50%); \
-        z-index: 2;'
+          top: 50%; \
+          left: 50%; \
+          transform: translate(-50%, -50%); \
+          z-index: 2;'
+        //позиционирование контейнера форм
+        formContainer.style.cssText = `position: relative; \
+          top: 50%; \
+          left: 50%; \
+          transform: translate(-50%, -50%); \
+          width: ${background.offsetWidth}px; \
+          height: ${background.offsetHeight}px; \
+          z-index: 3;`
         //скрытие прелоадера
         document.querySelector('.image-loader').style.display = 'none';
         menu.style.display = '';
         app.insertBefore(drawArea, background);
-
-        if (wsData.pic.mask) {
-          updateMask(wsData.pic.mask);
-        }
-        if (wsData.pic.comments) {
-          loadComments(wsData.pic.comments);
+        //проверка позиции меню
+        if (menu.offsetHeight > menuHeight) {
+          checkWidth(menu, menu.offsetLeft);
         }
       })
+      if (wsData.pic.mask !== undefined) {
+        updateMask(wsData.pic.mask);
+      }
+      if (wsData.pic.comments !== undefined) {
+        loadComments(wsData.pic.comments);
+      }
     }
   })
 }
@@ -510,6 +537,11 @@ function getUrlId() {
 // ~~~~~~~~~~ events ~~~~~~~~~~ //
 //загрузка страницы
 document.addEventListener('DOMContentLoaded', () => {
+  //создание контейнера для комментариев
+  app.appendChild(formContainer);
+  //удаление примера чата комментария
+  document.querySelector('.comments__form').parentNode
+    .removeChild(document.querySelector('.comments__form'));
   //установка позиции меню
   menuPositionCalc(menu);
   //удаление ссылки на фон
@@ -564,19 +596,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   //Проверка ссылки, попытка загрузки с сервера
-  let shareUrl = getUrlId();
+  let shareUrl = getUrlId() ? getUrlId().id : sessionStorage.backgroundId;
   if (shareUrl) {
-    fetch(`https://neto-api.herokuapp.com/pic/${shareUrl.id}`)
+    fetch(`https://neto-api.herokuapp.com/pic/${shareUrl}`)
       .then(data => {
         return data.json();
       })
       .then(data => {
         document.querySelector('.menu__url').setAttribute('value', `${mainPath}?${data.id}`);
         wsConnect(data.id);
-        toCommentsMenu();
+        if (getUrlId()) {
+          toCommentsMenu();
+        } else {
+          shareImage();
+        }
       })
       .catch(data => {
         showError('Изображение по ссылке не найдено');
+        startingApp();
       })
 
   } else {
@@ -616,7 +653,6 @@ document.addEventListener('mousemove', event => {
       menu.style.setProperty('--menu-left', event.pageX - dragMenu.offsetWidth / 2 + 'px');
       localStorage.menuLeft = event.pageX - dragMenu.offsetWidth / 2;
     }
-
     if (event.pageY - dragMenu.offsetHeight / 2 < 0) {
       menu.style.setProperty('--menu-top', 0 + 'px')
       localStorage.menuTop = 0;
@@ -627,7 +663,6 @@ document.addEventListener('mousemove', event => {
       menu.style.setProperty('--menu-top', event.pageY - dragMenu.offsetHeight / 2 + 'px');
       localStorage.menuTop = event.pageY - dragMenu.offsetHeight / 2;
     }
-
   }
 })
 
@@ -639,6 +674,7 @@ document.addEventListener('mouseup', event => {
 
 //клики меню
 menu.addEventListener('click', event => {
+  formContainer.style.zIndex = '';
   if (event.target === burgerMenu || event.target.parentNode === burgerMenu) {
     Array.from(menu.children).forEach(item => {
       item.dataset.state = '';
@@ -667,9 +703,9 @@ menu.addEventListener('click', event => {
 })
 
 //создание комментариев
-drawArea.addEventListener('click', event => {
-  closeComments();
-  if (commentsMenu.dataset.state === 'selected' && commentsToggle[0].hasAttribute('checked')) {
+formContainer.addEventListener('click', event => {
+  if (event.target === event.currentTarget && commentsMenu.dataset.state === 'selected' && commentsToggle[0].hasAttribute('checked')) {
+    closeComments();
     let formX = event.pageX - (drawArea.offsetLeft - drawArea.offsetWidth / 2);
     let formY = event.pageY - (drawArea.offsetTop - drawArea.offsetHeight / 2);
     createNewCommentBlock(formX, formY);
