@@ -670,9 +670,3 @@ body {
 .menu[data-state="selected"] > .menu__item[data-state="selected"], .menu__item[data-state="selected"] + .tool {
   display: inline-block;
 }
-
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ added ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.menu {
-  width: max-content;
-}
