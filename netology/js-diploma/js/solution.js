@@ -135,12 +135,12 @@ function menuPositionCalc(block) {
   let posLeft = localStorage.menuLeft ? localStorage.menuLeft : (windowWidth - blockWidth) / 2;
 
   block.style.setProperty('--menu-top', posTop + "px");
+   block.style.setProperty('--menu-left', posLeft + 'px');
   //защита от переламывания меню 
   checkWidth(menu, posLeft);
 }
 
 function checkWidth(block, posLeft) {
-   block.style.setProperty('--menu-left', posLeft + 'px');
   if (block.offsetHeight > menuHeight + 5) {
     posLeft--;
     block.style.setProperty('--menu-left', posLeft + 'px');
