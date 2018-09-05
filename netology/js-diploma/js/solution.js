@@ -140,7 +140,7 @@ function menuPositionCalc(block) {
 }
 
 function checkWidth(block, posLeft) {
-  if (block.offsetHeight > menuHeight) {
+  if (block.offsetHeight > menuHeight + 5) {
     posLeft--;
     block.style.setProperty('--menu-left', posLeft + 'px');
     checkWidth(block, posLeft);
