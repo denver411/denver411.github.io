@@ -140,12 +140,12 @@ function menuPositionCalc(block) {
 }
 
 function checkWidth(block, posLeft) {
+   block.style.setProperty('--menu-left', posLeft + 'px');
   if (block.offsetHeight > menuHeight + 5) {
     posLeft--;
     block.style.setProperty('--menu-left', posLeft + 'px');
     checkWidth(block, posLeft);
   } else {
-    block.style.setProperty('--menu-left', posLeft + 'px');
     return;
   }
 }
