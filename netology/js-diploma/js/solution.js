@@ -145,6 +145,7 @@ function checkWidth(block, posLeft) {
     block.style.setProperty('--menu-left', posLeft + 'px');
     checkWidth(block, posLeft);
   } else {
+    block.style.setProperty('--menu-left', posLeft + 'px');
     return;
   }
 }
